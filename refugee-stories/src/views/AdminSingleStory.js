@@ -22,21 +22,13 @@ componentDidMount(){
 
     
     render(){
-        console.log(this.props.match.params.id)
+       
     return ( 
         <div>
         <h1>Single Story Admin</h1>
-      {this.props.adminStories.map((story,index) => story.id == this.props.match.params.id ? 
-            <div>
-            <p>{story.title}</p>
-            <button>accept</button>
-            <button>reject</button>
-            </div>
-            
-            
-            
-            
-            : null)}
+        <p> {this.props.adminStories.map((story,index) => story.id == this.props.match.params.id ? story.title : null)}</p>
+        <button onClick={this.accept}>accept</button>
+        <button onClick={this.reject}>reject</button>
         </div>
 
      );

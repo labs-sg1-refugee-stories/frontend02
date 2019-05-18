@@ -36,6 +36,7 @@ function App() {
 
   {/* protected admin routes */}
   <PrivateRoute exact path={"/admin_stories_list/"} component={AdminStoriesList}></PrivateRoute>
+  <PrivateRoute exact path={"/admin_stories_list/:id"} component={AdminSingleStory}></PrivateRoute>
   </Router>
   
   );
