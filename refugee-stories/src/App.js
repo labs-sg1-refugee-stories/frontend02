@@ -5,7 +5,7 @@ import Home from './views/Home'
 import {BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import PrivateRoute from './components/PrivateRoute'
 import StoriesList from './views/containers/StoriesList'
-import SingleStory from './views/containers/SingleStory'
+import SingleStory from './views/SingleStory'
 import AddStory from './views/AddStory'
 
 
@@ -28,7 +28,7 @@ function App() {
   <Route  exact path={"/login"} component={Login}></Route>
   {/* protected user routes */}
   <PrivateRoute exact path={"/stories_list"} component={StoriesList}></PrivateRoute>
-  <PrivateRoute exact path={"/stories_list/addStory"} component={AddStory}></PrivateRoute>
+  <PrivateRoute exact path={"/stories_list/add_story"} component={AddStory}></PrivateRoute>
   <PrivateRoute path={"/stories_list/:id"} component={SingleStory}></PrivateRoute>
 
   {/* protected admin routes */}
