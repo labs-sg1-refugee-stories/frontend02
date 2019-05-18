@@ -4,6 +4,7 @@ const initialState = {
   stories: []
 };
 
+
 export const storiesReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_DATA_START:
