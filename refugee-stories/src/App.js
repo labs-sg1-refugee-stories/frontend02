@@ -5,7 +5,7 @@ import Home from './views/Home'
 import {BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import PrivateRoute from './components/PrivateRoute'
 import StoriesList from './views/containers/StoriesList'
-import SingleStory from './views/containers/SingleStory'
+import SingleStory from './views/SingleStory'
 import AddStory from './views/AddStory'
 
 
