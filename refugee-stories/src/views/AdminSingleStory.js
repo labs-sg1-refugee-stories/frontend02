@@ -1,44 +1,39 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { getData } from '../actions'
+import React from "react";
+import { connect } from "react-redux";
+import { getData } from "../actions";
 
+class SingleStory extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-
-class SingleStory extends React.Component{
-    constructor(props){
-        super(props)
-        this.state = {
-
-        }
-
-    }
-
-
-componentDidMount(){
+  componentDidMount() {
     this.props.getData();
-}
+  }
 
-
-
-    
-    render(){
-       
-    return ( 
-        <div>
+  render() {
+    return (
+      <div>
         <h1>Single Story Admin</h1>
-        <p> {this.props.adminStories.map((story,index) => story.id == this.props.match.params.id ? story.title : null)}</p>
-        <button onClick={this.accept}>accept</button>
-        <button onClick={this.reject}>reject</button>
-        </div>
-
-     );
-    }
+        <p>
+          {" "}
+          {this.props.adminStories.map((story, index) =>
+            story.id == this.props.match.params.id ? story.title : null
+          )}
+        </p>
+        <button onClick={this.acceptStory}>accept</button>
+        <button onClick={this.rejectStory}>reject</button>
+      </div>
+    );
+  }
 }
 
+const mapStateToProps = state => ({
+  adminStories: state.adminStories
+});
 
-
-const mapStateToProps = state =>({
-    adminStories: state.adminStories
-})
-
-export default connect(mapStateToProps,{getData})(SingleStory);
+export default connect(
+  mapStateToProps,
+  { getData }
+)(SingleStory);

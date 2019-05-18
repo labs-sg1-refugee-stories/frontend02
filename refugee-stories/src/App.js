@@ -31,8 +31,9 @@ function App() {
   <Route  exact path={"/login"} component={Login}></Route>
   {/* protected user routes */}
   <PrivateRoute exact path={"/stories_list"} component={StoriesList}></PrivateRoute>
-  <PrivateRoute exact path={"/stories_list/add_story"} component={AddStory}></PrivateRoute>
   <PrivateRoute exact path={"/stories_list/:id"} component={SingleStory}></PrivateRoute>
+  <PrivateRoute exact path={"/stories_list/add_story"} component={AddStory}></PrivateRoute>
+
 
   {/* protected admin routes */}
   <PrivateRoute exact path={"/admin_stories_list/"} component={AdminStoriesList}></PrivateRoute>

@@ -1,43 +1,60 @@
-import React from 'react';
-
+import React from "react";
+import { connect } from "react-redux";
+import { addPost } from "../actions";
 class AddStory extends React.Component {
-    state = { 
-            title: "",
-            author: "",
-            post:""
+  state = {
+    title: "",
+    author: "",
+    post: ""
+  };
 
+  textChangeHandler = event => {
+    const newText = event.target.value;
+    this.setState({
+      ...this.state,
+      [event.target.name]: newText
+    });
+  };
+  addPost = event => {
+    event.preventDefault();
+    this.props.addPost(this.state);
+  };
 
-        }
-     
-
-     textChangeHandler = (event) =>{
-        const newText = event.target.value
-        this.setState({
-          ...this.state,
-          [event.target.name]:newText
-          
-        })
-      } 
-
-
-
-      render() { 
-        return ( 
-            <div>
-            <h1>Add new Post</h1>
-            <form onSubmit={this.addFriend}>
-              <h2>title</h2>
-              <input onChange={this.textChangeHandler} name="title" type="text" value={this.state.title} />
-              <h2>author</h2>
-              <input onChange={this.textChangeHandler} name="author" type="text" value={this.state.author} />
-              <h2>post</h2>
-              <input onChange={this.textChangeHandler} name="post" type="text" value={this.state.post} />
-              <button>Add Post</button> 
-              {/* loader in button with isloggin in booliearn terinary */}
-            </form>
-          </div>
-         );
-    }
+  render() {
+    return (
+      <div>
+        <h1>Add new Post</h1>
+        <form onSubmit={this.addPost}>
+          <h2>title</h2>
+          <input
+            onChange={this.textChangeHandler}
+            name="title"
+            type="text"
+            value={this.state.title}
+          />
+          <h2>author</h2>
+          <input
+            onChange={this.textChangeHandler}
+            name="author"
+            type="text"
+            value={this.state.author}
+          />
+          <h2>post</h2>
+          <input
+            onChange={this.textChangeHandler}
+            name="post"
+            type="text"
+            value={this.state.post}
+          />
+          <button>Add Post</button>
+          {/* loader in button with isloggin in booliearn terinary */}
+        </form>
+      </div>
+    );
+  }
 }
- 
-export default AddStory;
+
+export default connect(
+  null,
+  { addPost }
+)(AddStory);
