@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components"
+import Button from '../components/Button'
 
 const Wrapper = styled.div`
 height: 285px;
@@ -37,17 +38,7 @@ const Form = styled.form`
 display:flex;
 flex-direction: column;
 `
-const Button = styled.button`
-padding: 10px 20px;
-font-size: 2rem;
-border-radius: 5px;
-color: white;
-background-color: #2aa18a;
-    :hover{
-      transform: translateY(-3px);
-      transition: all .8s;
-    }
-`
+
 
 class SignUp extends React.Component {
   state = {
@@ -67,7 +58,7 @@ class SignUp extends React.Component {
           <Input placeholder="Password" type="text" />
          
         </Form>
-        <Button onClick={""}>Create Account</Button>
+        <Button text={"Create Account"} onClick={""}></Button>
         {/* set up text input action etc. */}
       </Wrapper>
     );

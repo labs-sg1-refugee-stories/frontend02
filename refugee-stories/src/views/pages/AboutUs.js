@@ -4,6 +4,7 @@ import hero from "../../assets/hero.jpg";
 import Navbar from '../../components/Navbar'
 import Profile from '../../components/Profile'
 
+
 const HeroWrapper = styled.div`
   display: flex;
   margin: 0 auto;

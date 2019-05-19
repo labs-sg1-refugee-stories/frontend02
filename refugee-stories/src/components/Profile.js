@@ -11,16 +11,21 @@ justify-content: space-around;
 
 const ProfileWrap = styled.div`
 padding-top: 20px;
-
-height: 400px;
+border: 1px solid white;
+height: 450px;
 margin-top: 200px;
 display:flex
 flex-direction: column;
+padding: 40px;
+padding-bottom: 40px;
 
 color: white;
 width: 25%;
 text-align: center;
-background-color: rgba(0,0,0,.5);
+background-color: rgba(0,0,0,.3);
+
+
+
     h2{
         font-size: 5rem;
     }
@@ -31,6 +36,7 @@ background-color: rgba(0,0,0,.5);
         width 100px;
         margin: 0 auto;
         border-radius: 100px;
+        background-color: rgba(0,0,0,.4);
        
     }
 `
