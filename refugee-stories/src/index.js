@@ -10,11 +10,16 @@ import { storiesReducer } from './reducers'
 
 
 
+
 const store = createStore(storiesReducer,applyMiddleware(thunk,logger))
 
 ReactDOM.render(
+    
 <Provider store={store}>
-    <App />   
+   
+        <App />   
+   
+ 
 </Provider>
 , document.getElementById('root'));
 

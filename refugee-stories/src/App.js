@@ -1,31 +1,26 @@
 import React from 'react';
 import './App.css';
-import Login from './views/Login';
-import Home from './views/Home';
+import Login from './views/pages/Login';
+import Home from './views/pages/Home';
 import {BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import PrivateRoute from './components/PrivateRoute';
 import StoriesList from './views/containers/StoriesList';
-import SingleStory from './views/SingleStory';
-import AddStory from './views/AddStory';
+import SingleStory from './views/pages/SingleStory';
+import AddStory from './views/pages/AddStory';
 import AdminStoriesList from './views/containers/AdminStoriesList';
-import AdminSingleStory from './views/AdminSingleStory'
+import AdminSingleStory from './views/pages/AdminSingleStory'
+import { GlobalStyle } from './styles/Global';
+
+
+
 
 
 function App() {
   return (
-  <Router>
-    <div className="App">
-      <header>
-        <nav>
-          <Link to={"/login"}>login</Link>
-          <Link to={"/"}>Home</Link>
-          <Link to={"/stories_list"}>(secure stories list)</Link>
-          <Link to={"/admin_stories_list"}>(secure Admin stories list)</Link>
 
-        </nav>
-      </header>
-   
-    </div>
+  <Router>
+    <GlobalStyle />
+    
   {/* unprotected routes */}
   <Route exact path={"/"} component={Home}></Route>
   <Route  exact path={"/login"} component={Login}></Route>
@@ -38,8 +33,9 @@ function App() {
   {/* protected admin routes */}
   <PrivateRoute exact path={"/admin_stories_list/"} component={AdminStoriesList}></PrivateRoute>
   <PrivateRoute exact path={"/admin_stories_list/:id"} component={AdminSingleStory}></PrivateRoute>
+ 
   </Router>
-  
+
   );
 }
 

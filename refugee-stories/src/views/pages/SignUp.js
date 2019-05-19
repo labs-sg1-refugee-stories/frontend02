@@ -1,4 +1,13 @@
 import React from "react";
+import styled from "styled-components"
+
+const Wrapper = styled.div`
+padding-top:200px
+`
+
+const TitleTwo = styled.h2`
+color:white;
+`
 
 class SignUp extends React.Component {
   state = {
@@ -9,15 +18,15 @@ class SignUp extends React.Component {
   };
   render() {
     return (
-      <div>
-        <h1>Sign Up</h1>
+      <Wrapper>
+        <TitleTwo>Sign Up</TitleTwo>
         <form>
-          <h2>User Name</h2>
+          <TitleTwo>User Name</TitleTwo>
           <input type="text" />
-          <h2>password</h2>
+          <TitleTwo>password</TitleTwo>
           <input type="text" />
         </form>
-      </div>
+      </Wrapper>
     );
   }
 }

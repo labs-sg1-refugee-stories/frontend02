@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addPost } from "../actions";
+import { addPost } from "../../actions";
 class AddStory extends React.Component {
   state = {
     title: "",
