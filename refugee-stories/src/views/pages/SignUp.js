@@ -4,9 +4,18 @@ import styled from "styled-components"
 const Wrapper = styled.div`
 padding-top:200px
 `
-
 const TitleTwo = styled.h2`
 color:white;
+font-size:3rem;
+margin-bottom: 0px;
+text-align:center;
+`
+const Input = styled.input`
+border: none;
+border-bottom: 1px solid white;
+margin-left:60px
+
+
 `
 
 class SignUp extends React.Component {
@@ -19,12 +28,12 @@ class SignUp extends React.Component {
   render() {
     return (
       <Wrapper>
-        <TitleTwo>Sign Up</TitleTwo>
+        <TitleTwo>Sign Up and Share </TitleTwo>
         <form>
           <TitleTwo>User Name</TitleTwo>
-          <input type="text" />
+          <Input type="text" />
           <TitleTwo>password</TitleTwo>
-          <input type="text" />
+          <Input type="text" />
         </form>
       </Wrapper>
     );

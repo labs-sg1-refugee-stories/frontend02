@@ -27,17 +27,28 @@ font-size:3rem;
 `
 const NavBar = styled.div`
 position:absolute;
+display:flex;
+justify-content: ;
+    a{
+        padding-left: 70px
+        text-decoration: none
+        color: white;
+        font-size: 2rem;
+        
+    }
 `
+
+
 
 class Home extends React.Component {
     state = {  }
     render() { 
         return ( 
             <HeroWrapper>
-                <div className="App">
+              
       <NavBar>
         <nav>
-          <Link to={"/login"}>login</Link>
+          <Link to={"/login"}>Login</Link>
           <Link to={"/"}>Home</Link>
           <Link to={"/stories_list"}>(secure USER stories list)</Link>
           <Link to={"/admin_stories_list"}>(secure ADMIN stories list)</Link>
@@ -45,7 +56,7 @@ class Home extends React.Component {
         </nav>
       </NavBar>
    
-    </div>
+
                 <div>
             <Title>Refugee Stories.</Title>
             <SubHeader>Voices that need to be heard</SubHeader>
