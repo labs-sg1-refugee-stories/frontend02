@@ -17,9 +17,7 @@ const HeroWrapper = styled.div`
     url(${hero});
   background-size: contain;
   font-size: 4rem;
-
 `
-
 const Title = styled.h1`
   color: white;
   margin-top: 200px;
