@@ -10,10 +10,7 @@ import AddStory from './views/pages/AddStory';
 import AdminStoriesList from './views/containers/AdminStoriesList';
 import AdminSingleStory from './views/pages/AdminSingleStory'
 import { GlobalStyle } from './styles/Global';
-
-
-
-
+import AboutUs from './views/pages/AboutUs'
 
 function App() {
   return (
@@ -24,6 +21,7 @@ function App() {
   {/* unprotected routes */}
   <Route exact path={"/"} component={Home}></Route>
   <Route  exact path={"/login"} component={Login}></Route>
+  <Route  exact path={"/about_us"} component={AboutUs}></Route>
   {/* protected user routes */}
   <PrivateRoute exact path={"/stories_list"} component={StoriesList}></PrivateRoute>
   <PrivateRoute exact path={"/stories_list/:id"} component={SingleStory}></PrivateRoute>
