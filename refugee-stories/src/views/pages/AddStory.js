@@ -1,6 +1,26 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addPost } from "../../actions";
+import hero from "../../assets/hero.jpg";
+import Navbar from "../../components/Navbar";
+import Profile from "../../components/Profile";
+import styled from "styled-components";
+
+const HeroWrapper = styled.div`
+  display: flex;
+  margin: 0 auto;
+
+  height: 900px;
+  justify-content: space-around;
+  background-image: linear-gradient(
+      rgba(000, 000, 000, 0.9),
+      rgba(111, 111, 111, 0.8)
+    ),
+    url(${hero});
+  background-size: contain;
+  font-size: 4rem;
+  color:white;
+`;
 class AddStory extends React.Component {
   state = {
     title: "",
@@ -23,7 +43,9 @@ class AddStory extends React.Component {
   render() {
     return (
       <div>
-        <h1>Add new Post</h1>
+        <Navbar></Navbar>
+      <HeroWrapper>
+        <h1>Share Your Story</h1>
         <form onSubmit={this.addPost}>
           <h2>title</h2>
           <input
@@ -47,8 +69,8 @@ class AddStory extends React.Component {
             value={this.state.post}
           />
           <button>Add Post</button>
-          {/* loader in button with isloggin in booliearn terinary */}
         </form>
+      </HeroWrapper>
       </div>
     );
   }
