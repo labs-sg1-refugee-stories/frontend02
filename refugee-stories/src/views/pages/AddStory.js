@@ -26,12 +26,13 @@ const HeroWrapper = styled.div`
 const FormWrapper = styled.div`
 margin: 0 auto;
 width: 800px;
-background-color: rgba(0,0,0,.3);
+background-color: rgba(0,0,0,.6);
+margin-top:20px;
 `
 const Form = styled.form`
-
 display: flex;
 flex-direction: column;
+padding: 30px;
 `
 const TextInput = styled.textarea`
 border: none;
@@ -44,7 +45,10 @@ margin-bottom: 30px;
   font-family: 'Oswald', sans-serif;
   letter-spacing: 1px
 }
-
+`
+const Header = styled.div`
+margin: 0 auto;
+margin-top: 40px;
 `
 
 const Input = styled.input`
@@ -82,9 +86,11 @@ class AddStory extends React.Component {
     return (
       <div>
         <Navbar />
+        
         <HeroWrapper>
+        <Header>Share Your Story</Header>
           <FormWrapper>
-          <h1>Share Your Story</h1>
+     
           <Form onSubmit={this.addPost}>
  
             <Input
