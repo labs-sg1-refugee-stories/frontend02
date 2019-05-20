@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
 import { storiesReducer } from './reducers'
+import Footer from './components/Footer'
 
 
 
@@ -18,6 +19,7 @@ ReactDOM.render(
 <Provider store={store}>
    
         <App />   
+        <Footer></Footer>
    
  
 </Provider>

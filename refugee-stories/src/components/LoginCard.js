@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components"
 
 const Wrapper = styled.div`
-height: 285px;
+height: 350px;
 
 border: 1px solid white;
 padding: 10px 20px;
@@ -10,7 +10,12 @@ padding-bottom: none;
 display:flex;
 flex-direction: column;
 background-color: white;
+color: white;
 background-color: rgba(0,0,0,.3);
+
+    p{
+        margin: 0;
+    }
 `
 const TitleTwo = styled.h2`
 color:white;
@@ -18,6 +23,20 @@ font-size:2.5rem;
 margin-bottom: 0px;
 text-align:center;
 margin-bottom: 20px;
+`
+
+const CheckboxWrap = styled.div`
+display: flex;
+margin-left: 20px;
+    input {
+        margin-right: 30px;
+        margin-top:10px;
+    }
+    p {
+        font-size: 2rem;
+        padding-right: 4px;
+    }
+
 
 `
 const Input = styled.input`
@@ -65,8 +84,12 @@ class LoginCard extends React.Component {
           <Input placeholder="Username" type="text" />
    
           <Input placeholder="Password" type="text" />
-          {/* <input type="checkbox">Admin</input>
-          <input type="checkbox">User</input> */}
+          <CheckboxWrap>
+          <p>Admin</p>
+          <input value="admin" type="checkbox"></input>
+          <p>User</p>
+          <input value="user" type="checkbox"></input>
+          </CheckboxWrap>
         </Form>
         <Button onClick={""}>Share</Button>
         {/* set up text input action etc. */}

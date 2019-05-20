@@ -1,7 +1,6 @@
-import React from 'react';
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const NavBar = styled.div`
 
@@ -35,23 +34,23 @@ background-color: #2aa18a
         }
         
     }
-    }
+}
 
 
 `;
 
 const Navbar = () => {
-    return ( 
-        <NavBar>
-        <nav>
-          <Link to={"/login"}>Login</Link>
-          <Link to={"/"}>Home</Link>
-          <Link to={"/about_us"}>About Us</Link>
-          <Link to={"/stories_list"}>(secure USER stories list)</Link>
-          <Link to={"/admin_stories_list"}>(secure ADMIN stories list)</Link>
-        </nav>
-      </NavBar>
-     );
-}
- 
+  return (
+    <NavBar>
+      <nav>
+        <Link to={"/login"}>Login</Link>
+        <Link to={"/"}>Home</Link>
+        <Link to={"/about_us"}>About Us</Link>
+        <Link to={"/stories_list"}>(secure USER stories list)</Link>
+        <Link to={"/admin_stories_list"}>(secure ADMIN stories list)</Link>
+      </nav>
+    </NavBar>
+  );
+};
+
 export default Navbar;

@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "../../components/Navbar"
+import Navbar from "../../components/Navbar";
 import styled from "styled-components";
 import hero from "../../assets/hero.jpg";
-import LoginCard from "../../components/LoginCard"
+import LoginCard from "../../components/LoginCard";
 
 const HeroWrapper = styled.div`
   display: flex;
@@ -17,15 +17,13 @@ const HeroWrapper = styled.div`
     url(${hero});
   background-size: contain;
   font-size: 4rem;
-`
+`;
 const Title = styled.h1`
   color: white;
   margin-top: 200px;
   font-size: 7rem;
-  letter-spacing: 2px
-`
-
-
+  letter-spacing: 2px;
+`;
 
 class Login extends React.Component {
   state = {
@@ -34,19 +32,19 @@ class Login extends React.Component {
       password: ""
     }
   };
+
+
+  
   render() {
     return (
       <div>
-      <Navbar />
-      <HeroWrapper>
-     
-
-        <div>
-          <Title>Welcome Back.</Title>
-          <LoginCard />
-        </div>
-
-      </HeroWrapper>
+        <Navbar />
+        <HeroWrapper>
+          <div>
+            <Title>Welcome Back.</Title>
+            <LoginCard />
+          </div>
+        </HeroWrapper>
       </div>
     );
   }
