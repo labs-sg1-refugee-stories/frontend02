@@ -4,6 +4,7 @@ import { getData } from "../../actions";
 import styled from "styled-components";
 import hero from "../../assets/hero.jpg";
 import Navbar from "../../components/Navbar";
+import Button from "../../components/Button"
 
 
 const HeroWrapper = styled.div`
@@ -22,6 +23,14 @@ const HeroWrapper = styled.div`
   color: white;
 `;
 
+const StoryWrapper = styled.div`
+
+    button{
+      margin-left: 10px
+      
+    }
+`
+
 class SingleStory extends React.Component {
   constructor(props) {
     super(props);
@@ -37,6 +46,7 @@ class SingleStory extends React.Component {
       <div>
       <Navbar/>
       <HeroWrapper>
+        <StoryWrapper>
         <h1>Single Story Admin</h1>
         <p>
           {" "}
@@ -45,9 +55,10 @@ class SingleStory extends React.Component {
           )}
         </p>
         <div>
-        <button onClick={this.acceptStory}>accept</button>
-        <button onClick={this.rejectStory}>reject</button>
+        <Button text={"accept"} onClick={this.acceptStory}>accept</Button>
+        <Button text={"decline"} onClick={this.rejectStory}>reject</Button>
         </div>
+        </StoryWrapper>
       </HeroWrapper>
       </div>
     );

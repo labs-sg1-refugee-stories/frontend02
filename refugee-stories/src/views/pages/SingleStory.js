@@ -10,7 +10,6 @@ import styled from "styled-components";
 const HeroWrapper = styled.div`
   display: flex;
   margin: 0 auto;
-
   height: 900px;
   justify-content: space-around;
   background-image: linear-gradient(
@@ -22,6 +21,9 @@ const HeroWrapper = styled.div`
   font-size: 4rem;
   color:white;
 `;
+const StoryWrapper = styled.div`
+
+`
 
 
 class SingleStory extends React.Component{
@@ -45,10 +47,12 @@ componentDidMount(){
         console.log(this.props.match.params.id)
     return ( 
         <div>
-        <Navbar></Navbar>
+        <Navbar />
         <HeroWrapper>
+            <StoryWrapper>
         <h1>Single Story</h1>
         <p> {this.props.stories.map((story,index) => story.id == this.props.match.params.id ? story.title: null)}</p>
+        </StoryWrapper>
         </HeroWrapper>
         </div>
      );
