@@ -5,10 +5,10 @@ const FooterWrap = styled.div`
   display: flex;
   justify-content: space-around;
   color: white;
-  height: 70px;
   background-color: #33313b;
   font-size: 2rem;
-  align-items: baseline
+  align-items: baseline;
+  margin-bottom: 0px;
   i {
     padding: 0px 10px;
   }
@@ -33,7 +33,7 @@ const Footer = () => {
         </p>
       </div>
       <div>
-        <p>Refugee Stories &copy; </p>
+        <p>Refugee Stories 2019 &copy; </p>
       </div>
       <SocialMedia>
         <p>

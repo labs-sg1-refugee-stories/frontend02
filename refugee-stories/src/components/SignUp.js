@@ -47,6 +47,15 @@ class SignUp extends React.Component {
       password: ""
     }
   };
+
+  textChangeHandler = event => {
+    const newText = event.target.value;
+    this.setState({
+      ...this.state,
+      [event.target.name]: newText
+    });
+  };
+  
   render() {
     return (
       <Wrapper>
