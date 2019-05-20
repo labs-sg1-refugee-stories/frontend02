@@ -19,17 +19,17 @@ function App() {
     <GlobalStyle />
     
   {/* unprotected routes */}
-  <Route exact path={"/"} component={Home}></Route>
-  <Route  exact path={"/login"} component={Login}></Route>
-  <Route  exact path={"/about_us"} component={AboutUs}></Route>
+  <Route  exact path={"/"} component={Home}></Route>
+  <Route  path={"/login"} component={Login}></Route>
+  <Route  path={"/about_us"} component={AboutUs}></Route>
   {/* protected user routes */}
-  <PrivateRoute exact path={"/stories_list"} component={StoriesList}></PrivateRoute>
-  <PrivateRoute exact path={"/stories_list/:id"} component={SingleStory}></PrivateRoute>
-  <PrivateRoute exact path={"/stories_list/add_story"} component={AddStory}></PrivateRoute>
+  <PrivateRoute  exact path={"/stories_list"} component={StoriesList}></PrivateRoute>
+  <PrivateRoute  exact path={"/stories_list/user/:id"} component={SingleStory}></PrivateRoute>
+  <PrivateRoute  exact path={"/stories_list/add_story"} component={AddStory}></PrivateRoute>
 
 
   {/* protected admin routes */}
-  <PrivateRoute exact path={"/admin_stories_list/"} component={AdminStoriesList}></PrivateRoute>
+  <PrivateRoute exact path={"/admin_stories_list"} component={AdminStoriesList}></PrivateRoute>
   <PrivateRoute exact path={"/admin_stories_list/:id"} component={AdminSingleStory}></PrivateRoute>
  
   </Router>

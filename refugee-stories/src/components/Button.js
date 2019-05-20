@@ -9,7 +9,7 @@ color: white;
 background-color: #2aa18a;
     :hover{
       transform: translateY(-3px);
-      transition: all .8s;
+      transition: all .4s;
     }
 `
 

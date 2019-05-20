@@ -1,9 +1,8 @@
-import React from 'react';
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 import hero from "../../assets/hero.jpg";
-import Navbar from '../../components/Navbar'
-import Profile from '../../components/Profile'
-
+import Navbar from "../../components/Navbar";
+import Profile from "../../components/Profile";
 
 const HeroWrapper = styled.div`
   display: flex;
@@ -18,22 +17,17 @@ const HeroWrapper = styled.div`
     url(${hero});
   background-size: contain;
   font-size: 4rem;
-
 `;
 
-
-
 const AboutUs = () => {
-    return ( 
-        <>
-        <Navbar />
-        <HeroWrapper>   
+  return (
+    <>
+      <Navbar />
+      <HeroWrapper>
+        <Profile />
+      </HeroWrapper>
+    </>
+  );
+};
 
-            <Profile/>
-        </HeroWrapper>
-
-        </>
-     );
-}
- 
 export default AboutUs;
