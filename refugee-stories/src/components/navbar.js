@@ -47,7 +47,7 @@ const Navbar = () => {
         <Link to={"/"}>Home</Link>
         <Link to={"/about_us"}>About Us</Link>
         <Link to="/stories_list/add_story" >Submit Story</Link>
-        <Link to={"/stories_list"}>( secure USER )</Link>
+        <Link to={"/stories_list"}>Read</Link>
         <Link to={"/admin_stories_list"}>( secure ADMIN )</Link>
      
       </nav>

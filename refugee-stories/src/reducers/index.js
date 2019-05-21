@@ -17,45 +17,9 @@ import {
 } from "../actions";
 
 const initialState = {
-  stories: [    {
-    userId: 1,
-    id: 1,
-    title: "delectus aut autem",
-    completed: false
-  },
-  {
-    userId: 1,
-    id: 2,
-    title: "quis ut nam facilis et officia qui",
-    completed: false
-  },
-  {
-    userId: 1,
-    id: 3,
-    title: "fugiat veniam minus",
-    completed: false
-  }],
+  stories: [],
   //temp data until routes arrive to fill admin stories
-  adminStories: [
-    {
-      userId: 1,
-      id: 1,
-      title: "delectus aut autem",
-      completed: false
-    },
-    {
-      userId: 1,
-      id: 2,
-      title: "quis ut nam facilis et officia qui",
-      completed: false
-    },
-    {
-      userId: 1,
-      id: 3,
-      title: "fugiat veniam minus",
-      completed: false
-    }
-  ]
+  adminStories: []
 };
 
 export const storiesReducer = (state = initialState, action) => {
@@ -70,14 +34,14 @@ export const storiesReducer = (state = initialState, action) => {
     case ADD_POST_START:
       return { ...state };
     case ADD_POST_SUCCESS:
-      return { ...state, adminStories: action.payload.data };
+      return { ...state, stories: [...state.stories, action.payload.data] };
     case ADD_POST_FAILURE:
       return { ...state };
     
     case REJECT_STORY_START:
-      return { ...state };
+      return { ...state, };
     case REJECT_STORY_SUCCESS:
-      return { ...state};
+      return { ...state, error: action.payload.data };
     case REJECT_STORY_FAILURE:
       return { ...state };
 

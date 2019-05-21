@@ -42,10 +42,12 @@ class StoriesList extends React.Component {
     this.props.getData();
   }
 
-  render() {
+render = () => {
+  console.log(this.props.stories)
+return(
+  <div>
+    {this.props.stories &&
 
-
-    return (
       <div>
       <Navbar />
     <HeroWrapper>
@@ -58,7 +60,9 @@ class StoriesList extends React.Component {
         </ListWrapper>
       </HeroWrapper>
       </div>
-    );
+      
+    }
+   </div> )
   
 }
 }

@@ -29,7 +29,7 @@ const Footer = () => {
     <FooterWrap>
       <div>
         <p>
-          made with <i class="fas fa-heart" /> and <i class="fas fa-coffee" />
+          made with <i className="fas fa-heart" /> and <i className="fas fa-coffee" />
         </p>
       </div>
       <div>
@@ -37,9 +37,9 @@ const Footer = () => {
       </div>
       <SocialMedia>
         <p>
-          <i class="fab fa-github-square" />
-          <i class="fab fa-facebook-square" />
-          <i class="fab fa-twitter-square" />
+          <i className="fab fa-github-square" />
+          <i className="fab fa-facebook-square" />
+          <i className="fab fa-twitter-square" />
         </p>
       </SocialMedia>
     </FooterWrap>

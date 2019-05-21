@@ -44,7 +44,7 @@ class AdminStoriesList extends React.Component {
 
   render() {
 
-
+    if(this.props){
     return (
       <div>
       <Navbar />
@@ -54,17 +54,16 @@ class AdminStoriesList extends React.Component {
         <ListWrapper>
         
         {/* needs to go to the id of the story create map function to search for correct story - */}
-        {this.props.adminStories.map((story,index) => <div><Link to={`/admin_stories_list/${story.id}`}>{story.title}</Link></div>)}
+        {this.props.stories.map((story,index) => <div><Link to={`/admin_stories_list/${story.id}`}>{story.title}</Link></div>)}
         </ListWrapper>
       </HeroWrapper>
       </div>
     );
   
+}}
 }
-}
-
 const mapStateToProps = state => ({
-  adminStories: state.adminStories
+  stories: state.stories
 });
 
 export default connect(

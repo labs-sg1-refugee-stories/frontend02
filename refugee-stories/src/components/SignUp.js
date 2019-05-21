@@ -3,8 +3,8 @@ import styled from "styled-components"
 import Button from '../components/Button'
 
 const Wrapper = styled.div`
-height: 285px;
-margin-top: 240px
+height: 185px;
+margin-top: 280px
 border: 1px solid white;
 padding: 10px 20px;
 padding-bottom: none;
@@ -39,7 +39,6 @@ display:flex;
 flex-direction: column;
 `
 
-
 class SignUp extends React.Component {
   state = {
     newCredentials: {
@@ -55,19 +54,17 @@ class SignUp extends React.Component {
       [event.target.name]: newText
     });
   };
-  
+
   render() {
     return (
       <Wrapper>
-        <TitleTwo>Sign Up and Share </TitleTwo>
+        <TitleTwo>Share Your Experience</TitleTwo>
         <Form>
      
-          <Input placeholder="Username" type="text" />
-   
-          <Input placeholder="Password" type="text" />
+          
          
         </Form>
-        <Button text={"Create Account"} onClick={""}></Button>
+        <Button text={"Publish"} onClick={""}></Button>
         {/* set up text input action etc. */}
       </Wrapper>
     );

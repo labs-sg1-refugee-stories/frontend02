@@ -9,8 +9,8 @@ export const GET_DATA_FAILURE = "GET_DATA_FAILURE";
 export const getData = () => dispatch => {
   dispatch({ type: GET_DATA_START });
   return axios
-    .get("")
-    // https://jsonplaceholder.typicode.com/todos/
+    .get("https://refugee-stories-api.herokuapp.com/stories")
+
     .then(res => {
       dispatch({ type: GET_DATA_SUCCESS, payload: res });
     })
@@ -23,8 +23,8 @@ export const ADD_POST_FAILURE = "ADD_POST_FAILURE";
 
 export const addPost = newPost => dispatch => {
   dispatch({ type: ADD_POST_START });
-  return axios
-    .post("??????", newPost)
+  axios
+    .post("https://refugee-stories-api.herokuapp.com/stories", newPost)
     .then(res => {
       dispatch({ type: ADD_POST_SUCCESS, payload: res });
     })
@@ -36,11 +36,13 @@ export const REJECT_STORY_SUCCESS = "REJECT_STORY_SUCCESS";
 export const REJECT_STORY_FAILURE = "REJECT_STORY_FAILURE";
 
 export const rejectStory = id => dispatch => {
-  dispatch({ type: REJECT_STORY_START });
-  return axios
-    .delete("??????", id)
+  dispatch({type: REJECT_STORY_START})
+  axios
+    .delete(`https://refugee-stories-api.herokuapp.com/stories/${id}`)
     .then(res => {
+      console.log("return from delete", res)
       dispatch({ type: REJECT_STORY_SUCCESS, payload: res });
+   
     })
     .catch(err => console.log(err));
 };

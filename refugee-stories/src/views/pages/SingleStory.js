@@ -1,10 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getData } from '../../actions'
-import { Link } from 'react-router-dom'
 import hero from "../../assets/hero.jpg";
 import Navbar from "../../components/Navbar";
-import Profile from "../../components/Profile";
 import styled from "styled-components";
 
 const HeroWrapper = styled.div`
@@ -44,7 +42,7 @@ componentDidMount(){
 
     
     render(){
-        console.log(this.props.match.params.id)
+        console.log(this.props.stories.id)
     return ( 
         <div>
         <Navbar />
@@ -52,15 +50,13 @@ componentDidMount(){
             <StoryWrapper>
         <h1>Single Story</h1>
         <p> {this.props.stories.map((story,index) => story.id == this.props.match.params.id ? story.title: null)}</p>
+        
         </StoryWrapper>
         </HeroWrapper>
         </div>
      );
     }
 }
-
-
-// if(props.match.params.id === this.props.story.id)
 
 const mapStateToProps = state =>({
     stories: state.stories

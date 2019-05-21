@@ -1,11 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getData } from "../../actions";
+import { rejectStory } from "../../actions";
+import { Redirect } from 'react-router-dom';
 import styled from "styled-components";
 import hero from "../../assets/hero.jpg";
 import Navbar from "../../components/Navbar";
-import Button from "../../components/Button"
-
+import Button from "../../components/Button";
 
 const HeroWrapper = styled.div`
   display: flex;
@@ -24,12 +25,10 @@ const HeroWrapper = styled.div`
 `;
 
 const StoryWrapper = styled.div`
-
-    button{
-      margin-left: 10px
-      
-    }
-`
+  button {
+    margin-left: 10px;
+  }
+`;
 
 class SingleStory extends React.Component {
   constructor(props) {
@@ -41,35 +40,54 @@ class SingleStory extends React.Component {
     this.props.getData();
   }
 
-  render() {
-    return (
-      <div>
-      <Navbar/>
-      <HeroWrapper>
-        <StoryWrapper>
-        <h1>Single Story Admin</h1>
-        <p>
-          {" "}
-          {this.props.adminStories.map((story, index) =>
-            story.id == this.props.match.params.id ? story.title : null
-          )}
-        </p>
-        <div>
-        <Button text={"accept"} onClick={this.acceptStory}>accept</Button>
-        <Button text={"decline"} onClick={this.rejectStory}>reject</Button>
-        </div>
-        </StoryWrapper>
-      </HeroWrapper>
-      </div>
-    );
+  rejectStory(id) {
+    console.log("reject", id);
+    this.props.rejectStory(id);
+    this.props.history.push("/admin_stories_list")
+   
+    
   }
+
+  render() {
+  
+    return (
+
+      <div>
+        <Navbar />
+        <HeroWrapper>
+          <StoryWrapper>
+            <h1>Single Story Admin</h1>
+            <div>
+              {this.props.stories.map((story, index) =>
+                story.id == this.props.match.params.id ? (
+                  <div key={index}>
+                    {story.title}
+                    <button text={"accept"} onClick={this.acceptStory}>
+                      accept
+                    </button>
+                    <button
+                      text={"decline"}
+                      onClick={() => {this.rejectStory(story.id) }}>
+                      reject 
+                    </button>
+                  </div>
+                ) : null
+              )}
+            </div>
+            <div />
+          </StoryWrapper>
+        </HeroWrapper>
+      </div>
+    ) 
+    }
+  
 }
 
 const mapStateToProps = state => ({
-  adminStories: state.adminStories
+  stories: state.stories
 });
 
 export default connect(
   mapStateToProps,
-  { getData }
+  { getData, rejectStory }
 )(SingleStory);

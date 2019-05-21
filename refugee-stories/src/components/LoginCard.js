@@ -84,12 +84,7 @@ class LoginCard extends React.Component {
           <Input placeholder="Username" type="text" />
    
           <Input placeholder="Password" type="text" />
-          <CheckboxWrap>
-          <p>Admin</p>
-          <input value="admin" type="checkbox"></input>
-          <p>User</p>
-          <input value="user" type="checkbox"></input>
-          </CheckboxWrap>
+         
         </Form>
         <Button onClick={""}>Share</Button>
         {/* set up text input action etc. */}

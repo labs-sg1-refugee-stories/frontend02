@@ -15,7 +15,7 @@ import Footer from './components/Footer'
 const store = createStore(storiesReducer,applyMiddleware(thunk,logger))
 
 ReactDOM.render(
-    
+      
 <Provider store={store}>
    
         <App />   

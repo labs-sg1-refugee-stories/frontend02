@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { addPost } from "../../actions";
 import hero from "../../assets/hero.jpg";
 import Navbar from "../../components/Navbar";
-import Profile from "../../components/Profile";
 import styled from "styled-components";
 import Button from "../../components/Button"
 
@@ -66,8 +65,9 @@ height 30px;
 class AddStory extends React.Component {
   state = {
     title: "",
-    author: "",
-    post: ""
+    name: "",
+    storytext: "",
+    country: ""
   };
 
   textChangeHandler = event => {
@@ -80,6 +80,7 @@ class AddStory extends React.Component {
   addPost = event => {
     event.preventDefault();
     this.props.addPost(this.state);
+    this.props.history.push("/admin_stories_list")
   };
 
   render() {
@@ -102,20 +103,27 @@ class AddStory extends React.Component {
             />
      
             <Input
-            placeholder="Author"
+            placeholder="Author (optional)"
               onChange={this.textChangeHandler}
-              name="author"
+              name="name"
               type="text"
-              value={this.state.author}
+              value={this.state.name}
+            />
+            <Input
+            placeholder="Country"
+              onChange={this.textChangeHandler}
+              name="country"
+              type="text"
+              value={this.state.country}
             />
          
             <TextInput
               placeholder="Story"
-              rows="20" cols="100"
+              rows="18" cols="100"
               onChange={this.textChangeHandler}
-              name="post"
+              name="storytext"
               type="text"
-              value={this.state.post}
+              value={this.state.storytext}
             />
             <Button text={"Share"}>Add Post</Button>
           </Form>
