@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const NavBar = styled.div`
 
-
+}
 
 padding-top: 15px;
 padding-bottom: 15px;
@@ -16,6 +16,11 @@ background-color: #2aa18a
     nav{
       display:flex;
       justify-content: space-around;
+      @media (max-width: 700px) {
+        flex-direction: column;
+        align-items: center
+  
+      }
 
       a{
        
@@ -24,6 +29,12 @@ background-color: #2aa18a
         font-size: 2rem;
         border-bottom: 1px solid #2aa18a;
         font-size: 2.1rem;
+        @media (max-width: 700px) {
+          border-bottom: 1px solid white;
+          width: 100%
+          text-align: center;
+          padding: 10px;
+      }
 
         :hover{
           color:white;

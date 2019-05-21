@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { getData } from "../../actions";
 import { rejectStory } from "../../actions";
-
+import { Redirect } from "react-router-dom";
 import styled from "styled-components";
 import hero from "../../assets/hero.jpg";
 import Navbar from "../../components/Navbar";
@@ -12,7 +12,7 @@ const HeroWrapper = styled.div`
   display: flex;
   margin: 0 auto;
 
-  height: 900px;
+
   justify-content: space-around;
   background-image: linear-gradient(
       rgba(000, 000, 000, 0.9),
@@ -23,51 +23,62 @@ const HeroWrapper = styled.div`
   font-size: 4rem;
   color: white;
 `;
-
 const StoryWrapper = styled.div`
-  button {
-    margin-left: 10px;
-  }
+  padding: 20px;
+  margin-bottom: 200px;
+  margin-top:100px;
+  width: 400px;
+  border: 1px solid white;
+  background-color:rgba(000, 000, 000, 0.4);
+      button {
+        margin-right: 20px;
+      }
 `;
-
 class SingleStory extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
-
+  componentDidMount() {
+    this.props.getData();
+  }
 
   rejectStory(id) {
-    console.log("reject", id);
     this.props.rejectStory(id);
-    this.props.history.push("/admin_stories_list")
-   
-   
-    
+    this.props.history.push("/admin_stories_list");
+  }
+
+  acceptStory(id) {
+    this.props.acceptStory(id);
+    this.props.history.push("/admin_stories_list");
   }
 
   render() {
-  
     return (
-
       <div>
         <Navbar />
         <HeroWrapper>
           <StoryWrapper>
-            <h1>Single Story Admin</h1>
             <div>
-              {this.props.stories.map((story, index) =>
+              {this.props.adminStories.map((story, index) =>
                 story.id == this.props.match.params.id ? (
                   <div key={index}>
-                    {story.title}
-                    <button text={"accept"} onClick={this.acceptStory}>
+                    <h1>{story.title}</h1>
+                    <h4>{story.name}</h4>
+                    <h4>{story.country}</h4>
+                    <p>{story.storytext}</p>
+
+                    <button text={"accept"} onClick={this.acceptStory(story.id)}>
                       accept
                     </button>
                     <button
                       text={"decline"}
-                      onClick={() => {this.rejectStory(story.id) }}>
-                      reject 
+                      onClick={() => {
+                        this.rejectStory(story.id);
+                      }}
+                    >
+                      reject
                     </button>
                   </div>
                 ) : null
@@ -77,13 +88,12 @@ class SingleStory extends React.Component {
           </StoryWrapper>
         </HeroWrapper>
       </div>
-    ) 
-    }
-  
+    );
+  }
 }
 
 const mapStateToProps = state => ({
-  stories: state.stories
+  adminStories: state.adminStories
 });
 
 export default connect(

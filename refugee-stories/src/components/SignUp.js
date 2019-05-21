@@ -12,6 +12,9 @@ display:flex;
 flex-direction: column;
 background-color: white;
 background-color: rgba(0,0,0,.3);
+@media (max-width: 700px) {
+  margin-top: 0px;
+ }
 `
 const TitleTwo = styled.h2`
 color:white;
@@ -59,11 +62,6 @@ class SignUp extends React.Component {
     return (
       <Wrapper>
         <TitleTwo>Share Your Experience</TitleTwo>
-        <Form>
-     
-          
-         
-        </Form>
         <Button text={"Publish"} onClick={""}></Button>
         {/* set up text input action etc. */}
       </Wrapper>

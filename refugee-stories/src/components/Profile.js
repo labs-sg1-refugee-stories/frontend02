@@ -49,17 +49,17 @@ const Profile = () => {
             <ProfileWrap>
             <i class="fas fa-link"></i>
                 <h2>Connect</h2>
-                <p>help connect refugees to each other, others, and the world.</p>
+                <p>We help connect refugees to each other, others, and the world. Giving a more personal voice to the narrative of refugees and their struggle.</p>
             </ProfileWrap>
             <ProfileWrap>
             <i class="fas fa-question"></i>
                 <h2>Inform</h2>
-                <p>To bring the reality of this world wide crisis home to those who are seperated from it.</p>
+                <p>We wish to bring the reality of this world wide crisis home to those who are seperated from it.  We wish to give some insigt into the horrors and trauma of war and the crisis it causes.</p>
             </ProfileWrap>
             <ProfileWrap>
             <i class="fas fa-globe-europe"></i>
                 <h2>Change</h2>
-                <p>2019 has seen the largest number of refugees since in the last 50 years.</p>
+                <p>2019 has seen the largest number of refugees since in the last 50 years.  We hope to help in our own small way. Something has to change.  Share your story and help us spread the message.</p>
             </ProfileWrap>
             
 

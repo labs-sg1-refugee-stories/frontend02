@@ -27,14 +27,14 @@ export const storiesReducer = (state = initialState, action) => {
     case GET_DATA_START:
       return { ...state };
     case GET_DATA_SUCCESS:
-      return { ...state, stories: action.payload.data };
+      return { ...state, adminStories: action.payload.data };
     case GET_DATA_FAILURE:
       return { ...state };
 
     case ADD_POST_START:
       return { ...state };
     case ADD_POST_SUCCESS:
-      return { ...state, stories: [...state.stories, action.payload.data] };
+      return { ...state, adminStories: [...state.adminStories, action.payload.data] };
     case ADD_POST_FAILURE:
       return { ...state };
     
@@ -43,7 +43,7 @@ export const storiesReducer = (state = initialState, action) => {
       return {...state };
     case REJECT_STORY_SUCCESS:
       return { ...state,
-       stories: state.stories.filter(story => story.id != action.payload) };
+       adminStories: state.adminStories.filter(story => story.id != action.payload) };
     case REJECT_STORY_FAILURE:
       return { ...state };
 

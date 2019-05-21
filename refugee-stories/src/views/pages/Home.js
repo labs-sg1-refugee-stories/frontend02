@@ -17,6 +17,12 @@ const HeroWrapper = styled.div`
     url(${hero});
   background-size: contain;
   font-size: 4rem;
+  @media (max-width: 700px) {
+    flex-direction: column;
+    align-items: center
+    text-align:center;
+    height:600px;
+}
 
 `;
 const Title = styled.h1`
@@ -24,6 +30,9 @@ const Title = styled.h1`
   margin-top: 280px;
   font-size: 7rem;
   letter-spacing: 2px
+  @media (max-width: 700px) {
+    margin-top: 0px;
+}
 
 `;
 const SubHeader = styled.p`

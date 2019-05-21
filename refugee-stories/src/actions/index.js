@@ -52,11 +52,12 @@ export const ACCEPT_STORY_START = "ACCEPT_STORY_START";
 export const ACCEPT_STORY_SUCCESS = "ACCEPT_STORY_SUCCESS";
 export const ACCEPT_STORY_FAILURE = "ACCEPT_STORY_FAILURE";
 
-export const acceptStory = post => dispatch => {
+export const acceptStory = id => dispatch => {
   dispatch({ type: ACCEPT_STORY_START });
   return axios
-    .post("??????", post)
+    .post(`https://refugee-stories-api.herokuapp.com/stories/approved:${id}`)
     .then(res => {
+      console.log("accept", res)
       dispatch({ type: ACCEPT_STORY_SUCCESS, payload: res });
     })
     .catch(err => console.log(err));

@@ -7,7 +7,6 @@ import LoginCard from "../../components/LoginCard";
 const HeroWrapper = styled.div`
   display: flex;
   margin: 0 auto;
-
   height: 900px;
   justify-content: space-around;
   background-image: linear-gradient(
@@ -17,7 +16,21 @@ const HeroWrapper = styled.div`
     url(${hero});
   background-size: contain;
   font-size: 4rem;
-`;
+  @media (max-width: 700px) {
+    flex-direction: column;
+    align-items: center
+
+  }
+`
+const CallToAction = styled.div`
+@media (max-width: 700px) {
+  display:flex;
+  flex-direction: column;
+  align-items: center
+
+}
+`
+
 const Title = styled.h1`
   color: white;
   margin-top: 200px;
@@ -48,10 +61,10 @@ class Login extends React.Component {
       <div>
         <Navbar />
         <HeroWrapper>
-          <div>
+          <CallToAction>
             <Title>Welcome Back.</Title>
             <LoginCard />
-          </div>
+          </CallToAction>
         </HeroWrapper>
       </div>
     );

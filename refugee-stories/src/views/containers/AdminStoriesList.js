@@ -23,19 +23,33 @@ const HeroWrapper = styled.div`
   font-size: 4rem;
   color: white;
   flex-direction:column;
-`;
 
+`
+const Title = styled.h1`
+margin: 50px auto;
+margin
+
+`
 const ListWrapper = styled.div`
 height: 800px;
-flex-direction:column;
-justify-content: left
+display:flex;
+
+justify-content: space-around
     a{
       color:white;
       font-size: 3rem;
       text-decoration:none;
+      display:flex;
+      justify-content:space-around;
+      width:80%;
+      border: 1px solid white;
+      height 40px;
+      border-radius: 5px;
+      
     }
-
 `
+
+
 
 class AdminStoriesList extends React.Component {
   componentDidMount() {
@@ -50,11 +64,19 @@ class AdminStoriesList extends React.Component {
       <Navbar />
     <HeroWrapper>
       
-        <h1>Select Story for Review</h1>
+        <Title>Select Story for Review</Title>
         <ListWrapper>
         
         {/* needs to go to the id of the story create map function to search for correct story - */}
-        {this.props.stories.map((story,index) => <div><Link to={`/admin_stories_list/${story.id}`}>{story.title}</Link></div>)}
+        {this.props.adminStories.map((story,index) => 
+     
+            <Link to={`/admin_stories_list/${story.id}`}>
+            <div>{story.title}</div>
+            <div>{story.country}</div>
+            <div>{story.name}</div>
+            </Link>
+    
+        )}
         </ListWrapper>
       </HeroWrapper>
       </div>
@@ -63,7 +85,7 @@ class AdminStoriesList extends React.Component {
 }}
 }
 const mapStateToProps = state => ({
-  stories: state.stories
+  adminStories: state.adminStories
 });
 
 export default connect(

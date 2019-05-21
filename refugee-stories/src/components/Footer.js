@@ -9,6 +9,11 @@ const FooterWrap = styled.div`
   font-size: 2rem;
   align-items: baseline;
   margin-bottom: 0px;
+  @media (max-width: 700px) {
+    flex-direction: column;
+    align-items: center
+  }
+
   i {
     padding: 0px 10px;
   }

@@ -80,7 +80,7 @@ class AddStory extends React.Component {
   addPost = event => {
     event.preventDefault();
     this.props.addPost(this.state);
-    this.props.history.push("/admin_stories_list")
+    this.props.history.push("/stories_list")
   };
 
   render() {
