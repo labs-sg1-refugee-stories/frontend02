@@ -9,9 +9,6 @@ import logger from 'redux-logger'
 import { storiesReducer } from './reducers'
 import Footer from './components/Footer'
 
-
-
-
 const store = createStore(storiesReducer,applyMiddleware(thunk,logger))
 
 ReactDOM.render(

@@ -36,12 +36,13 @@ export const REJECT_STORY_SUCCESS = "REJECT_STORY_SUCCESS";
 export const REJECT_STORY_FAILURE = "REJECT_STORY_FAILURE";
 
 export const rejectStory = id => dispatch => {
-  dispatch({type: REJECT_STORY_START})
+  dispatch({type: REJECT_STORY_START, payload: id })
+
   axios
     .delete(`https://refugee-stories-api.herokuapp.com/stories/${id}`)
     .then(res => {
       console.log("return from delete", res)
-      dispatch({ type: REJECT_STORY_SUCCESS, payload: res });
+      dispatch({ type: REJECT_STORY_SUCCESS, payload: id });
    
     })
     .catch(err => console.log(err));

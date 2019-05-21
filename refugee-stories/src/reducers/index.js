@@ -39,9 +39,11 @@ export const storiesReducer = (state = initialState, action) => {
       return { ...state };
     
     case REJECT_STORY_START:
-      return { ...state, };
+    console.log("start",action.payload)
+      return {...state };
     case REJECT_STORY_SUCCESS:
-      return { ...state, error: action.payload.data };
+      return { ...state,
+       stories: state.stories.filter(story => story.id != action.payload) };
     case REJECT_STORY_FAILURE:
       return { ...state };
 

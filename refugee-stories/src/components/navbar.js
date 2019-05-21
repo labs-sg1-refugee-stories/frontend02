@@ -22,8 +22,6 @@ background-color: #2aa18a
         text-decoration: none
         color: white;
         font-size: 2rem;
-
-       
         border-bottom: 1px solid #2aa18a;
         font-size: 2.1rem;
 
@@ -35,8 +33,6 @@ background-color: #2aa18a
         
     }
 }
-
-
 `;
 
 const Navbar = () => {

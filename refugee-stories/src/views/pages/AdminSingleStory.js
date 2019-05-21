@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { getData } from "../../actions";
 import { rejectStory } from "../../actions";
-import { Redirect } from 'react-router-dom';
+
 import styled from "styled-components";
 import hero from "../../assets/hero.jpg";
 import Navbar from "../../components/Navbar";
@@ -36,14 +36,13 @@ class SingleStory extends React.Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    this.props.getData();
-  }
+
 
   rejectStory(id) {
     console.log("reject", id);
     this.props.rejectStory(id);
     this.props.history.push("/admin_stories_list")
+   
    
     
   }
