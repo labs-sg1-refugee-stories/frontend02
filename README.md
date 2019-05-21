@@ -1,7 +1,9 @@
 # Refugee Stories - Frontend02
 Frontend02 for Refugee Stories Labs SG1 by Brandon Pampuch
 
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline. Feel free to add your own flare to it.
+## Technical Design Document
+[Technical Design Document](https://docs.google.com/document/d/1AZU1sWxj3n63dbdo91oi3M3fNJRERgi_ZXTMFo9l7DU/edit?usp=sharing)
+
 
 ## Contributors
 
