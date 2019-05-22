@@ -84,7 +84,7 @@ return(
       {/* needs to go to the id of the story create map function to search for correct story - */}
       {this.props.stories.map((story,index) => 
    
-          <Link to={`/admin_stories_list/${story.id}`}>
+          <Link to={`/stories_list/user/${story.id}`}>
           <ContentWrapper>
           <Content>{story.title}</Content>
           </ContentWrapper>

@@ -8,7 +8,7 @@ import styled from "styled-components";
 const HeroWrapper = styled.div`
   display: flex;
   margin: 0 auto;
-  height: 900px;
+
   justify-content: space-around;
   background-image: linear-gradient(
       rgba(000, 000, 000, 0.9),
@@ -17,45 +17,64 @@ const HeroWrapper = styled.div`
     url(${hero});
   background-size: contain;
   font-size: 4rem;
-  color:white;
+  color: white;
 `;
 const StoryWrapper = styled.div`
+  padding: 20px;
+  margin-bottom: 200px;
+  margin-top:100px;
+  width: 400px;
+  border: 1px solid white;
+  background-color:rgba(000, 000, 000, 0.4);
+      button {
+        margin-right: 20px;
+      }
+`;
+class SingleStory extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-`
-
-
-class SingleStory extends React.Component{
-    constructor(props){
-        super(props)
-        this.state = {
-
-        }
-
-    }
-
-
-componentDidMount(){
+  componentDidMount() {
     this.props.getData();
-}
+  }
 
+  rejectStory(id) {
+    this.props.rejectStory(id);
+    this.props.history.push("/admin_stories_list");
+  }
 
+  acceptStory(story) {
+    console.log("launching accept story", story)
+    this.props.acceptStory(story);
+    this.props.history.push("/admin_stories_list");
+  }
 
-    
-    render(){
-        console.log(this.props.stories)
-    return ( 
-        <div>
+  render() {
+    return (
+      <div>
         <Navbar />
         <HeroWrapper>
-            <StoryWrapper>
-        <h1>Single Story</h1>
-        <p> {this.props.stories.map((story,index) => story.id == this.props.match.params.id ? story.title: null)}</p>
-        
-        </StoryWrapper>
+          <StoryWrapper>
+            <div>
+              {this.props.stories.map((story, index) =>
+                story.id == this.props.match.params.id ? (
+                  <div key={index}>
+                    <h1>{story.title}</h1>
+                    <h4>{story.name}</h4>
+                    <h4>{story.country}</h4>
+                    <p>{story.storytext}</p>
+                  </div>
+                ) : null
+              )}
+            </div>
+            <div />
+          </StoryWrapper>
         </HeroWrapper>
-        </div>
-     );
-    }
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = state =>({
