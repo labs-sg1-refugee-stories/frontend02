@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components"
+import { connect } from "react-redux"
+import { login } from "../actions"
 
 const Wrapper = styled.div`
 height: 350px;
@@ -72,6 +74,7 @@ class LoginCard extends React.Component {
   };
 
   login = (event) => {
+    console.log("firing")
     event.preventDefault()
     this.props.login(this.state.newCredentials)
   }
@@ -85,13 +88,13 @@ class LoginCard extends React.Component {
           <Input onChange={this.textChangeHandler} placeholder="Username" type="text" name="username" value={this.state.newCredentials.username} />
    
           <Input onChange={this.textChangeHandler} placeholder="Password" type="text" name="password"value={this.state.newCredentials.password} />
-         
+          <Button >Share</Button>
         </Form>
-        <Button >Share</Button>
+        
         {/* set up text input action etc. */}
       </Wrapper>
     );
   }
 }
 
-export default LoginCard;
+export default connect(null, {login})(LoginCard);

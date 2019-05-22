@@ -88,10 +88,11 @@ export const LOGIN_FAILURE = "LOGIN_FAILURE";
 
 export const login = (newCredentials) => dispatch => {
   dispatch({ type: LOGIN_START });
-  return axiosWithAuth
-    .post("https://refugee-stories-api.herokuapp.com/stories")
+  return axiosWithAuth()
+    .post("https://refugee-stories-api.herokuapp.com/login", newCredentials)
 
     .then(res => {
+      console.log(res)
       dispatch({ type: LOGIN_SUCCESS, payload: res });
     })
     .catch(err => console.log(err));
