@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 const Wrapper = styled.div`
 height: 350px;
-
 border: 1px solid white;
 padding: 10px 20px;
 padding-bottom: none;
@@ -23,21 +22,6 @@ font-size:2.5rem;
 margin-bottom: 0px;
 text-align:center;
 margin-bottom: 20px;
-`
-
-const CheckboxWrap = styled.div`
-display: flex;
-margin-left: 20px;
-    input {
-        margin-right: 30px;
-        margin-top:10px;
-    }
-    p {
-        font-size: 2rem;
-        padding-right: 4px;
-    }
-
-
 `
 const Input = styled.input`
 border: none;
@@ -61,7 +45,7 @@ padding: 10px 20px;
 font-size: 2rem;
 border-radius: 5px;
 color: white;
-background-color: #2aa18a;
+background-color: #9C000B;
     :hover{
       transform: translateY(-3px);
       transition: all .8s;

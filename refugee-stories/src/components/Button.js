@@ -6,7 +6,7 @@ padding: 10px 20px;
 font-size: 2rem;
 border-radius: 5px;
 color: white;
-background-color: #2aa18a;
+background-color: #9C000B;
     :hover{
       transform: translateY(-3px);
       transition: all .4s;

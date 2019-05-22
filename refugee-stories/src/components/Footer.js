@@ -23,7 +23,7 @@ const SocialMedia = styled.div`
   i {
     font-size: 3.5rem;
     :hover{
-        color: #2aa18a;
+        color: #0180C7;
         transition: all .8s;
     }
   }

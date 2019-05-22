@@ -4,7 +4,7 @@ import Button from '../components/Button'
 
 const Wrapper = styled.div`
 height: 185px;
-margin-top: 280px
+margin-top: 270px
 border: 1px solid white;
 padding: 10px 20px;
 padding-bottom: none;
@@ -22,6 +22,7 @@ font-size:2.5rem;
 margin-bottom: 0px;
 text-align:center;
 margin-bottom: 20px;
+letter-spacing:1px;
 
 `
 const Input = styled.input`

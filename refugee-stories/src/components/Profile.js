@@ -39,7 +39,7 @@ background-color: rgba(0,0,0,.3);
         font-size: 5rem;
     }
     i{
-        color: #2aa18a;
+        color: #0180C7;
         border: 1px solid white;
         padding: 30px;
         width 100px;

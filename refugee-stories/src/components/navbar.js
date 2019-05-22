@@ -2,98 +2,105 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
-
 const LinkElem = styled(NavLink)`
-// example style
-&.active {
-  color: #33313b;
-  border-bottom: 1px solid #33313b;
-}
+  // example style
+  &.active {
+    color: #0180C7;
+  
+   
+  }
 `;
 
 const NavBar = styled.div`
 
-
-
-padding-top: 15px;
-padding-bottom: 15px;
 width: 100%
-border-bottom: 1px solid white;
-background-color: #2aa18a
 
-
-    nav{
+background-color: #fff
+    
+    Nav{
       display:flex;
-      justify-content: space-around;
+      align-items: baseline;
+      justify-content: space-between;
       @media (max-width: 700px) {
         flex-direction: column;
         align-items: center
-  
       }
-
-      a{
+        a{
        
         text-decoration: none
-        color: white;
+        color: #33313b;
         font-size: 2rem;
-        border-bottom: 1px solid #2aa18a;
-        font-size: 2.1rem;
+        border-bottom: 1px solid #fff;
+        font-size: 2.5rem;
+        font weight: 700;
+        margin-right: 50px;
+        
         @media (max-width: 700px) {
           border-bottom: 1px solid white;
           width: 100%
           text-align: center;
           padding: 10px;
       }
-
         :hover{
-       
           transition: all .8s;
-        
+          color:#0180C7
         }
-        
-    }
-}
-`;
+      }
+    }`;
 
-class Navbar extends React.Component{
-  constructor(){
-    super()
+const Logo = styled.div`
+    background-color: #0180C7;
+    color: white;
+ 
+    font-size:5rem;
+    font-weight: ;
+    padding-bottom:15px;
+    padding-right:5px
+    padding-left:5px
+    margin-left:100px;
+      span{
+        display: block;
+      }
+    
+`
+class Navbar extends React.Component {
+  constructor() {
+    super();
     this.state = {
       activeTab: 0
-    }
-    
+    };
   }
 
-
-
-  findTab = (tabNumber) =>{
- 
+  findTab = tabNumber => {
     this.setState({
       ...this.state,
-      activeTab: tabNumber,
-    
-      
-      
-    })
+      activeTab: tabNumber
+    });
+  };
 
+  render() {
+    return (
+      <NavBar>
+        <nav>
+          <Logo>RS</Logo>
+          <div>
+          <LinkElem to={"/login"}>Login</LinkElem>
+          <LinkElem exact to={"/"}>
+            Home
+          </LinkElem>
+          <LinkElem to={"/about_us"}>About</LinkElem>
+          <LinkElem exact to="/stories_list/add_story">
+            Submit
+          </LinkElem>
+          <LinkElem exact to={"/stories_list"}>
+            Read
+          </LinkElem>
+          <NavLink to={"/admin_stories_list"}>( secure ADMIN )</NavLink>
+          </div>
+        </nav>
+      </NavBar>
+    );
   }
-  
-
-  render(){
-  return (
-    <NavBar>
-      <nav>
-        <LinkElem to={"/login"}>Login</LinkElem>
-        <LinkElem exact to={"/"}>Home</LinkElem>
-        <LinkElem to={"/about_us"}>About Us</LinkElem>
-        <LinkElem exact to="/stories_list/add_story" >Submit Story</LinkElem>
-        <LinkElem exact to={"/stories_list"}>Read</LinkElem>
-        <NavLink  to={"/admin_stories_list"}>( secure ADMIN )</NavLink>
-     
-      </nav>
-    </NavBar>
-  );
-  }
-};
+}
 
 export default Navbar;

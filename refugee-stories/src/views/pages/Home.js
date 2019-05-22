@@ -27,7 +27,7 @@ const HeroWrapper = styled.div`
 `;
 const Title = styled.h1`
   color: white;
-  margin-top: 280px;
+  margin-top: 260px;
   font-size: 7rem;
   letter-spacing: 2px
   @media (max-width: 700px) {

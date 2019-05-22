@@ -11,14 +11,14 @@ export const GlobalStyle =createGlobalStyle`
   }
   
   html, body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Fira Sans';
     background-color:#33313b;
     
   
 }
   
   h1, h2, h3, h4, h5 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Fira Sans';
   }
   
   h1 {

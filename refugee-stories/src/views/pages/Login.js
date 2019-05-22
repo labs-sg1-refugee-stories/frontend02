@@ -33,7 +33,7 @@ const CallToAction = styled.div`
 
 const Title = styled.h1`
   color: white;
-  margin-top: 200px;
+  margin-top: 100px;
   font-size: 7rem;
   letter-spacing: 2px;
 `;
