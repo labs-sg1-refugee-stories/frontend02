@@ -18,6 +18,10 @@ import {
   ACCEPT_STORIES_START,
   ACCEPT_STORIES_SUCCESS,
   ACCEPT_STORIES_FAILURE,
+
+  LOGIN_START,
+  LOGIN_SUCCESS,
+  LOGIN_FAILURE,
 } from "../actions";
 
 const initialState = {
@@ -58,15 +62,22 @@ export const storiesReducer = (state = initialState, action) => {
     case APPROVED_STORIES_FAILURE:
       return { ...state };
     
-      case ACCEPT_STORIES_START:
+    case ACCEPT_STORIES_START:
       return { ...state };
     case ACCEPT_STORIES_SUCCESS: {
-  return {...state,
+      return {...state,
  adminStories: state.adminStories.filter(story => story.id != action.payload)} ;
   }
     case ACCEPT_STORIES_FAILURE:
       return { ...state };
 
+    case LOGIN_START:
+      return { ...state };
+    case LOGIN_SUCCESS: 
+      return {...state };
+    case LOGIN_FAILURE: 
+      return { ...state };
+    
     
 
     default:

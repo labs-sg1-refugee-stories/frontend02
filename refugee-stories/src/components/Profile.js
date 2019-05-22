@@ -4,9 +4,9 @@ import styled from 'styled-components'
 
 const ProfileWrapper = styled.div`
 display:flex;
-flex-wrap:wrap;
+
 justify-content: space-around;
-@media (max-width: 700px) {
+@media (max-width: 800px) {
     flex-direction: column;
     align-items: center
     text-align:center;
@@ -22,15 +22,14 @@ display:flex
 flex-direction: column;
 padding: 40px;
 padding-bottom: 40px;
-margin-bottom:200px;
+margin-bottom:300px;
 color: white;
 width: 30%;
 text-align: center;
 background-color: rgba(0,0,0,.3);
-@media (max-width: 700px) {
-    flex-direction: column;
-    align-items: center
-    text-align:center;
+@media (max-width: 800px) {
+    width:80%;
+    margin-bottom: 50px;
 }
 
 

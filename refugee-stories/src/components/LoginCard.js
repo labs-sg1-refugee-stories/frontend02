@@ -59,18 +59,35 @@ class LoginCard extends React.Component {
       password: ""
     }
   };
+  textChangeHandler = event => {
+    const newText = event.target.value;
+    this.setState({
+      ...this.state,
+      newCredentials:{
+        ...this.state.newCredentials,
+        [event.target.name]: newText
+      }
+ 
+    });
+  };
+
+  login = (event) => {
+    event.preventDefault()
+    this.props.login(this.state.newCredentials)
+  }
+
   render() {
     return (
       <Wrapper>
         <TitleTwo>Login</TitleTwo>
-        <Form>
+        <Form onSubmit={this.login}>
      
-          <Input placeholder="Username" type="text" />
+          <Input onChange={this.textChangeHandler} placeholder="Username" type="text" name="username" value={this.state.newCredentials.username} />
    
-          <Input placeholder="Password" type="text" />
+          <Input onChange={this.textChangeHandler} placeholder="Password" type="text" name="password"value={this.state.newCredentials.password} />
          
         </Form>
-        <Button onClick={""}>Share</Button>
+        <Button >Share</Button>
         {/* set up text input action etc. */}
       </Wrapper>
     );
