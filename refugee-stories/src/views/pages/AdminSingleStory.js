@@ -6,6 +6,7 @@ import styled from "styled-components";
 import hero from "../../assets/hero.jpg";
 import Navbar from '../../components/AuthNavbar'
 import { acceptStory } from "../../actions"
+import Button from '../../components/Button'
 
 const HeroWrapper = styled.div`
   display: flex;
@@ -68,17 +69,17 @@ class SingleStory extends React.Component {
                     <h4>{story.country}</h4>
                     <p>{story.storytext}</p>
 
-                    <button text={"accept"} onClick={()=> {this.acceptStory(story)}}>
+                    <Button text={"accept"} onClick={()=> {this.acceptStory(story)}}>
                       accept
-                    </button>
-                    <button
+                    </Button>
+                    <Button
                       text={"decline"}
                       onClick={() => {
                         this.rejectStory(story.id);
                       }}
                     >
                       reject
-                    </button>
+                    </Button>
                   </div>
                 ) : null
               )}
