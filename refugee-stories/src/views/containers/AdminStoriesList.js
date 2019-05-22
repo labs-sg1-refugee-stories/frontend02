@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { getData } from "../../actions";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom'
-import Navbar from '../../components/Navbar'
+import Navbar from '../../components/AuthNavbar'
 import hero from "../../assets/hero.jpg";
 
 
@@ -12,7 +12,7 @@ const HeroWrapper = styled.div`
   margin: 0 auto;
 
 
-  height: 900px;
+  min-height: 900px;
   justify-content: space-around;
   background-image: linear-gradient(
       rgba(000, 000, 000, 0.9),
@@ -35,6 +35,7 @@ height: 800px;
 display:flex;
 flex-direction: column
 align-items: center;
+margin-bottom:10px;
 
 
     a{

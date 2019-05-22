@@ -41,8 +41,8 @@ const Title = styled.h1`
 class Login extends React.Component {
   state = {
     newCredentials: {
-      username: "",
-      password: ""
+      "username": "",
+      "password": ""
     }
   };
 

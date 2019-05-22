@@ -87,11 +87,13 @@ export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAILURE = "LOGIN_FAILURE";
 
 export const login = (newCredentials) => dispatch => {
+  console.log("inside of action",newCredentials)
   dispatch({ type: LOGIN_START });
   return axiosWithAuth()
     .post("https://refugee-stories-api.herokuapp.com/login", newCredentials)
 
     .then(res => {
+      localStorage.setItem("jwt", res.data.token)
       console.log(res)
       dispatch({ type: LOGIN_SUCCESS, payload: res });
     })

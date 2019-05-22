@@ -12,7 +12,7 @@ const HeroWrapper = styled.div`
   margin: 0 auto;
 
 
-  height: 900px;
+  min-height: 900px;
   justify-content: space-around;
   background-image: linear-gradient(
       rgba(000, 000, 000, 0.9),
@@ -23,18 +23,44 @@ const HeroWrapper = styled.div`
   font-size: 4rem;
   color: white;
   flex-direction:column;
-`;
 
+
+`
+const Title = styled.h1`
+margin: 50px auto;
+margin
+
+`
 const ListWrapper = styled.div`
 height: 800px;
-flex-direction:column;
-justify-content: left
+display:flex;
+flex-direction: column
+align-items: center;
+margin-bottom: 10px;
+
     a{
       color:white;
       font-size: 3rem;
       text-decoration:none;
+      display:flex;
+      width:80%;
+      border: 1px solid white;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom:20px;
+      background-color: rgba(0,0,0,.3);
+      
     }
+`
+const Content = styled.div`
+width: 100%;
+padding-left:40px;
+`
 
+const ContentWrapper = styled.div`
+width: 50%
+@media (max-width: 700px) {
+  width: 30%
 `
 
 class StoriesList extends React.Component {
@@ -50,15 +76,31 @@ return(
 
       <div>
       <Navbar />
-    <HeroWrapper>
+      <HeroWrapper>
       
-        <h1>Choose a Recent Refugee Story</h1>
-        <ListWrapper>
-        
-        {/* needs to go to the id of the story create map function to search for correct story - */}
-        {this.props.stories.map((story,index) => <div><Link to={`/stories_list/user/${story.id}`}>{story.title}</Link></div>)}
-        </ListWrapper>
-      </HeroWrapper>
+      <Title>Select Story </Title>
+      <ListWrapper>
+      
+      {/* needs to go to the id of the story create map function to search for correct story - */}
+      {this.props.stories.map((story,index) => 
+   
+          <Link to={`/admin_stories_list/${story.id}`}>
+          <ContentWrapper>
+          <Content>{story.title}</Content>
+          </ContentWrapper>
+          <ContentWrapper>
+          <Content>{story.name}</Content>
+          </ContentWrapper>
+          <ContentWrapper>
+          <Content>{story.country}</Content>
+          </ContentWrapper>
+         
+       
+          </Link>
+  
+      )}
+      </ListWrapper>
+    </HeroWrapper>
       </div>
       
     }

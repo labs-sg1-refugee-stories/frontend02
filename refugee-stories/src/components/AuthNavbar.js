@@ -84,7 +84,7 @@ class Navbar extends React.Component {
         <nav>
           <Logo>RS</Logo>
           <div>
-          <LinkElem to={"/login"}>Login</LinkElem>
+          <LinkElem to={"/"}>Logout</LinkElem>
           <LinkElem exact to={"/"}>
             Home
           </LinkElem>
@@ -95,7 +95,7 @@ class Navbar extends React.Component {
           <LinkElem exact to={"/stories_list"}>
             Read
           </LinkElem>
-          <NavLink to={"/admin_stories_list"}>( secure ADMIN )</NavLink>
+         
           </div>
         </nav>
       </NavBar>

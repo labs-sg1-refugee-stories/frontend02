@@ -4,13 +4,12 @@ import { getData } from "../../actions";
 import { rejectStory } from "../../actions";
 import styled from "styled-components";
 import hero from "../../assets/hero.jpg";
-import Navbar from "../../components/Navbar";
+import Navbar from '../../components/AuthNavbar'
 import { acceptStory } from "../../actions"
 
 const HeroWrapper = styled.div`
   display: flex;
   margin: 0 auto;
-
 
   justify-content: space-around;
   background-image: linear-gradient(
