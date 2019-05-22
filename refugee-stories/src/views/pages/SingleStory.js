@@ -42,7 +42,7 @@ componentDidMount(){
 
     
     render(){
-        console.log(this.props.stories.id)
+        console.log(this.props.stories)
     return ( 
         <div>
         <Navbar />

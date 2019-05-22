@@ -8,8 +8,9 @@ import Button from "../../components/Button"
 
 const HeroWrapper = styled.div`
   display: flex;
-  margin: 0 auto;
+
   height: 900px;
+  flex-wrap:wrap
   
   flex-direction:column
   background-image: linear-gradient(
@@ -23,8 +24,8 @@ const HeroWrapper = styled.div`
   
 `;
 const FormWrapper = styled.div`
+width: 80%
 margin: 0 auto;
-width: 800px;
 background-color: rgba(0,0,0,.6);
 margin-top:20px;
 `

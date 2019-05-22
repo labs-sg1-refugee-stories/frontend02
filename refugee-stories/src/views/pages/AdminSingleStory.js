@@ -2,11 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import { getData } from "../../actions";
 import { rejectStory } from "../../actions";
-import { Redirect } from "react-router-dom";
 import styled from "styled-components";
 import hero from "../../assets/hero.jpg";
 import Navbar from "../../components/Navbar";
-import Button from "../../components/Button";
+import { acceptStory } from "../../actions"
 
 const HeroWrapper = styled.div`
   display: flex;
@@ -49,8 +48,9 @@ class SingleStory extends React.Component {
     this.props.history.push("/admin_stories_list");
   }
 
-  acceptStory(id) {
-    this.props.acceptStory(id);
+  acceptStory(story) {
+    console.log("launching accept story", story)
+    this.props.acceptStory(story);
     this.props.history.push("/admin_stories_list");
   }
 
@@ -69,7 +69,7 @@ class SingleStory extends React.Component {
                     <h4>{story.country}</h4>
                     <p>{story.storytext}</p>
 
-                    <button text={"accept"} onClick={this.acceptStory(story.id)}>
+                    <button text={"accept"} onClick={()=> {this.acceptStory(story)}}>
                       accept
                     </button>
                     <button
@@ -98,5 +98,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getData, rejectStory }
+  { getData, rejectStory, acceptStory }
 )(SingleStory);

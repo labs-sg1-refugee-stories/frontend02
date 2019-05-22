@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
-import { getData } from "../../actions";
+import { getApprovedStories } from "../../actions";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom'
 import Navbar from '../../components/Navbar'
@@ -39,7 +39,7 @@ justify-content: left
 
 class StoriesList extends React.Component {
   componentDidMount() {
-    this.props.getData();
+    this.props.getApprovedStories();
   }
 
 render = () => {
@@ -71,4 +71,4 @@ const mapStateToProps = state => ({
   stories: state.stories
 });
 
-export default connect(mapStateToProps,{ getData })(StoriesList);
+export default connect(mapStateToProps,{ getApprovedStories })(StoriesList);

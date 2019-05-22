@@ -6,23 +6,32 @@ const ProfileWrapper = styled.div`
 display:flex;
 flex-wrap:wrap;
 justify-content: space-around;
-
+@media (max-width: 700px) {
+    flex-direction: column;
+    align-items: center
+    text-align:center;
+}
 `
 
 const ProfileWrap = styled.div`
 padding-top: 20px;
 border: 1px solid white;
-height: 450px;
-margin-top: 200px;
+
+margin-top: 100px;
 display:flex
 flex-direction: column;
 padding: 40px;
 padding-bottom: 40px;
-
+margin-bottom:200px;
 color: white;
-width: 25%;
+width: 30%;
 text-align: center;
 background-color: rgba(0,0,0,.3);
+@media (max-width: 700px) {
+    flex-direction: column;
+    align-items: center
+    text-align:center;
+}
 
 
 

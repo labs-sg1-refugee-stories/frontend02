@@ -33,22 +33,34 @@ margin
 const ListWrapper = styled.div`
 height: 800px;
 display:flex;
+flex-direction: column
+align-items: center;
 
-justify-content: space-around
+
     a{
       color:white;
       font-size: 3rem;
       text-decoration:none;
       display:flex;
-      justify-content:space-around;
       width:80%;
       border: 1px solid white;
-      height 40px;
+      padding: 20px;
       border-radius: 5px;
+      margin-bottom:20px;
+      background-color: rgba(0,0,0,.3);
       
     }
 `
+const Content = styled.div`
+width: 100%;
+padding-left:40px;
+`
 
+const ContentWrapper = styled.div`
+width: 50%
+@media (max-width: 700px) {
+  width: 30%
+`
 
 
 class AdminStoriesList extends React.Component {
@@ -71,9 +83,17 @@ class AdminStoriesList extends React.Component {
         {this.props.adminStories.map((story,index) => 
      
             <Link to={`/admin_stories_list/${story.id}`}>
-            <div>{story.title}</div>
-            <div>{story.country}</div>
-            <div>{story.name}</div>
+            <ContentWrapper>
+            <Content>{story.title}</Content>
+            </ContentWrapper>
+            <ContentWrapper>
+            <Content>{story.name}</Content>
+            </ContentWrapper>
+            <ContentWrapper>
+            <Content>{story.country}</Content>
+            </ContentWrapper>
+           
+         
             </Link>
     
         )}

@@ -1,10 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
+
+const LinkElem = styled(NavLink)`
+// example style
+&.active {
+  color: #33313b;
+  border-bottom: 1px solid #33313b;
+}
+`;
 
 const NavBar = styled.div`
 
-}
+
 
 padding-top: 15px;
 padding-bottom: 15px;
@@ -37,29 +46,54 @@ background-color: #2aa18a
       }
 
         :hover{
-          color:white;
+       
           transition: all .8s;
-          border-bottom: 1px solid white;
+        
         }
         
     }
 }
 `;
 
-const Navbar = () => {
+class Navbar extends React.Component{
+  constructor(){
+    super()
+    this.state = {
+      activeTab: 0
+    }
+    
+  }
+
+
+
+  findTab = (tabNumber) =>{
+ 
+    this.setState({
+      ...this.state,
+      activeTab: tabNumber,
+    
+      
+      
+    })
+
+  }
+  
+
+  render(){
   return (
     <NavBar>
       <nav>
-        <Link to={"/login"}>Login</Link>
-        <Link to={"/"}>Home</Link>
-        <Link to={"/about_us"}>About Us</Link>
-        <Link to="/stories_list/add_story" >Submit Story</Link>
-        <Link to={"/stories_list"}>Read</Link>
-        <Link to={"/admin_stories_list"}>( secure ADMIN )</Link>
+        <LinkElem to={"/login"}>Login</LinkElem>
+        <LinkElem exact to={"/"}>Home</LinkElem>
+        <LinkElem to={"/about_us"}>About Us</LinkElem>
+        <LinkElem exact to="/stories_list/add_story" >Submit Story</LinkElem>
+        <LinkElem exact to={"/stories_list"}>Read</LinkElem>
+        <NavLink  to={"/admin_stories_list"}>( secure ADMIN )</NavLink>
      
       </nav>
     </NavBar>
   );
+  }
 };
 
 export default Navbar;
