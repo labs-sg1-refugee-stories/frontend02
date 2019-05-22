@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export default  () => {
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem('jwt')
  
   
       return axios.create({

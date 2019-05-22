@@ -57,13 +57,14 @@ class Login extends React.Component {
 
 
   render() {
+    console.log(this.props)
     return (
       <div>
         <Navbar />
         <HeroWrapper>
           <CallToAction>
             <Title>Welcome Back.</Title>
-            <LoginCard />
+            <LoginCard history={this.props.history} />
           </CallToAction>
         </HeroWrapper>
       </div>

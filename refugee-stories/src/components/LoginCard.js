@@ -77,6 +77,9 @@ class LoginCard extends React.Component {
     console.log("firing")
     event.preventDefault()
     this.props.login(this.state.newCredentials)
+    .then(()=>{
+      this.props.history.push("/admin_stories_list")
+    })
   }
 
   render() {

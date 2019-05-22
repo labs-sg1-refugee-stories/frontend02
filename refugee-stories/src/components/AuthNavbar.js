@@ -85,18 +85,8 @@ class Navbar extends React.Component {
           <Logo>RS</Logo>
           <div>
           <LinkElem to={"/"}>Logout</LinkElem>
-          <LinkElem exact to={"/"}>
-            Home
-          </LinkElem>
-          <LinkElem to={"/about_us"}>About</LinkElem>
-          <LinkElem exact to="/stories_list/add_story">
-            Submit
-          </LinkElem>
-          <LinkElem exact to={"/stories_list"}>
-            Read
-          </LinkElem>
-         
-          </div>
+          <LinkElem exact to={"/admin_stories_list"}>Review</LinkElem>
+           </div>
         </nav>
       </NavBar>
     );
