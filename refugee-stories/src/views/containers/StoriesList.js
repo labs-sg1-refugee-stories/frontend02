@@ -32,7 +32,7 @@ margin
 
 `
 const ListWrapper = styled.div`
-height: 800px;
+min-height: 800px;
 display:flex;
 flex-direction: column
 align-items: center;

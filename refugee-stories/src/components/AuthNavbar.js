@@ -30,13 +30,12 @@ background-color: #fff
         text-decoration: none
         color: #33313b;
         font-size: 2rem;
-        border-bottom: 1px solid #fff;
         font-size: 2.5rem;
         font weight: 700;
         margin-right: 50px;
         
         @media (max-width: 700px) {
-          border-bottom: 1px solid white;
+          margin-right:0
           width: 100%
           text-align: center;
           padding: 10px;
@@ -61,7 +60,17 @@ const Logo = styled.div`
       span{
         display: block;
       }
-    
+      @media (max-width: 700px) {
+          
+       display:none;
+`
+
+const Mobile = styled.div`
+display:flex;
+@media (max-width: 700px) {
+  flex-direction: column;
+  align-items: center
+}
 `
 class Navbar extends React.Component {
   constructor() {
@@ -83,10 +92,10 @@ class Navbar extends React.Component {
       <NavBar>
         <nav>
           <Logo>RS</Logo>
-          <div>
-          <LinkElem to={"/"}>Logout</LinkElem>
+          <Mobile>
+          <LinkElem exact to={"/"}>Logout</LinkElem>
           <LinkElem exact to={"/admin_stories_list"}>Review</LinkElem>
-           </div>
+           </Mobile>
         </nav>
       </NavBar>
     );

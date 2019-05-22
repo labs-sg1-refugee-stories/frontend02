@@ -11,10 +11,16 @@ const LinkElem = styled(NavLink)`
   }
 `;
 
+const Mobile = styled.div`
+display:flex;
+@media (max-width: 700px) {
+  flex-direction: column;
+  align-items: center
+}
+`
+
 const NavBar = styled.div`
-
 width: 100%
-
 background-color: #fff
     
     Nav{
@@ -28,18 +34,19 @@ background-color: #fff
         a{
        
         text-decoration: none
+      
         color: #33313b;
         font-size: 2rem;
-        border-bottom: 1px solid #fff;
         font-size: 2.5rem;
         font weight: 700;
         margin-right: 50px;
         
         @media (max-width: 700px) {
-          border-bottom: 1px solid white;
           width: 100%
           text-align: center;
-          padding: 10px;
+          padding: 5px;
+          margin-left: 50px;
+      
       }
         :hover{
           transition: all .8s;
@@ -61,6 +68,9 @@ const Logo = styled.div`
       span{
         display: block;
       }
+      @media (max-width: 700px) {
+       display:none;
+    }
     
 `
 class Navbar extends React.Component {
@@ -83,7 +93,7 @@ class Navbar extends React.Component {
       <NavBar>
         <nav>
           <Logo>RS</Logo>
-          <div>
+          <Mobile>
           <LinkElem to={"/login"}>Login</LinkElem>
           <LinkElem exact to={"/"}>
             Home
@@ -96,7 +106,7 @@ class Navbar extends React.Component {
             Read
           </LinkElem>
        
-          </div>
+          </Mobile>
         </nav>
       </NavBar>
     );

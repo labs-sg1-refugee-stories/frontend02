@@ -37,7 +37,7 @@ export const GlobalStyle =createGlobalStyle`
   
   p {
     line-height: 1.5;
-    font-size: 1.6rem;
+    font-size: 2.0rem;
     padding-bottom: 10px;
   }
 
