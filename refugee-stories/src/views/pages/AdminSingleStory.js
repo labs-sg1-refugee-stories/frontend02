@@ -4,7 +4,7 @@ import { getData, rejectStory, acceptStory } from "../../actions";
 import styled from "styled-components";
 import hero from "../../assets/hero.jpg";
 import Navbar from '../../components/AuthNavbar'
-import Button from '../../components/Button'
+
 
 const HeroWrapper = styled.div`
   display: flex;
@@ -30,6 +30,21 @@ const StoryWrapper = styled.div`
         margin-right: 20px;
       }
 `;
+
+const ButtonStyle = styled.button`
+padding: 10px 20px;
+font-size: 2rem;
+border-radius: 5px;
+color: white;
+background-color: #9C000B;
+`
+const ButtonStyleBlue = styled.button`
+padding: 10px 20px;
+font-size: 2rem;
+border-radius: 5px;
+color: white;
+background-color: #0180C7;
+`
 class SingleStory extends React.Component {
   constructor(props) {
     super(props);
@@ -65,18 +80,17 @@ class SingleStory extends React.Component {
                     <h4>{story.name}</h4>
                     <h4>{story.country}</h4>
                     <p>{story.storytext}</p>
-                    <Button text={"accept"} onClick={()=> {this.acceptStory(story)}}>
+                    <ButtonStyleBlue text={"accept"} onClick={()=> {this.acceptStory(story)}}>
                       accept
-                    </Button>
-                    <Button
-                      type="submit"
+                    </ButtonStyleBlue>
+                    <ButtonStyle
                       text={"decline"}
                       onClick={() => {
                         this.rejectStory(story.id);
                       }}
                     >
-                      reject
-                    </Button>
+                      decline
+                    </ButtonStyle>
                   </div>
                 ) : null
               )}

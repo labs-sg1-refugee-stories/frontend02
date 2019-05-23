@@ -13,8 +13,7 @@ import { createGlobalStyle } from 'styled-components'
     font-family: 'Fira Sans';
     background-color:#33313b;
     
-  
-}
+  }
   
   h1, h2, h3, h4, h5 {
     font-family: 'Fira Sans';
