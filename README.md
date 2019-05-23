@@ -4,19 +4,12 @@ Frontend02 for Refugee Stories Labs SG1 by Brandon Pampuch
 ## Technical Design Document
 [Technical Design Document](https://docs.google.com/document/d/1AZU1sWxj3n63dbdo91oi3M3fNJRERgi_ZXTMFo9l7DU/edit?usp=sharing)
 
-
+z
 ## Contributors
 
 
 
-|                                       [Brandon Pampuch](https://github.com/)                                        |                                           |
-| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="insert src here" width = "200" />](https://github.com/)                       |                      [<img src="insert src here" width = "200" />](https://github.com/)                       |                      [<img src="insert src here" width = "200" />](https://github.com/)                       |                      [<img src="insert src here" width = "200" />](https://github.com/)                       |                      [<img src="insert src here" width = "200" />](https://github.com/)                       |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
-
-<br>
-<br>
+Brandon Pampuch
 
 
 
