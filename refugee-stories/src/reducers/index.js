@@ -62,10 +62,9 @@ export const storiesReducer = (state = initialState, action) => {
     
     case ACCEPT_STORIES_START:
       return { ...state };
-    case ACCEPT_STORIES_SUCCESS: {
+    case ACCEPT_STORIES_SUCCESS: 
       return {...state,
- adminStories: state.adminStories.filter(story => story.id != action.payload)} ;
-  }
+    adminStories: state.adminStories.filter(story => story.id != action.payload) } ;
     case ACCEPT_STORIES_FAILURE:
       return { ...state };
 

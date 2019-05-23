@@ -2,12 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import hero from "../../assets/hero.jpg";
 import Navbar from "../../components/Navbar";
-import Profile from "../../components/Profile";
+import MapContainer from "../../components/Map";
 
 const HeroWrapper = styled.div`
-  display: flex;
   margin: 0 auto;
-  min-height: 900px; 
+  min-height: 900px;
   justify-content: space-around;
   background-image: linear-gradient(
       rgba(000, 000, 000, 0.9),
@@ -17,16 +16,34 @@ const HeroWrapper = styled.div`
   background-size: contain;
   font-size: 4rem;
 `;
+const MapWrapper = styled.div`
 
-const AboutUs = () => {
+display:flex;
+flex-direction: column;
+color:white;
+left: 400px;
+right: 400px;
+    h1{
+        text-align: center;
+    }
+`
+
+
+
+const Connect = () => {
   return (
     <>
       <Navbar />
       <HeroWrapper>
-        <Profile />
+        <MapWrapper>
+            <h1>Connect</h1>
+          <MapContainer  />
+         
+        </MapWrapper>
+       
       </HeroWrapper>
     </>
   );
 };
 
-export default AboutUs;
+export default Connect;

@@ -51,7 +51,6 @@ export const ACCEPT_STORIES_SUCCESS = "ACCEPT_STORIES_SUCCESS";
 export const ACCEPT_STORIES_FAILURE = "ACCEPT_STORIES_FAILURE";
 
 export const acceptStory = story => dispatch => {
-  console.log("acceptstory", story)
   dispatch({ type: ACCEPT_STORIES_START });
   axios
     .post(`https://refugee-stories-api.herokuapp.com/admin/stories/approve/${story.id}`, story)
@@ -68,7 +67,7 @@ export const APPROVED_STORIES_SUCCESS = "APPROVED_STORIES_SUCCESS";
 export const APPROVED_STORIES_FAILURE = "APPROVED_STORIES_FAILURE";
 
 export const getApprovedStories = () => dispatch => {
-  dispatch({ type: APPROVED_STORIES_START,  });
+  dispatch({ type: APPROVED_STORIES_START });
   return axios
     .get("https://refugee-stories-api.herokuapp.com/stories")
     .then(res => {
@@ -81,7 +80,7 @@ export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAILURE = "LOGIN_FAILURE";
 
 export const login = (newCredentials) => dispatch => {
-  console.log("inside of action",newCredentials)
+
   dispatch({ type: LOGIN_START });
   return axiosWithAuth()
     .post("https://refugee-stories-api.herokuapp.com/login", newCredentials)

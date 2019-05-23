@@ -3,11 +3,12 @@ import SignUp from "../../components/SignUp";
 import styled from "styled-components";
 import hero from "../../assets/hero.jpg";
 import Navbar from "../../components/Navbar";
+import MapContainer from '../pages/Connect'
 
 const HeroWrapper = styled.div`
   display: flex;
   margin: 0 auto;
-  height: 900px;
+  min-height: 900px;
   justify-content: space-around;
   background-image: linear-gradient(
       rgba(000, 000, 000, 0.9),
@@ -48,6 +49,7 @@ class Home extends React.Component {
             <SubHeader>Voices that need to be heard</SubHeader>
           </div>
           <SignUp />
+          
         </HeroWrapper>
       </div>
     );

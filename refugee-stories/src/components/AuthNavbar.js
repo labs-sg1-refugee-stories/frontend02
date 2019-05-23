@@ -85,13 +85,17 @@ class Navbar extends React.Component {
     });
   };
 
+  logOut = () =>{
+    localStorage.clear()
+  }
+
   render() {
     return (
       <NavBar>
         <nav>
           <Logo>RS</Logo>
           <Mobile>
-            <LinkElem exact to={"/"}>
+            <LinkElem  onClick={this.logOut}exact to={"/"}>
               Logout
             </LinkElem>
             <LinkElem exact to={"/admin_stories_list"}>

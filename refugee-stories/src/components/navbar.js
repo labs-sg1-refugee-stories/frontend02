@@ -103,6 +103,9 @@ class Navbar extends React.Component {
             <LinkElem exact to={"/stories_list"}>
               Read
             </LinkElem>
+            <LinkElem exact to={"/connect"}>
+              Connect
+            </LinkElem>
           </Mobile>
         </nav>
       </NavBar>
