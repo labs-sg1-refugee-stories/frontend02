@@ -4,14 +4,12 @@ import { addPost } from "../../actions";
 import hero from "../../assets/hero.jpg";
 import Navbar from "../../components/Navbar";
 import styled from "styled-components";
-import Button from "../../components/Button"
+import Button from "../../components/Button";
 
 const HeroWrapper = styled.div`
   display: flex;
-
-  height: 900px;
+  min-height: 900px;
   flex-wrap:wrap
-  
   flex-direction:column
   background-image: linear-gradient(
       rgba(000, 000, 000, 0.9),
@@ -24,32 +22,32 @@ const HeroWrapper = styled.div`
   
 `;
 const FormWrapper = styled.div`
-width: 80%
+width: 60%
 margin: 0 auto;
 background-color: rgba(0,0,0,.6);
 margin-top:20px;
-`
+`;
 const Form = styled.form`
-display: flex;
-flex-direction: column;
-padding: 30px;
-`
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+`;
 const TextInput = styled.textarea`
-border: none;
-border-bottom: 1px solid white;
-font-size: 1.6rem;
-margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid white;
+  font-size: 1.6rem;
+  margin-bottom: 30px;
 
-::placeholder{
-  padding-left: 10px;
-  font-family: 'Oswald', sans-serif;
-  letter-spacing: 1px
-}
-`
+  ::placeholder {
+    padding-left: 10px;
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 1px;
+  }
+`;
 const Header = styled.div`
-margin: 0 auto;
-margin-top: 40px;
-`
+  margin: 0 auto;
+  margin-top: 40px;
+`;
 
 const Input = styled.input`
 border: none;
@@ -62,7 +60,7 @@ height 30px;
       font-family: 'Oswald', sans-serif;
       letter-spacing: 1px
     }
-`
+`;
 class AddStory extends React.Component {
   state = {
     title: "",
@@ -81,54 +79,49 @@ class AddStory extends React.Component {
   addPost = event => {
     event.preventDefault();
     this.props.addPost(this.state);
-    this.props.history.push("/stories_list")
+    this.props.history.push("/stories_list");
   };
 
   render() {
     return (
       <div>
         <Navbar />
-        
         <HeroWrapper>
-        <Header>Share Your Story</Header>
+          <Header>Share Your Story</Header>
           <FormWrapper>
-     
-          <Form onSubmit={this.addPost}>
- 
-            <Input
-              placeholder="Title"
-              onChange={this.textChangeHandler}
-              name="title"
-              type="text"
-              value={this.state.title}
-            />
-     
-            <Input
-            placeholder="Author (optional)"
-              onChange={this.textChangeHandler}
-              name="name"
-              type="text"
-              value={this.state.name}
-            />
-            <Input
-            placeholder="Country"
-              onChange={this.textChangeHandler}
-              name="country"
-              type="text"
-              value={this.state.country}
-            />
-         
-            <TextInput
-              placeholder="Story"
-              rows="18" cols="100"
-              onChange={this.textChangeHandler}
-              name="storytext"
-              type="text"
-              value={this.state.storytext}
-            />
-            <Button text={"Share"}>Add Post</Button>
-          </Form>
-         
+            <Form onSubmit={this.addPost}>
+              <Input
+                placeholder="Title"
+                onChange={this.textChangeHandler}
+                name="title"
+                type="text"
+                value={this.state.title}
+              />
+              <Input
+                placeholder="Author (optional)"
+                onChange={this.textChangeHandler}
+                name="name"
+                type="text"
+                value={this.state.name}
+              />
+              <Input
+                placeholder="Country"
+                onChange={this.textChangeHandler}
+                name="country"
+                type="text"
+                value={this.state.country}
+              />
+              <TextInput
+                placeholder="Story"
+                rows="14"
+                cols="100"
+                onChange={this.textChangeHandler}
+                name="storytext"
+                type="text"
+                value={this.state.storytext}
+              />
+              <Button text={"Share"}>Add Post</Button>
+            </Form>
           </FormWrapper>
         </HeroWrapper>
       </div>

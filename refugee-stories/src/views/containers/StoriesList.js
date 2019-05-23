@@ -1,17 +1,15 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 import { getApprovedStories } from "../../actions";
 import { connect } from "react-redux";
-import { Link } from 'react-router-dom'
-import Navbar from '../../components/Navbar'
+import { Link } from "react-router-dom";
+import Navbar from "../../components/Navbar";
 import hero from "../../assets/hero.jpg";
-import Button from '../../components/Button'
+import Button from "../../components/Button";
 
 const HeroWrapper = styled.div`
   display: flex;
   margin: 0 auto;
-
-
   min-height: 900px;
   justify-content: space-around;
   background-image: linear-gradient(
@@ -22,95 +20,84 @@ const HeroWrapper = styled.div`
   background-size: contain;
   font-size: 4rem;
   color: white;
-  flex-direction:column;
-
-
-`
+  flex-direction: column;
+`;
 const Title = styled.h1`
 margin: 50px auto;
 margin
-
-`
+`;
 const ListWrapper = styled.div`
 min-height: 800px;
 display:flex;
 flex-direction: column
 align-items: center;
 margin-bottom: 10px;
-
-    a{
-      color:white;
-      font-size: 3rem;
-      text-decoration:none;
-      display:flex;
-      width:80%;
-      border: 1px solid white;
-      padding: 20px;
-      border-radius: 5px;
-      margin-bottom:20px;
-      background-color: rgba(0,0,0,.3);
+  a{
+    color:white;
+    font-size: 3rem;
+    text-decoration:none;
+    display:flex;
+    width:80%;
+    border: 1px solid white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom:20px;
+    background-color: rgba(0,0,0,.3);
       
     }
-`
+`;
 const Content = styled.div`
-width: 100%;
-padding-left:40px;
-`
+  width: 100%;
+  padding-left: 40px;
+`;
 
 const ContentWrapper = styled.div`
 width: 50%
 @media (max-width: 700px) {
   width: 30%
-`
-
+`;
 class StoriesList extends React.Component {
   componentDidMount() {
     this.props.getApprovedStories();
   }
 
-render = () => {
-  console.log(this.props.stories)
-return(
-  <div>
-    {this.props.stories &&
-
+  render = () => {
+    console.log(this.props.stories);
+    return (
       <div>
-      <Navbar />
-      <HeroWrapper>
-      
-      <Title>Select Story </Title>
-      <ListWrapper>
-      
-      {/* needs to go to the id of the story create map function to search for correct story - */}
-      {this.props.stories.map((story,index) => 
-   
-          <Link to={`/stories_list/user/${story.id}`}>
-          <ContentWrapper>
-          <Content>{story.title}</Content>
-          </ContentWrapper>
-          <ContentWrapper>
-          <Content>{story.name}</Content>
-          </ContentWrapper>
-          <ContentWrapper>
-          <Content>{story.country}</Content>
-          </ContentWrapper>
-         
-       
-          </Link>
-  
-      )}
-      </ListWrapper>
-    </HeroWrapper>
+        {this.props.stories && (
+          <div>
+            <Navbar />
+            <HeroWrapper>
+              <Title>Select Story </Title>
+              <ListWrapper>
+                {this.props.stories.map((story, index) => (
+                  <Link to={`/stories_list/user/${story.id}`}>
+                    <ContentWrapper>
+                      <Content>{story.title}</Content>
+                    </ContentWrapper>
+                    <ContentWrapper>
+                      <Content>{story.name}</Content>
+                    </ContentWrapper>
+                    <ContentWrapper>
+                      <Content>{story.country}</Content>
+                    </ContentWrapper>
+                  </Link>
+                ))}
+              </ListWrapper>
+            </HeroWrapper>
+          </div>
+        )}
       </div>
-      
-    }
-   </div> )
-  
-}
+    );
+  };
 }
 
 const mapStateToProps = state => ({
   stories: state.stories
 });
 
-export default connect(mapStateToProps,{ getApprovedStories })(StoriesList);
+export default connect(
+  mapStateToProps,
+  { getApprovedStories }
+)(StoriesList);

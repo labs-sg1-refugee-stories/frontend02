@@ -12,13 +12,7 @@ background-color: #9C000B;
       transition: all .4s;
     }
 `
-
-
 const Button = (props) => {
-    return ( 
-
-        <ButtonStyle>{props.text}</ButtonStyle>
-     );
+    return  <ButtonStyle>{props.text}</ButtonStyle>
 }
- 
-export default Button;
+ export default Button;

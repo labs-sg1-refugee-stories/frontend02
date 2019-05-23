@@ -1,22 +1,18 @@
-import React from 'react';
-import styled from 'styled-components'
-
+import React from "react";
+import styled from "styled-components";
 
 const ProfileWrapper = styled.div`
 display:flex;
-
 justify-content: space-around;
 @media (max-width: 800px) {
     flex-direction: column;
     align-items: center
     text-align:center;
 }
-`
-
+`;
 const ProfileWrap = styled.div`
 padding-top: 20px;
 border: 1px solid white;
-
 margin-top: 100px;
 display:flex
 flex-direction: column;
@@ -31,9 +27,6 @@ background-color: rgba(0,0,0,.3);
     width:80%;
     margin-bottom: 50px;
 }
-
-
-
     h2{
         font-size: 5rem;
     }
@@ -47,32 +40,39 @@ background-color: rgba(0,0,0,.3);
         background-color: rgba(0,0,0,.4);
        
     }
-`
+`;
 
 const Profile = () => {
-    return ( 
+  return (
+    <ProfileWrapper>
+      <ProfileWrap>
+        <i class="fas fa-link" />
+        <h2>Connect</h2>
+        <p>
+          We help connect refugees to each other, others, and the world. Giving
+          a more personal voice to the narrative of refugees and their struggle.
+        </p>
+      </ProfileWrap>
+      <ProfileWrap>
+        <i class="fas fa-question" />
+        <h2>Inform</h2>
+        <p>
+          We wish to bring the reality of this world wide crisis home to those
+          who are seperated from it. We wish to give some insigt into the
+          horrors and trauma of war and the crisis it causes.
+        </p>
+      </ProfileWrap>
+      <ProfileWrap>
+        <i class="fas fa-globe-europe" />
+        <h2>Change</h2>
+        <p>
+          2019 has seen the largest number of refugees since in the last 50
+          years. We hope to help in our own small way. Something has to change.
+          Share your story and help us spread the message.
+        </p>
+      </ProfileWrap>
+    </ProfileWrapper>
+  );
+};
 
-        <ProfileWrapper>
-         
-            <ProfileWrap>
-            <i class="fas fa-link"></i>
-                <h2>Connect</h2>
-                <p>We help connect refugees to each other, others, and the world. Giving a more personal voice to the narrative of refugees and their struggle.</p>
-            </ProfileWrap>
-            <ProfileWrap>
-            <i class="fas fa-question"></i>
-                <h2>Inform</h2>
-                <p>We wish to bring the reality of this world wide crisis home to those who are seperated from it.  We wish to give some insigt into the horrors and trauma of war and the crisis it causes.</p>
-            </ProfileWrap>
-            <ProfileWrap>
-            <i class="fas fa-globe-europe"></i>
-                <h2>Change</h2>
-                <p>2019 has seen the largest number of refugees since in the last 50 years.  We hope to help in our own small way. Something has to change.  Share your story and help us spread the message.</p>
-            </ProfileWrap>
-            
-
-        </ProfileWrapper>
-     );
-}
- 
 export default Profile;

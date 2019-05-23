@@ -26,7 +26,6 @@ import {
 
 const initialState = {
   stories: [],
-  //temp data until routes arrive to fill admin stories
   adminStories: []
 };
 
@@ -47,7 +46,6 @@ export const storiesReducer = (state = initialState, action) => {
       return { ...state };
     
     case REJECT_STORY_START:
-    console.log("start",action.payload)
       return {...state };
     case REJECT_STORY_SUCCESS:
       return { ...state,
@@ -78,8 +76,6 @@ export const storiesReducer = (state = initialState, action) => {
     case LOGIN_FAILURE: 
       return { ...state };
     
-    
-
     default:
       return state;
   }

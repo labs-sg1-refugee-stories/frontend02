@@ -14,11 +14,10 @@ const FooterWrap = styled.div`
     align-items: center
   }
 
-  i {
-    padding: 0px 10px;
-  }
+    i {
+      padding: 0px 10px;
+    }
 `;
-
 const SocialMedia = styled.div`
   i {
     font-size: 3.5rem;

@@ -1,17 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getData } from "../../actions";
-import { rejectStory } from "../../actions";
+import { getData, rejectStory, acceptStory } from "../../actions";
 import styled from "styled-components";
 import hero from "../../assets/hero.jpg";
 import Navbar from '../../components/AuthNavbar'
-import { acceptStory } from "../../actions"
 import Button from '../../components/Button'
 
 const HeroWrapper = styled.div`
   display: flex;
   margin: 0 auto;
-
   justify-content: space-around;
   background-image: linear-gradient(
       rgba(000, 000, 000, 0.9),
@@ -68,11 +65,11 @@ class SingleStory extends React.Component {
                     <h4>{story.name}</h4>
                     <h4>{story.country}</h4>
                     <p>{story.storytext}</p>
-
                     <Button text={"accept"} onClick={()=> {this.acceptStory(story)}}>
                       accept
                     </Button>
                     <Button
+                      type="submit"
                       text={"decline"}
                       onClick={() => {
                         this.rejectStory(story.id);

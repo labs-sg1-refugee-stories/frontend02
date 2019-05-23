@@ -5,19 +5,17 @@ import { NavLink } from "react-router-dom";
 const LinkElem = styled(NavLink)`
   // example style
   &.active {
-    color: #0180C7;
-  
-   
+    color: #0180c7;
   }
 `;
 
 const Mobile = styled.div`
-display:flex;
-@media (max-width: 700px) {
-  flex-direction: column;
-  align-items: center
-}
-`
+  display: flex;
+  @media (max-width: 700px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
 
 const NavBar = styled.div`
 width: 100%
@@ -72,7 +70,7 @@ const Logo = styled.div`
        display:none;
     }
     
-`
+`;
 class Navbar extends React.Component {
   constructor() {
     super();
@@ -94,18 +92,17 @@ class Navbar extends React.Component {
         <nav>
           <Logo>RS</Logo>
           <Mobile>
-          <LinkElem to={"/login"}>Login</LinkElem>
-          <LinkElem exact to={"/"}>
-            Home
-          </LinkElem>
-          <LinkElem to={"/about_us"}>About</LinkElem>
-          <LinkElem exact to="/stories_list/add_story">
-            Submit
-          </LinkElem>
-          <LinkElem exact to={"/stories_list"}>
-            Read
-          </LinkElem>
-       
+            <LinkElem to={"/login"}>Login</LinkElem>
+            <LinkElem exact to={"/"}>
+              Home
+            </LinkElem>
+            <LinkElem to={"/about_us"}>About</LinkElem>
+            <LinkElem exact to="/stories_list/add_story">
+              Submit
+            </LinkElem>
+            <LinkElem exact to={"/stories_list"}>
+              Read
+            </LinkElem>
           </Mobile>
         </nav>
       </NavBar>

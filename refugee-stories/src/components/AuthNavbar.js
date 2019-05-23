@@ -5,9 +5,7 @@ import { NavLink } from "react-router-dom";
 const LinkElem = styled(NavLink)`
   // example style
   &.active {
-    color: #0180C7;
-  
-   
+    color: #0180c7;
   }
 `;
 
@@ -63,15 +61,15 @@ const Logo = styled.div`
       @media (max-width: 700px) {
           
        display:none;
-`
+`;
 
 const Mobile = styled.div`
-display:flex;
-@media (max-width: 700px) {
-  flex-direction: column;
-  align-items: center
-}
-`
+  display: flex;
+  @media (max-width: 700px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
 class Navbar extends React.Component {
   constructor() {
     super();
@@ -93,9 +91,13 @@ class Navbar extends React.Component {
         <nav>
           <Logo>RS</Logo>
           <Mobile>
-          <LinkElem exact to={"/"}>Logout</LinkElem>
-          <LinkElem exact to={"/admin_stories_list"}>Review</LinkElem>
-           </Mobile>
+            <LinkElem exact to={"/"}>
+              Logout
+            </LinkElem>
+            <LinkElem exact to={"/admin_stories_list"}>
+              Review
+            </LinkElem>
+          </Mobile>
         </nav>
       </NavBar>
     );
