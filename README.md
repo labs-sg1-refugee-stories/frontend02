@@ -39,10 +39,6 @@ You can find the project at [URL NAME GOES HERE](copy and paste URL here).
 ### Frontend built using:
 React & Redux
 
-#### _Frontend framework goes here_
-
-    Styled Components
-    
 
 ### Frontend deployed to Netlify
 
