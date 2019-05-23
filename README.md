@@ -7,7 +7,7 @@ Frontend02 for Refugee Stories Labs SG1 by Brandon Pampuch
 
 ## Contributors
 
-🚫In Week 5 add contributor info below, make sure add images and edit the social links for each member. Add or delete these place-holders as needed
+
 
 |                                       [Brandon Pampuch](https://github.com/)                                        |                                       [Student 2](https://github.com/)                                        |                                       [Student 3](https://github.com/)                                        |                                       [Student 4](https://github.com/)                                        |                                       [Student 5](https://github.com/)                                        |
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
@@ -50,8 +50,6 @@ React & Redux
 
     Styled Components
     
-
-🚫List the rest of the front end features and libraries in the same format as the framework above.
 
 ### Frontend deployed to Netlify
 
