@@ -17,7 +17,7 @@ const HeroWrapper = styled.div`
   font-size: 4rem;
 `;
 const MapWrapper = styled.div`
-
+position: static;
 display:flex;
 flex-direction: column;
 color:white;

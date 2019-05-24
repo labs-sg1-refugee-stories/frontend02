@@ -44,7 +44,7 @@ const TextInput = styled.textarea`
     letter-spacing: 1px;
   }
 `;
-const Header = styled.div`
+const Header = styled.h1`
   margin: 0 auto;
   margin-top: 40px;
 `;

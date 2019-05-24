@@ -22,11 +22,13 @@ import {
   LOGIN_START,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
+
+
 } from "../actions";
 
 const initialState = {
   stories: [],
-  adminStories: []
+  adminStories: [],
 };
 
 export const storiesReducer = (state = initialState, action) => {
