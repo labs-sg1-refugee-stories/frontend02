@@ -53,6 +53,7 @@ const Input = styled.input`
 border: none;
 border-bottom: 1px solid white;
 font-size: 1.6rem;
+padding-left: 10px;
 margin-bottom: 30px;
 height 30px;
   ::placeholder{
