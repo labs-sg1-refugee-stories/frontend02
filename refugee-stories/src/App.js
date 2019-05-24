@@ -12,6 +12,7 @@ import AdminSingleStory from './views/pages/AdminSingleStory'
 import { GlobalStyle } from './styles/Global';
 import AboutUs from './views/pages/AboutUs'
 import Connect from './views/pages/Connect'
+import NotLogged from './views/pages/NotLogged'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
   <Route  exact path={"/stories_list"} component={StoriesList}></Route>
   <Route  exact path={"/stories_list/user/:id"} component={SingleStory}></Route>
   <Route  exact path={"/stories_list/add_story"} component={AddStory}></Route>
+  <Route  exact path={"/not_logged"} component={NotLogged}></Route>
 
 
   {/* protected admin routes */}
