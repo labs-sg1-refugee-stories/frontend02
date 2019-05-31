@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { login } from "../actions";
+import { login } from "actions";
 
 const Wrapper = styled.div`
   height: 350px;
@@ -58,8 +58,8 @@ class LoginCard extends React.Component {
   state = {
     newCredentials: {
       username: "",
-      password: ""
-    }
+      password: "",
+    },
   };
   textChangeHandler = event => {
     const newText = event.target.value;
@@ -67,8 +67,8 @@ class LoginCard extends React.Component {
       ...this.state,
       newCredentials: {
         ...this.state.newCredentials,
-        [event.target.name]: newText
-      }
+        [event.target.name]: newText,
+      },
     });
   };
 

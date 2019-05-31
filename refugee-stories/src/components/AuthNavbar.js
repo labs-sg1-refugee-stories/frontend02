@@ -46,21 +46,19 @@ background-color: #fff
     }`;
 
 const Logo = styled.div`
-    background-color: #0180C7;
-    color: white;
- 
-    font-size:5rem;
-    font-weight: ;
-    padding-bottom:15px;
-    padding-right:5px
-    padding-left:5px
-    margin-left:100px;
-      span{
-        display: block;
-      }
-      @media (max-width: 700px) {
-          
-       display:none;
+  background-color: #0180c7;
+  color: white;
+  font-size: 5rem;
+  padding-bottom: 15px;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-left: 100px;
+  span {
+    display: block;
+  }
+  @media (max-width: 700px) {
+    display: none;
+  }
 `;
 
 const Mobile = styled.div`
@@ -74,20 +72,20 @@ class Navbar extends React.Component {
   constructor() {
     super();
     this.state = {
-      activeTab: 0
+      activeTab: 0,
     };
   }
 
   findTab = tabNumber => {
     this.setState({
       ...this.state,
-      activeTab: tabNumber
+      activeTab: tabNumber,
     });
   };
 
-  logOut = () =>{
-    localStorage.clear()
-  }
+  logOut = () => {
+    localStorage.clear();
+  };
 
   render() {
     return (
@@ -95,7 +93,7 @@ class Navbar extends React.Component {
         <nav>
           <Logo>RS</Logo>
           <Mobile>
-            <LinkElem  onClick={this.logOut}exact to={"/"}>
+            <LinkElem onClick={this.logOut} exact to={"/"}>
               Logout
             </LinkElem>
             <LinkElem exact to={"/admin_stories_list"}>

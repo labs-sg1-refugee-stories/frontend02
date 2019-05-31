@@ -4,7 +4,7 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 
 let store;
-//* Configure store with redux-thunk in production
+//* Configures store with redux-thunk in production
 //* and with redux-thunk, redux-devtools, and logger in development
 if (process.env.NODE_ENV === "production") {
   store = createStore(storiesReducer, applyMiddleware(thunk));

@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addPost } from "../../actions";
-import hero from "../../assets/hero.jpg";
-import Navbar from "../../components/Navbar";
+import { addPost } from "actions";
+import hero from "assets/hero.jpg";
+import Navbar from "components/Navbar";
 import styled from "styled-components";
-import Button from "../../components/Button";
+import Button from "components/Button";
 
 const HeroWrapper = styled.div`
   display: flex;
@@ -67,14 +67,14 @@ class AddStory extends React.Component {
     title: "",
     name: "",
     storytext: "",
-    country: ""
+    country: "",
   };
 
   textChangeHandler = event => {
     const newText = event.target.value;
     this.setState({
       ...this.state,
-      [event.target.name]: newText
+      [event.target.name]: newText,
     });
   };
   addPost = event => {

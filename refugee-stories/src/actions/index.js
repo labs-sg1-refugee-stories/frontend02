@@ -1,89 +1,66 @@
-import axios from "../utils/axiosBase";
-import axiosWithAuth from "../utils/axiosWithAuth";
-
-export const GET_DATA_START = "GET_DATA_START";
-export const GET_DATA_SUCCESS = "GET_DATA_SUCCESS";
-export const GET_DATA_FAILURE = "GET_DATA_FAILURE";
+import axios from "utils/axiosBase";
+import axiosWithAuth from "utils/axiosWithAuth";
+import * as type from "./types";
 
 export const getData = () => dispatch => {
-  dispatch({ type: GET_DATA_START });
+  dispatch({ type: type.GET_DATA_START });
   return axios
     .get("/admin/stories")
     .then(res => {
-      dispatch({ type: GET_DATA_SUCCESS, payload: res });
+      dispatch({ type: type.GET_DATA_SUCCESS, payload: res });
     })
     .catch(err => console.log(err));
 };
 
-export const ADD_POST_START = "ADD_POST_START";
-export const ADD_POST_SUCCESS = "ADD_POST_SUCCESS";
-export const ADD_POST_FAILURE = "ADD_POST_FAILURE";
-
 export const addPost = newPost => dispatch => {
-  dispatch({ type: ADD_POST_START });
+  dispatch({ type: type.ADD_POST_START });
   axios
     .post("/admin/stories", newPost)
     .then(res => {
-      dispatch({ type: ADD_POST_SUCCESS, payload: res });
+      dispatch({ type: type.ADD_POST_SUCCESS, payload: res });
     })
     .catch(err => console.log(err));
 };
 
-export const REJECT_STORY_START = "REJECT_STORY_START";
-export const REJECT_STORY_SUCCESS = "REJECT_STORY_SUCCESS";
-export const REJECT_STORY_FAILURE = "REJECT_STORY_FAILURE";
-
 export const rejectStory = id => dispatch => {
-  dispatch({ type: REJECT_STORY_START, payload: id });
-
+  dispatch({ type: type.REJECT_STORY_START, payload: id });
   axios
     .delete(`/admin/stories/reject/${id}`)
     .then(res => {
-      dispatch({ type: REJECT_STORY_SUCCESS, payload: id });
+      dispatch({ type: type.REJECT_STORY_SUCCESS, payload: id });
     })
     .catch(err => console.log(err));
 };
 
-export const ACCEPT_STORIES_START = "ACCEPT_STORIES_START";
-export const ACCEPT_STORIES_SUCCESS = "ACCEPT_STORIES_SUCCESS";
-export const ACCEPT_STORIES_FAILURE = "ACCEPT_STORIES_FAILURE";
-
 export const acceptStory = story => dispatch => {
-  dispatch({ type: ACCEPT_STORIES_START });
+  dispatch({ type: type.ACCEPT_STORIES_START });
   axios
     .post(`/admin/stories/approve/${story.id}`, story)
     .then(res => {
-      dispatch({ type: ACCEPT_STORIES_SUCCESS, payload: story.id });
+      dispatch({ type: type.ACCEPT_STORIES_SUCCESS, payload: story.id });
     })
     .catch(err => console.log(err));
 };
 
 //accepted stories
-export const APPROVED_STORIES_START = "APPROVED_STORIES_START";
-export const APPROVED_STORIES_SUCCESS = "APPROVED_STORIES_SUCCESS";
-export const APPROVED_STORIES_FAILURE = "APPROVED_STORIES_FAILURE";
-
 export const getApprovedStories = () => dispatch => {
-  dispatch({ type: APPROVED_STORIES_START });
+  dispatch({ type: type.APPROVED_STORIES_START });
   return axios
     .get("/stories")
     .then(res => {
-      dispatch({ type: APPROVED_STORIES_SUCCESS, payload: res });
+      dispatch({ type: type.APPROVED_STORIES_SUCCESS, payload: res });
     })
     .catch(err => console.log(err));
 };
-export const LOGIN_START = "LOGIN_START";
-export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
-export const LOGIN_FAILURE = "LOGIN_FAILURE";
 
 export const login = newCredentials => dispatch => {
-  dispatch({ type: LOGIN_START });
+  dispatch({ type: type.LOGIN_START });
   return axiosWithAuth
     .post("/login", newCredentials)
     .then(res => {
       localStorage.setItem("jwt", res.data.token);
       console.log(res);
-      dispatch({ type: LOGIN_SUCCESS, payload: res });
+      dispatch({ type: type.LOGIN_SUCCESS, payload: res });
     })
     .catch(err => console.log(err));
 };
