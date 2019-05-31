@@ -1,6 +1,5 @@
-import axios from "axios";
-import axiosWithAuth from '../utils/axiosWithAuth'
-
+import axios from "../utils/axiosBase";
+import axiosWithAuth from "../utils/axiosWithAuth";
 
 export const GET_DATA_START = "GET_DATA_START";
 export const GET_DATA_SUCCESS = "GET_DATA_SUCCESS";
@@ -9,7 +8,7 @@ export const GET_DATA_FAILURE = "GET_DATA_FAILURE";
 export const getData = () => dispatch => {
   dispatch({ type: GET_DATA_START });
   return axios
-    .get("https://refugee-stories-api.herokuapp.com/admin/stories")
+    .get("/admin/stories")
     .then(res => {
       dispatch({ type: GET_DATA_SUCCESS, payload: res });
     })
@@ -23,7 +22,7 @@ export const ADD_POST_FAILURE = "ADD_POST_FAILURE";
 export const addPost = newPost => dispatch => {
   dispatch({ type: ADD_POST_START });
   axios
-    .post("https://refugee-stories-api.herokuapp.com/admin/stories", newPost)
+    .post("/admin/stories", newPost)
     .then(res => {
       dispatch({ type: ADD_POST_SUCCESS, payload: res });
     })
@@ -35,13 +34,12 @@ export const REJECT_STORY_SUCCESS = "REJECT_STORY_SUCCESS";
 export const REJECT_STORY_FAILURE = "REJECT_STORY_FAILURE";
 
 export const rejectStory = id => dispatch => {
-  dispatch({type: REJECT_STORY_START, payload: id })
+  dispatch({ type: REJECT_STORY_START, payload: id });
 
   axios
-    .delete(`https://refugee-stories-api.herokuapp.com/admin/stories/reject/${id}`)
+    .delete(`/admin/stories/reject/${id}`)
     .then(res => {
       dispatch({ type: REJECT_STORY_SUCCESS, payload: id });
-   
     })
     .catch(err => console.log(err));
 };
@@ -53,13 +51,12 @@ export const ACCEPT_STORIES_FAILURE = "ACCEPT_STORIES_FAILURE";
 export const acceptStory = story => dispatch => {
   dispatch({ type: ACCEPT_STORIES_START });
   axios
-    .post(`https://refugee-stories-api.herokuapp.com/admin/stories/approve/${story.id}`, story)
+    .post(`/admin/stories/approve/${story.id}`, story)
     .then(res => {
       dispatch({ type: ACCEPT_STORIES_SUCCESS, payload: story.id });
     })
     .catch(err => console.log(err));
 };
-
 
 //accepted stories
 export const APPROVED_STORIES_START = "APPROVED_STORIES_START";
@@ -69,7 +66,7 @@ export const APPROVED_STORIES_FAILURE = "APPROVED_STORIES_FAILURE";
 export const getApprovedStories = () => dispatch => {
   dispatch({ type: APPROVED_STORIES_START });
   return axios
-    .get("https://refugee-stories-api.herokuapp.com/stories")
+    .get("/stories")
     .then(res => {
       dispatch({ type: APPROVED_STORIES_SUCCESS, payload: res });
     })
@@ -79,18 +76,14 @@ export const LOGIN_START = "LOGIN_START";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAILURE = "LOGIN_FAILURE";
 
-export const login = (newCredentials) => dispatch => {
-
+export const login = newCredentials => dispatch => {
   dispatch({ type: LOGIN_START });
-  return axiosWithAuth()
-    .post("https://refugee-stories-api.herokuapp.com/login", newCredentials)
+  return axiosWithAuth
+    .post("/login", newCredentials)
     .then(res => {
-      localStorage.setItem("jwt", res.data.token)
-      console.log(res)
+      localStorage.setItem("jwt", res.data.token);
+      console.log(res);
       dispatch({ type: LOGIN_SUCCESS, payload: res });
     })
     .catch(err => console.log(err));
 };
-
-
-

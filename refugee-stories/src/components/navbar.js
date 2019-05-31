@@ -1,13 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import React from 'react'
+import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
 
 const LinkElem = styled(NavLink)`
   // example style
   &.active {
     color: #0180c7;
   }
-`;
+`
 
 const Mobile = styled.div`
   display: flex;
@@ -15,7 +15,7 @@ const Mobile = styled.div`
     flex-direction: column;
     align-items: center;
   }
-`;
+`
 
 const NavBar = styled.div`
 width: 100%
@@ -51,7 +51,7 @@ background-color: #fff
           color:#0180C7
         }
       }
-    }`;
+    }`
 
 const Logo = styled.div`
     background-color: #0180C7;
@@ -70,21 +70,21 @@ const Logo = styled.div`
        display:none;
     }
     
-`;
+`
 class Navbar extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
-      activeTab: 0
-    };
+      activeTab: 0,
+    }
   }
 
   findTab = tabNumber => {
     this.setState({
       ...this.state,
-      activeTab: tabNumber
-    });
-  };
+      activeTab: tabNumber,
+    })
+  }
 
   render() {
     return (
@@ -92,26 +92,25 @@ class Navbar extends React.Component {
         <nav>
           <Logo>RS</Logo>
           <Mobile>
-           
-            <LinkElem exact to={"/"}>
+            <LinkElem exact to={'/'}>
               Home
             </LinkElem>
-            <LinkElem to={"/about_us"}>About</LinkElem>
-            <LinkElem exact to="/stories_list/add_story">
-              Share 
+            <LinkElem to={'/about_us'}>About</LinkElem>
+            <LinkElem exact to='/stories_list/add_story'>
+              Share
             </LinkElem>
-            <LinkElem exact to={"/stories_list"}>
+            <LinkElem exact to={'/stories_list'}>
               Read
             </LinkElem>
-            <LinkElem exact to={"/connect"}>
+            <LinkElem exact to={'/connect'}>
               Connect
             </LinkElem>
-            <LinkElem to={"/login"}>Login</LinkElem>
+            <LinkElem to={'/login'}>Login</LinkElem>
           </Mobile>
         </nav>
       </NavBar>
-    );
+    )
   }
 }
 
-export default Navbar;
+export default Navbar
