@@ -18,18 +18,16 @@ const HeroWrapper = styled.div`
   font-size: 4rem;
   @media (max-width: 700px) {
     flex-direction: column;
-    align-items: center
-
+    align-items: center;
   }
-`
+`;
 const CallToAction = styled.div`
-@media (max-width: 700px) {
-  display:flex;
-  flex-direction: column;
-  align-items: center
-
-}
-`
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
 
 const Title = styled.h1`
   color: white;
@@ -41,23 +39,21 @@ const Title = styled.h1`
 class Login extends React.Component {
   state = {
     newCredentials: {
-      "username": "",
-      "password": ""
-    }
+      username: "",
+      password: "",
+    },
   };
 
   textChangeHandler = event => {
     const newText = event.target.value;
     this.setState({
       ...this.state,
-      [event.target.name]: newText
+      [event.target.name]: newText,
     });
   };
 
-
-
   render() {
-    console.log(this.props)
+    console.log(this.props);
     return (
       <div>
         <Navbar />

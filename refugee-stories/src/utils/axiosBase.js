@@ -5,8 +5,4 @@ import { baseURL } from "./urls";
 const token = localStorage.getItem("jwt");
 export default axios.create({
   baseURL,
-  headers: {
-    "Content-Type": "application/json",
-    Authorization: `${token}`,
-  },
 });
