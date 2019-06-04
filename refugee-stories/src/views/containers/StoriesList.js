@@ -24,12 +24,12 @@ const HeroWrapper = styled.div`
 `;
 const Title = styled.h1`
 margin: 50px auto;
-margin
+
 `;
 const ListWrapper = styled.div`
 min-height: 800px;
 display:flex;
-flex-direction: column
+flex-direction: column;
 align-items: center;
 margin-bottom: 10px;
 
@@ -61,7 +61,8 @@ const Content = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-  width: 50% @media (max-width: 950px) {
+width: 50%;
+ @media (max-width: 950px) {
     width: 100%;
   }
 `;
