@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import hero from "../../assets/hero.jpg";
-import Navbar from "../../components/Navbar";
-import Profile from "../../components/Profile";
+import hero from "assets/hero.jpg";
+import Navbar from "components/Navbar";
+import Profile from "components/Profile";
 
 const HeroWrapper = styled.div`
   display: flex;
   margin: 0 auto;
-  min-height: 900px; 
+  min-height: 900px;
   justify-content: space-around;
   background-image: linear-gradient(
       rgba(000, 000, 000, 0.9),

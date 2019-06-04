@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../components/Button";
+import Button from "components/Button";
 import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
 height: 175px;
-margin-top: 270px
+margin-top: 270px;
 border: 1px solid white;
 padding: 10px 20px;
 padding-bottom: none;

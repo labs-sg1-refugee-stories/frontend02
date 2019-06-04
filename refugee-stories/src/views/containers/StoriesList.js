@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { getApprovedStories } from "../../actions";
+import { getApprovedStories } from "actions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import Navbar from "../../components/Navbar";
-import hero from "../../assets/hero.jpg";
-import Button from "../../components/Button";
+import Navbar from "components/Navbar";
+import hero from "assets/hero.jpg";
+
 
 const HeroWrapper = styled.div`
   display: flex;
@@ -24,12 +24,12 @@ const HeroWrapper = styled.div`
 `;
 const Title = styled.h1`
 margin: 50px auto;
-margin
+
 `;
 const ListWrapper = styled.div`
 min-height: 800px;
 display:flex;
-flex-direction: column
+flex-direction: column;
 align-items: center;
 margin-bottom: 10px;
 
@@ -55,17 +55,16 @@ const Content = styled.div`
   width: 100%;
   padding-left: 100px;
   @media (max-width: 950px) {
-  padding-bottom: 20px;
-  padding-left: 0;
-
-    }
+    padding-bottom: 20px;
+    padding-left: 0;
+  }
 `;
 
 const ContentWrapper = styled.div`
-width: 50%
-@media (max-width: 950px) {
-  width: 100%
-
+width: 50%;
+ @media (max-width: 950px) {
+    width: 100%;
+  }
 `;
 class StoriesList extends React.Component {
   componentDidMount() {
@@ -105,7 +104,7 @@ class StoriesList extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  stories: state.stories
+  stories: state.stories,
 });
 
 export default connect(

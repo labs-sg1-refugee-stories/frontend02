@@ -1,16 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addPost } from "../../actions";
-import hero from "../../assets/hero.jpg";
-import Navbar from "../../components/Navbar";
+import { addPost } from "actions";
+import hero from "assets/hero.jpg";
+import Navbar from "components/Navbar";
 import styled from "styled-components";
-import Button from "../../components/Button";
+import Button from "components/Button";
 
 const HeroWrapper = styled.div`
   display: flex;
   min-height: 900px;
-  flex-wrap:wrap
-  flex-direction:column
+  flex-wrap:wrap;
+  flex-direction:column;
   background-image: linear-gradient(
       rgba(000, 000, 000, 0.9),
       rgba(111, 111, 111, 0.8)
@@ -22,7 +22,7 @@ const HeroWrapper = styled.div`
   
 `;
 const FormWrapper = styled.div`
-width: 60%
+width: 60%;
 margin: 0 auto;
 background-color: rgba(0,0,0,.6);
 margin-top:20px;
@@ -55,7 +55,7 @@ border-bottom: 1px solid white;
 font-size: 1.6rem;
 padding-left: 10px;
 margin-bottom: 30px;
-height 30px;
+height: 30px;
   ::placeholder{
       padding-left: 10px;
       font-family: 'Oswald', sans-serif;
@@ -67,14 +67,14 @@ class AddStory extends React.Component {
     title: "",
     name: "",
     storytext: "",
-    country: ""
+    country: "",
   };
 
   textChangeHandler = event => {
     const newText = event.target.value;
     this.setState({
       ...this.state,
-      [event.target.name]: newText
+      [event.target.name]: newText,
     });
   };
   addPost = event => {

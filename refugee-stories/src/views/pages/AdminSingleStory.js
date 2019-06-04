@@ -1,15 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getData, rejectStory, acceptStory } from "../../actions";
+import { getData, rejectStory, acceptStory } from "actions";
 import styled from "styled-components";
-import hero from "../../assets/hero.jpg";
-import Navbar from '../../components/AuthNavbar'
-
+import hero from "assets/hero.jpg";
+import Navbar from "components/AuthNavbar";
 
 const HeroWrapper = styled.div`
   display: flex;
   margin: 0 auto;
- 
+
   justify-content: space-around;
   background-image: linear-gradient(
       rgba(000, 000, 000, 0.9),
@@ -23,29 +22,29 @@ const HeroWrapper = styled.div`
 const StoryWrapper = styled.div`
   padding: 20px;
   margin-bottom: 200px;
-  margin-top:100px;
+  margin-top: 100px;
   width: 400px;
   border: 1px solid white;
-  background-color:rgba(000, 000, 000, 0.4);
-      button {
-        margin-right: 20px;
-      }
+  background-color: rgba(000, 000, 000, 0.4);
+  button {
+    margin-right: 20px;
+  }
 `;
 
 const ButtonStyle = styled.button`
-padding: 10px 20px;
-font-size: 2rem;
-border-radius: 5px;
-color: white;
-background-color: #9C000B;
-`
+  padding: 10px 20px;
+  font-size: 2rem;
+  border-radius: 5px;
+  color: white;
+  background-color: #9c000b;
+`;
 const ButtonStyleBlue = styled.button`
-padding: 10px 20px;
-font-size: 2rem;
-border-radius: 5px;
-color: white;
-background-color: #0180C7;
-`
+  padding: 10px 20px;
+  font-size: 2rem;
+  border-radius: 5px;
+  color: white;
+  background-color: #0180c7;
+`;
 class SingleStory extends React.Component {
   constructor(props) {
     super(props);
@@ -62,7 +61,7 @@ class SingleStory extends React.Component {
   }
 
   acceptStory(story) {
-    console.log("launching accept story", story)
+    console.log("launching accept story", story);
     this.props.acceptStory(story);
     this.props.history.push("/admin_stories_list");
   }
@@ -81,7 +80,12 @@ class SingleStory extends React.Component {
                     <h4>{story.name}</h4>
                     <h4>{story.country}</h4>
                     <p>{story.storytext}</p>
-                    <ButtonStyleBlue text={"accept"} onClick={()=> {this.acceptStory(story)}}>
+                    <ButtonStyleBlue
+                      text={"accept"}
+                      onClick={() => {
+                        this.acceptStory(story);
+                      }}
+                    >
                       accept
                     </ButtonStyleBlue>
                     <ButtonStyle
@@ -105,7 +109,7 @@ class SingleStory extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  adminStories: state.adminStories
+  adminStories: state.adminStories,
 });
 
 export default connect(

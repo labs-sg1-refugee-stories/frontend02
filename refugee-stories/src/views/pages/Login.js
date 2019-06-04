@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
+import Navbar from "components/Navbar";
 import styled from "styled-components";
-import hero from "../../assets/hero.jpg";
-import LoginCard from "../../components/LoginCard";
+import hero from "assets/hero.jpg";
+import LoginCard from "components/LoginCard";
 
 const HeroWrapper = styled.div`
   display: flex;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { login } from "../actions";
+import { login } from "actions";
 
 const Wrapper = styled.div`
   height: 350px;
@@ -30,7 +30,7 @@ border: none;
 border-bottom: 1px solid white;
 font-size: 1.6rem;
 margin-bottom: 30px;
-height 30px;
+height: 30px;
 padding-left: 10px;
   ::placeholder{
       padding-left: 10px;
@@ -58,8 +58,8 @@ class LoginCard extends React.Component {
   state = {
     newCredentials: {
       username: "",
-      password: ""
-    }
+      password: "",
+    },
   };
   textChangeHandler = event => {
     const newText = event.target.value;
@@ -67,8 +67,8 @@ class LoginCard extends React.Component {
       ...this.state,
       newCredentials: {
         ...this.state.newCredentials,
-        [event.target.name]: newText
-      }
+        [event.target.name]: newText,
+      },
     });
   };
 
@@ -95,7 +95,7 @@ class LoginCard extends React.Component {
           <Input
             onChange={this.textChangeHandler}
             placeholder="Password"
-            type="text"
+            type="password"
             name="password"
             value={this.state.newCredentials.password}
           />
