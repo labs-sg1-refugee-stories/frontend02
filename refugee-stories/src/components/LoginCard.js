@@ -30,7 +30,7 @@ border: none;
 border-bottom: 1px solid white;
 font-size: 1.6rem;
 margin-bottom: 30px;
-height 30px;
+height: 30px;
 padding-left: 10px;
   ::placeholder{
       padding-left: 10px;
