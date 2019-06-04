@@ -1,9 +1,9 @@
 import React from "react";
-import SignUp from "../../components/SignUp";
+import SignUp from "components/SignUp";
 import styled from "styled-components";
-import hero from "../../assets/hero.jpg";
-import Navbar from "../../components/Navbar";
-import MapContainer from '../pages/Connect'
+import hero from "assets/hero.jpg";
+import Navbar from "components/Navbar";
+import MapContainer from "../pages/Connect";
 
 const HeroWrapper = styled.div`
   display: flex;
@@ -49,7 +49,6 @@ class Home extends React.Component {
             <SubHeader>Voices that need to be heard</SubHeader>
           </div>
           <SignUp />
-          
         </HeroWrapper>
       </div>
     );

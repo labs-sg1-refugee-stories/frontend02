@@ -1,8 +1,8 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { getData } from '../../actions'
-import hero from "../../assets/hero.jpg";
-import Navbar from "../../components/Navbar";
+import React from "react";
+import { connect } from "react-redux";
+import { getData } from "actions";
+import hero from "assets/hero.jpg";
+import Navbar from "components/Navbar";
 import styled from "styled-components";
 
 const HeroWrapper = styled.div`
@@ -22,13 +22,13 @@ const HeroWrapper = styled.div`
 const StoryWrapper = styled.div`
   padding: 20px;
   margin-bottom: 200px;
-  margin-top:100px;
+  margin-top: 100px;
   width: 400px;
   border: 1px solid white;
-  background-color:rgba(000, 000, 000, 0.4);
-      button {
-        margin-right: 20px;
-      }
+  background-color: rgba(000, 000, 000, 0.4);
+  button {
+    margin-right: 20px;
+  }
 `;
 class SingleStory extends React.Component {
   constructor(props) {
@@ -46,7 +46,7 @@ class SingleStory extends React.Component {
   }
 
   acceptStory(story) {
-    console.log("launching accept story", story)
+    console.log("launching accept story", story);
     this.props.acceptStory(story);
     this.props.history.push("/admin_stories_list");
   }
@@ -77,11 +77,11 @@ class SingleStory extends React.Component {
   }
 }
 
-const mapStateToProps = state =>({
-    stories: state.stories
-})
+const mapStateToProps = state => ({
+  stories: state.stories,
+});
 
-export default connect(mapStateToProps,{getData})(SingleStory);
-
-
-
+export default connect(
+  mapStateToProps,
+  { getData }
+)(SingleStory);
