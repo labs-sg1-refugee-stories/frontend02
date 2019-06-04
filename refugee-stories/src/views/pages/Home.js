@@ -3,7 +3,7 @@ import SignUp from "components/SignUp";
 import styled from "styled-components";
 import hero from "assets/hero.jpg";
 import Navbar from "components/Navbar";
-import MapContainer from "../pages/Connect";
+
 
 const HeroWrapper = styled.div`
   display: flex;
@@ -19,7 +19,7 @@ const HeroWrapper = styled.div`
   font-size: 4rem;
   @media (max-width: 700px) {
     flex-direction: column;
-    align-items: center
+    align-items: center;
     text-align:center;
     height:600px;
 }
@@ -29,7 +29,8 @@ const Title = styled.h1`
   color: white;
   margin-top: 260px;
   font-size: 7rem;
-  letter-spacing: 2px @media (max-width: 700px) {
+  letter-spacing: 2px; 
+  @media (max-width: 700px) {
     margin-top: 0px;
   }
 `;

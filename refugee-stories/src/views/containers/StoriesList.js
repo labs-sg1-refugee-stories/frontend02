@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Navbar from "components/Navbar";
 import hero from "assets/hero.jpg";
-import Button from "components/Button";
+
 
 const HeroWrapper = styled.div`
   display: flex;
