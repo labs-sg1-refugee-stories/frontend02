@@ -18,8 +18,8 @@ const Mobile = styled.div`
 `
 
 const NavBar = styled.div`
-width: 100%
-background-color: #fff
+width: 100%;
+background-color: #fff;
     
     Nav{
       display:flex;
@@ -31,16 +31,16 @@ background-color: #fff
       }
         a{
        
-        text-decoration: none
+        text-decoration: none;
       
         color: #33313b;
         font-size: 2rem;
         font-size: 2.5rem;
-        font weight: 700;
+        font-weight: 700;
         margin-right: 50px;
         
         @media (max-width: 700px) {
-          width: 100%
+          width: 100%;
           text-align: center;
           padding: 5px;
           margin-left: 50px;
@@ -48,7 +48,7 @@ background-color: #fff
       }
         :hover{
           transition: all .8s;
-          color:#0180C7
+          color:#0180C7;
         }
       }
     }`
@@ -58,10 +58,9 @@ const Logo = styled.div`
     color: white;
  
     font-size:5rem;
-    font-weight: ;
     padding-bottom:15px;
-    padding-right:5px
-    padding-left:5px
+    padding-right:5px;
+    padding-left:5px;
     margin-left:100px;
       span{
         display: block;

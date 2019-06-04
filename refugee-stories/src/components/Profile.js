@@ -6,7 +6,7 @@ display:flex;
 justify-content: space-around;
 @media (max-width: 800px) {
     flex-direction: column;
-    align-items: center
+    align-items: center;
     text-align:center;
 }
 `;
@@ -14,7 +14,7 @@ const ProfileWrap = styled.div`
 padding-top: 20px;
 border: 1px solid white;
 margin-top: 100px;
-display:flex
+display:flex;
 flex-direction: column;
 padding: 40px;
 padding-bottom: 40px;
@@ -34,7 +34,7 @@ background-color: rgba(0,0,0,.3);
         color: #0180C7;
         border: 1px solid white;
         padding: 30px;
-        width 100px;
+        width: 100px;
         margin: 0 auto;
         border-radius: 100px;
         background-color: rgba(0,0,0,.4);

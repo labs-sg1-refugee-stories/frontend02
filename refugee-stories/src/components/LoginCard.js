@@ -95,7 +95,7 @@ class LoginCard extends React.Component {
           <Input
             onChange={this.textChangeHandler}
             placeholder="Password"
-            type="text"
+            type="password"
             name="password"
             value={this.state.newCredentials.password}
           />

@@ -10,10 +10,8 @@ const LinkElem = styled(NavLink)`
 `;
 
 const NavBar = styled.div`
-
-width: 100%
-
-background-color: #fff
+width: 100%;
+background-color: #fff;
     
     Nav{
       display:flex;
@@ -21,20 +19,20 @@ background-color: #fff
       justify-content: space-between;
       @media (max-width: 700px) {
         flex-direction: column;
-        align-items: center
+        align-items: center;
       }
         a{
        
-        text-decoration: none
+        text-decoration: none;
         color: #33313b;
         font-size: 2rem;
         font-size: 2.5rem;
-        font weight: 700;
+        font-weight: 700;
         margin-right: 50px;
         
         @media (max-width: 700px) {
-          margin-right:0
-          width: 100%
+          margin-right: 0;
+          width: 100%;
           text-align: center;
           padding: 10px;
       }
