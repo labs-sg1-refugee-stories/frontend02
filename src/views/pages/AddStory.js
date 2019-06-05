@@ -22,7 +22,7 @@ const HeroWrapper = styled.div`
   
 `;
 const FormWrapper = styled.div`
-width: 60%;
+width: 80%;
 margin: 0 auto;
 background-color: rgba(0,0,0,.6);
 margin-top:20px;
