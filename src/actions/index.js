@@ -43,10 +43,10 @@ export const acceptStory = story => dispatch => {
 };
 
 //accepted stories
-export const getApprovedStories = () => dispatch => {
+export const getApprovedStories = (offset = 0) => dispatch => {
   dispatch({ type: type.APPROVED_STORIES_START });
   return axios
-    .get("/stories")
+    .get(`/stories?offset=${offset}`)
     .then(res => {
       dispatch({ type: type.APPROVED_STORIES_SUCCESS, payload: res });
     })

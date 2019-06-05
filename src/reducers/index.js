@@ -3,6 +3,9 @@ import * as type from "actions/types";
 const initialState = {
   stories: [],
   adminStories: [],
+  storiesOffset: 0,
+  storiesLimit: 10,
+  storiesCount: 0,
 };
 
 export const storiesReducer = (state = initialState, action) => {
@@ -39,7 +42,13 @@ export const storiesReducer = (state = initialState, action) => {
     case type.APPROVED_STORIES_START:
       return { ...state };
     case type.APPROVED_STORIES_SUCCESS:
-      return { ...state, stories: action.payload.data };
+      return {
+        ...state,
+        stories: action.payload.data.stories,
+        storiesOffset: action.payload.data.meta.offset,
+        storiesCount: action.payload.data.meta.count,
+        storiesLimit: action.payload.data.meta.limit,
+      };
     case type.APPROVED_STORIES_FAILURE:
       return { ...state };
 
