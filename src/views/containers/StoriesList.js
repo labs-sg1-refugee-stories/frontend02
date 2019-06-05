@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Navbar from "components/Navbar";
 import hero from "assets/hero.jpg";
-
+import ReactPaginate from "react-paginate";
 
 const HeroWrapper = styled.div`
   display: flex;
@@ -21,35 +21,71 @@ const HeroWrapper = styled.div`
   font-size: 4rem;
   color: white;
   flex-direction: column;
+  //* Pagination styles *//
+  .pagination {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto 30px;
+    font-weight: 600;
+    .previous,
+    .next {
+      a {
+        width: 100px;
+        height: 50px;
+      }
+    }
+    .active {
+      background: dodgerblue;
+    }
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid white;
+      border-radius: 5px;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+      &:hover {
+        background: dodgerblue;
+      }
+    }
+  }
 `;
 const Title = styled.h1`
-margin: 50px auto;
-
+  margin: 50px auto;
 `;
 const ListWrapper = styled.div`
-min-height: 800px;
-display:flex;
-flex-direction: column;
-align-items: center;
-margin-bottom: 10px;
+  min-height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
 
-  a{
-    color:white;
+  a {
+    color: white;
     font-size: 3rem;
-    text-decoration:none;
-    display:flex;
-    width:80%;
+    text-decoration: none;
+    display: flex;
+    width: 80%;
     border: 1px solid white;
     padding: 20px;
     border-radius: 5px;
-    margin-bottom:20px;
-    background-color: rgba(0,0,0,.3);
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
     @media (max-width: 950px) {
-      flex-direction:column;
-      padding-bottom:20px;
-      }
-      
+      flex-direction: column;
+      padding-bottom: 20px;
     }
+  }
 `;
 const Content = styled.div`
   width: 100%;
@@ -61,18 +97,23 @@ const Content = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-width: 50%;
- @media (max-width: 950px) {
+  width: 50%;
+  @media (max-width: 950px) {
     width: 100%;
   }
 `;
 class StoriesList extends React.Component {
   componentDidMount() {
-    this.props.getApprovedStories();
+    this.props.getApprovedStories(this.props.offset);
   }
 
+  handlePageClick = data => {
+    let selected = data.selected;
+    let offset = Math.ceil(selected * this.props.limit);
+    this.props.getApprovedStories(offset);
+  };
+
   render = () => {
-    console.log(this.props.stories);
     return (
       <div>
         {this.props.stories && (
@@ -82,7 +123,7 @@ class StoriesList extends React.Component {
               <Title>Select Story </Title>
               <ListWrapper>
                 {this.props.stories.map((story, index) => (
-                  <Link to={`/stories_list/user/${story.id}`}>
+                  <Link key={index} to={`/stories_list/user/${story.id}`}>
                     <ContentWrapper>
                       <Content>{story.title}</Content>
                     </ContentWrapper>
@@ -95,6 +136,22 @@ class StoriesList extends React.Component {
                   </Link>
                 ))}
               </ListWrapper>
+              <ReactPaginate
+                previousLabel={"<"}
+                nextLabel={">"}
+                breakLabel={"..."}
+                breakClassName={"break-me"}
+                pageCount={Math.ceil(this.props.count / this.props.limit) || 1}
+                marginPagesDisplayed={1}
+                pageRangeDisplayed={2}
+                onPageChange={this.handlePageClick}
+                containerClassName={"pagination"}
+                subContainerClassName={"pages pagination"}
+                activeClassName={"active"}
+                initialPage={
+                  Math.floor(this.props.offset / this.props.limit) || 0
+                }
+              />
             </HeroWrapper>
           </div>
         )}
@@ -105,6 +162,9 @@ class StoriesList extends React.Component {
 
 const mapStateToProps = state => ({
   stories: state.stories,
+  offset: state.storiesOffset,
+  limit: state.storiesLimit,
+  count: state.storiesCount,
 });
 
 export default connect(
