@@ -22,6 +22,8 @@ const HeroWrapper = styled.div`
     align-items: center;
     text-align:center;
     height:600px;
+    justify-content: start;
+
 }
 
 `;
@@ -31,7 +33,7 @@ const Title = styled.h1`
   font-size: 7rem;
   letter-spacing: 2px; 
   @media (max-width: 700px) {
-    margin-top: 0px;
+    margin-top: 50px;
   }
 `;
 const SubHeader = styled.p`

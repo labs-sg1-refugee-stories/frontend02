@@ -7,7 +7,7 @@ import LoginCard from "components/LoginCard";
 const HeroWrapper = styled.div`
   display: flex;
   margin: 0 auto;
-  height: 900px;
+  min-height: 900px;
   justify-content: space-around;
   background-image: linear-gradient(
       rgba(000, 000, 000, 0.9),
@@ -19,6 +19,7 @@ const HeroWrapper = styled.div`
   @media (max-width: 700px) {
     flex-direction: column;
     align-items: center;
+    justify-content:start;
   }
 `;
 const CallToAction = styled.div`
@@ -26,6 +27,7 @@ const CallToAction = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    
   }
 `;
 
