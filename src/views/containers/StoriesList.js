@@ -28,15 +28,19 @@ const HeroWrapper = styled.div`
     justify-content: center;
     margin: 0 auto 30px;
     font-weight: 600;
+    
     .previous,
     .next {
       a {
-        width: 100px;
+        width: 50px;
         height: 50px;
       }
     }
-    .active {
-      background: dodgerblue;
+    .active,
+    .focus {
+      outline: none;
+      background: #0180c7;
+
     }
     li {
       display: flex;
@@ -55,7 +59,8 @@ const HeroWrapper = styled.div`
         cursor: pointer;
       }
       &:hover {
-        background: dodgerblue;
+        background: #0180c7;
+        outline: none;
       }
     }
   }
