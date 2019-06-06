@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
 const LinkElem = styled(NavLink)`
-  // example style
+
   &.active {
     color: #0180c7;
   }
@@ -14,6 +14,7 @@ const Mobile = styled.div`
   @media (max-width: 700px) {
     flex-direction: column;
     align-items: center;
+    display:none;
   }
 `
 
@@ -87,6 +88,8 @@ class Navbar extends React.Component {
 
   render() {
     return (
+     
+ 
       <NavBar>
         <nav>
           <Logo>RS</Logo>
@@ -108,6 +111,7 @@ class Navbar extends React.Component {
           </Mobile>
         </nav>
       </NavBar>
+    
     )
   }
 }

@@ -3,6 +3,7 @@ import SignUp from "components/SignUp";
 import styled from "styled-components";
 import hero from "assets/hero.jpg";
 import Navbar from "components/Navbar";
+import Hamburger from "components/Hamburger";
 
 
 const HeroWrapper = styled.div`
@@ -45,8 +46,10 @@ class Home extends React.Component {
   render() {
     return (
       <div>
+    
         <Navbar />
         <HeroWrapper>
+        <Hamburger />
           <div>
             <Title>Refugee Stories.</Title>
             <SubHeader>Voices that need to be heard</SubHeader>
