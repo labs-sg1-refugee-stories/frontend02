@@ -70,6 +70,17 @@ export const storiesReducer = (state = initialState, action) => {
       return { ...state };
     case type.LOGIN_FAILURE:
       return { ...state };
+      
+    case type.DELETE_STORY_START:
+      return { ...state };
+    case type.DELETE_STORY_SUCCESS:
+      return {
+        ...state,
+        stories: state.stories.filter(
+          story => story.id != action.payload
+        )}
+    case type.DELETE_STORY_FAILURE:
+      return { ...state };
 
     default:
       return state;
