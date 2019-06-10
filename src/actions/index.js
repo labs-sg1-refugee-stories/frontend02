@@ -35,7 +35,7 @@ export const deleteStory = id => dispatch => {
   dispatch({ type: type.DELETE_STORY_START, payload: id });
 
   axios
-    .delete(`/api/stories/${id}`)
+    .delete(`/stories/${id}`)
     .then(res => {
       dispatch({ type: type.DELETE_STORY_SUCCESS, payload: id });
     })

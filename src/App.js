@@ -25,7 +25,6 @@ function App() {
       <Route path={"/login"} component={Login} />
       <Route path={"/about_us"} component={AboutUs} />
       <Route exact path={"/connect"} component={Connect} />
-
       <Route exact path={"/stories_list"} component={StoriesList} />
       <Route exact path={"/stories_list/user/:id"} component={SingleStory} />
       <Route exact path={"/stories_list/add_story"} component={AddStory} />
