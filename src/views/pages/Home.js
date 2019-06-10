@@ -55,6 +55,7 @@ class Home extends React.Component {
             <SubHeader>Voices that need to be heard</SubHeader>
           </div>
           <SignUp />
+          
         </HeroWrapper>
       </div>
     );

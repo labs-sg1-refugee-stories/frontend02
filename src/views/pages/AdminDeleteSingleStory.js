@@ -1,9 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getData } from "actions";
-import hero from "assets/hero.jpg";
-import Navbar from "components/Navbar";
+import { getData,deleteStory } from "actions";
 import styled from "styled-components";
+import hero from "assets/hero.jpg";
+import Navbar from "components/AuthNavbar";
 
 const HeroWrapper = styled.div`
   display: flex;
@@ -30,7 +30,16 @@ const StoryWrapper = styled.div`
     margin-right: 20px;
   }
 `;
-class SingleStory extends React.Component {
+
+const ButtonStyle = styled.button`
+  padding: 10px 20px;
+  font-size: 2rem;
+  border-radius: 5px;
+  color: white;
+  background-color: #9c000b;
+`;
+
+class AdminDeleteSingleStory extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -40,16 +49,12 @@ class SingleStory extends React.Component {
     this.props.getData();
   }
 
-  rejectStory(id) {
-    this.props.rejectStory(id);
-    this.props.history.push("/admin_stories_list");
+  deleteStory(id) {
+    this.props.deleteStory(id);
+    console.log("helper function", id)
+    this.props.history.push("/admin_accepted_stories_list");
   }
 
-  acceptStory(story) {
-    console.log("launching accept story", story);
-    this.props.acceptStory(story);
-    this.props.history.push("/admin_stories_list");
-  }
 
   render() {
     return (
@@ -65,6 +70,14 @@ class SingleStory extends React.Component {
                     <h4>{story.name}</h4>
                     <h4>{story.country}</h4>
                     <p>{story.storytext}</p>
+                    <ButtonStyle
+                      text={"delete"}
+                      onClick={() => {
+                        this.deleteStory(story.id);
+                      }}
+                    >
+                      delete
+                    </ButtonStyle>
                   </div>
                 ) : null
               )}
@@ -83,5 +96,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getData }
-)(SingleStory);
+  { getData, deleteStory }
+)(AdminDeleteSingleStory);

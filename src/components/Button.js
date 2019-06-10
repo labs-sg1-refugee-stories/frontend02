@@ -7,6 +7,7 @@ font-size: 2rem;
 border-radius: 5px;
 color: white;
 background-color: #9C000B;
+height: ${props => props.height ? "none" : "50px"};
     :hover{
       transform: translateY(-3px);
       transition: all .4s;

@@ -97,6 +97,9 @@ class Navbar extends React.Component {
             <LinkElem exact to={"/admin_stories_list"}>
               Review
             </LinkElem>
+            <LinkElem exact to={"/admin_accepted_stories_list"}>
+              Delete
+            </LinkElem>
           </Mobile>
         </nav>
       </NavBar>

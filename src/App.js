@@ -8,10 +8,12 @@ import SingleStory from "views/pages/SingleStory";
 import AddStory from "views/pages/AddStory";
 import AdminStoriesList from "views/containers/AdminStoriesList";
 import AdminSingleStory from "views/pages/AdminSingleStory";
+import AdminAcceptedStoriesList from "views/containers/AdminAcceptedStoriesList"
 import { GlobalStyle } from "styles/Global";
 import AboutUs from "views/pages/AboutUs";
 import Connect from "views/pages/Connect";
 import NotLogged from "views/pages/NotLogged";
+import AdminDeleteSingleStory from "views/pages/AdminDeleteSingleStory";
 
 function App() {
   return (
@@ -23,7 +25,6 @@ function App() {
       <Route path={"/login"} component={Login} />
       <Route path={"/about_us"} component={AboutUs} />
       <Route exact path={"/connect"} component={Connect} />
-
       <Route exact path={"/stories_list"} component={StoriesList} />
       <Route exact path={"/stories_list/user/:id"} component={SingleStory} />
       <Route exact path={"/stories_list/add_story"} component={AddStory} />
@@ -34,6 +35,17 @@ function App() {
         exact
         path={"/admin_stories_list"}
         component={AdminStoriesList}
+      />
+      
+      <PrivateRoute
+        exact
+        path={"/admin_accepted_stories_list"}
+        component={AdminAcceptedStoriesList}
+      />
+      <PrivateRoute
+        exact
+        path={"/admin_accepted_stories_list/:id"}
+        component={AdminDeleteSingleStory}
       />
       <PrivateRoute
         exact

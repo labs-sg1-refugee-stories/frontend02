@@ -31,6 +31,18 @@ export const rejectStory = id => dispatch => {
     })
     .catch(err => console.log(err));
 };
+export const deleteStory = id => dispatch => {
+  dispatch({ type: type.DELETE_STORY_START, payload: id });
+
+  axios
+    .delete(`/stories/${id}`)
+    .then(res => {
+      dispatch({ type: type.DELETE_STORY_SUCCESS, payload: id });
+    })
+    .catch(err => console.log(err));
+};
+
+
 
 export const acceptStory = story => dispatch => {
   dispatch({ type: type.ACCEPT_STORIES_START });
