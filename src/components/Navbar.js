@@ -1,6 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
+
+import  styled  from 'styled-components';
 import { NavLink } from 'react-router-dom'
+import SimpleMenu from '../components/SimpleMenu'
+
+
 
 const LinkElem = styled(NavLink)`
 
@@ -22,14 +26,12 @@ const NavBar = styled.div`
 width: 100%;
 background-color: #fff;
     
-    Nav{
+    nav{
       display:flex;
+      flex-wrap:wrap;
       align-items: baseline;
-      justify-content: space-between;
-      @media (max-width: 700px) {
-        flex-direction: column;
-        align-items: center
-      }
+      justify-content: space-around;
+   
         a{
        
         text-decoration: none;
@@ -40,13 +42,7 @@ background-color: #fff;
         font-weight: 700;
         margin-right: 50px;
         
-        @media (max-width: 700px) {
-          width: 100%;
-          text-align: center;
-          padding: 5px;
-          margin-left: 50px;
-      
-      }
+  
         :hover{
           transition: all .8s;
           color:#0180C7;
@@ -67,10 +63,11 @@ const Logo = styled.div`
         display: block;
       }
       @media (max-width: 700px) {
-       display:none;
+       
     }
     
 `
+
 class Navbar extends React.Component {
   constructor() {
     super()
@@ -92,6 +89,8 @@ class Navbar extends React.Component {
  
       <NavBar>
         <nav>
+ 
+          <SimpleMenu/>  
           <Logo>RS</Logo>
           <Mobile>
             <LinkElem exact to={'/'}>
@@ -104,9 +103,6 @@ class Navbar extends React.Component {
             <LinkElem exact to={'/stories_list'}>
               Read
             </LinkElem>
-            {/* <LinkElem exact to={'/connect'}>
-              Connect
-            </LinkElem> */}
             <LinkElem to={'/login'}>Login</LinkElem>
           </Mobile>
         </nav>

@@ -49,7 +49,7 @@ class Home extends React.Component {
     
         <Navbar />
         <HeroWrapper>
-        <Hamburger />
+ 
           <div>
             <Title>Refugee Stories.</Title>
             <SubHeader>Voices that need to be heard</SubHeader>

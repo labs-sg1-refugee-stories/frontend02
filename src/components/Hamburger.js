@@ -3,22 +3,16 @@ import styled from 'styled-components'
 
 
 const HamburgerMenu = styled.div`
-color: white;
+color: black;
 display:flex;
 align-items:flex-start;
-margin-top: 20px;
-margin-right: 75%;
-@media (min-width: 700px) {
+
+
+font-size: 30px;
+/* @media (min-width: 700px) {
     display:none;
 }
-    button {
-        background-color: transparent;
-        border: none;
-        color:white;
-        font-size:40px;
-        display:flex;
-        align-items: flex-start;
-    }
+  */
 `
 
 class Hamburger extends React.Component {
@@ -26,7 +20,7 @@ class Hamburger extends React.Component {
     render() { 
         return ( 
             <HamburgerMenu>
-                <button onClick={""}><i class="fas fa-bars"></i></button>
+                <i class="fas fa-bars"></i>
             </HamburgerMenu>
          );
     }
