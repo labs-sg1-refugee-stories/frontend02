@@ -40,5 +40,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/labs-sg1-refugee-stories/frontend02.git",
+  "author": "Brandon-Pampuch <brandonpampuch@gmail.com>",
+  "license": "MIT"
 }
