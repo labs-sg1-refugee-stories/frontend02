@@ -30,7 +30,7 @@ background-color: #fff;
       display:flex;
       flex-wrap:wrap;
       align-items: baseline;
-      justify-content: space-around;
+      justify-content: space-between;
    
         a{
        
@@ -53,7 +53,7 @@ background-color: #fff;
 const Logo = styled.div`
     background-color: #0180C7;
     color: white;
- 
+    order:-1;
     font-size:5rem;
     padding-bottom:15px;
     padding-right:5px;
