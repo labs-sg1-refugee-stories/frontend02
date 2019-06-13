@@ -3,7 +3,7 @@ import SignUp from "components/SignUp";
 import styled from "styled-components";
 import hero from "assets/hero.jpg";
 import Navbar from "components/Navbar";
-import Hamburger from "components/Hamburger";
+
 
 
 const HeroWrapper = styled.div`
@@ -34,7 +34,7 @@ const Title = styled.h1`
   font-size: 7rem;
   letter-spacing: 2px; 
   @media (max-width: 700px) {
-    margin-top: 50px;
+    margin-top: 30px;
     font-size: 6rem;
   }
 `;
@@ -42,7 +42,7 @@ const SubHeader = styled.p`
   color: white;
   font-size: 3.5rem;
   @media (max-width: 700px) {
-    margin-top: 50px;
+    margin-top: 0px;
     font-size: 3rem;
   }
 `;
