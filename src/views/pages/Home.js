@@ -35,11 +35,16 @@ const Title = styled.h1`
   letter-spacing: 2px; 
   @media (max-width: 700px) {
     margin-top: 50px;
+    font-size: 6rem;
   }
 `;
 const SubHeader = styled.p`
   color: white;
   font-size: 3.5rem;
+  @media (max-width: 700px) {
+    margin-top: 50px;
+    font-size: 3rem;
+  }
 `;
 class Home extends React.Component {
   state = {};
