@@ -13,7 +13,10 @@ import { GlobalStyle } from "styles/Global";
 import AboutUs from "views/pages/AboutUs";
 import Connect from "views/pages/Connect";
 import NotLogged from "views/pages/NotLogged";
+import Contact from "views/pages/Contact"
+import Policies from "views/pages/Policies"
 import AdminDeleteSingleStory from "views/pages/AdminDeleteSingleStory";
+import Footer from "components/Footer";
 
 function App() {
   return (
@@ -29,6 +32,8 @@ function App() {
       <Route exact path={"/stories_list/user/:id"} component={SingleStory} />
       <Route exact path={"/stories_list/add_story"} component={AddStory} />
       <Route exact path={"/not_logged"} component={NotLogged} />
+      <Route exact path={"/contact"} component={Contact} />
+      <Route exact path={"/policies"} component={Policies} />
 
       {/* protected admin routes */}
       <PrivateRoute
@@ -52,6 +57,7 @@ function App() {
         path={"/admin_stories_list/:id"}
         component={AdminSingleStory}
       />
+         <Footer />
     </Router>
   );
 }

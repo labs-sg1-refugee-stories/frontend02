@@ -40,7 +40,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a {
-      font-size: 1.6rem
+      font-size: 1.6rem;
+      text-decoration: none
   }
   
   img {

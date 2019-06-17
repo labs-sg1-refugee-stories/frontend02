@@ -6,18 +6,11 @@ import Hamburger from './Hamburger';
 import { Link } from 'react-router-dom'
 import { styled } from '@material-ui/styles'
 
-
-
-
-
-
 const DropdownItem = styled(MenuItem)({
 color: "black",
 textdecoration: "none",
 display:'block',
 padding: "10px",
-
-
 })
 
 const MainButton = styled(Button)({
@@ -26,9 +19,6 @@ const MainButton = styled(Button)({
   display: "none"
 }
 })
-
-
-
 
 export default function SimpleMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);

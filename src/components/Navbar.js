@@ -103,7 +103,7 @@ class Navbar extends React.Component {
             <LinkElem exact to={'/stories_list'}>
               Read
             </LinkElem>
-            <LinkElem to={'/login'}>Login</LinkElem>
+      
           </Mobile>
         </nav>
       </NavBar>

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom"
 
 const FooterWrap = styled.div`
   display: flex;
@@ -28,12 +29,20 @@ const SocialMedia = styled.div`
   }
 `;
 
+const Link = styled(NavLink)`
+color: white;
+font-size: 2rem;
+`
+
 const Footer = () => {
   return (
     <FooterWrap>
       <div>
         <p>
-          made with <i className="fas fa-heart" /> and <i className="fas fa-coffee" />
+      
+            <Link to={'/login'}>Admin  </Link> &nbsp; | &nbsp;
+            <Link to={'/Contact'}>Contact</Link> &nbsp; | &nbsp;
+            <Link to={'/Policies'}>Policies</Link>
         </p>
       </div>
       <div>
