@@ -32,6 +32,10 @@ const SocialMedia = styled.div`
 const Link = styled(NavLink)`
 color: white;
 font-size: 2rem;
+  :hover{
+        color: #0180C7;
+        transition: all .8s;
+  }
 `
 
 const Footer = () => {

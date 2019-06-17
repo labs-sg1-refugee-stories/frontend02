@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import hero from "assets/hero.jpg";
 import Navbar from "components/Navbar";
-import Profile from "components/Profile";
+import SingleProfile from "components/SingleProfile";
 
 const HeroWrapper = styled.div`
   display: flex;
@@ -18,15 +18,15 @@ const HeroWrapper = styled.div`
   font-size: 4rem;
 `;
 
-const Contact = () => {
+const Policies = () => {
   return (
     <>
       <Navbar />
       <HeroWrapper>
-        <Profile />
+      <SingleProfile title={"Contact"} content={"brandonpampuch@gmail.com"} icon={"far fa-envelope"} />
       </HeroWrapper>
     </>
   );
 };
 
-export default Contact
+export default Policies;
