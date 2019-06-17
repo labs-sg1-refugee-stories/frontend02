@@ -18,7 +18,7 @@ const HeroWrapper = styled.div`
   font-size: 4rem;
 `;
 
-const AboutUs = () => {
+const Policies = () => {
   return (
     <>
       <Navbar />
@@ -29,4 +29,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default Policies;
