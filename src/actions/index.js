@@ -12,12 +12,42 @@ export const getData = () => dispatch => {
     .catch(err => console.log(err));
 };
 
+export const getStory = (id) => dispatch => {
+  dispatch({ type: type.GET_STORY_START });
+  return axios
+    .get(`/stories/${id}`)
+    .then(res => {
+      dispatch({ type: type.GET_STORY_SUCCESS, payload: res });
+    })
+    .catch(err => console.log(err));
+};
+
+export const getComments = (id) => dispatch => {
+  dispatch({ type: type.GET_COMMENTS_START });
+  return axios
+    .get(`/comments`)
+    .then(res => {
+      dispatch({ type: type.GET_COMMENTS_SUCCESS, payload: res });
+    })
+    .catch(err => console.log(err));
+};
+
 export const addPost = newPost => dispatch => {
   dispatch({ type: type.ADD_POST_START });
   axios
     .post("/admin/stories", newPost)
     .then(res => {
       dispatch({ type: type.ADD_POST_SUCCESS, payload: res });
+    })
+    .catch(err => console.log(err));
+};
+
+export const addComment = newComment => dispatch => {
+  dispatch({ type: type.ADD_COMMENT_START });
+  axios
+    .post("/comments", newComment)
+    .then(res => {
+      dispatch({ type: type.ADD_COMMENT_SUCCESS, payload: res });
     })
     .catch(err => console.log(err));
 };
