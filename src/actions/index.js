@@ -12,7 +12,7 @@ export const getData = () => dispatch => {
     .catch(err => console.log(err));
 };
 
-export const getStory = (id) => dispatch => {
+export const getStory = id => dispatch => {
   dispatch({ type: type.GET_STORY_START });
   return axios
     .get(`/stories/${id}`)
@@ -22,7 +22,7 @@ export const getStory = (id) => dispatch => {
     .catch(err => console.log(err));
 };
 
-export const getComments = (id) => dispatch => {
+export const getComments = id => dispatch => {
   dispatch({ type: type.GET_COMMENTS_START });
   return axios
     .get(`/comments`)
@@ -34,8 +34,15 @@ export const getComments = (id) => dispatch => {
 
 export const addPost = newPost => dispatch => {
   dispatch({ type: type.ADD_POST_START });
+
+  console.log("THIS IS NEW POST =>>>", newPost);
+
+  const fd = new FormData();
+
+  fd.append("photoUrl", newPost, newPost.name);
+
   axios
-    .post("/admin/stories", newPost)
+    .post("/admin/stories", fd)
     .then(res => {
       dispatch({ type: type.ADD_POST_SUCCESS, payload: res });
     })
@@ -71,8 +78,6 @@ export const deleteStory = id => dispatch => {
     })
     .catch(err => console.log(err));
 };
-
-
 
 export const acceptStory = story => dispatch => {
   dispatch({ type: type.ACCEPT_STORIES_START });
