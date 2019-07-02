@@ -9,8 +9,8 @@ import Button from "components/Button";
 const HeroWrapper = styled.div`
   display: flex;
   min-height: 900px;
-  flex-wrap:wrap;
-  flex-direction:column;
+  flex-wrap: wrap;
+  flex-direction: column;
   background-image: linear-gradient(
       rgba(000, 000, 000, 0.9),
       rgba(111, 111, 111, 0.8)
@@ -19,13 +19,12 @@ const HeroWrapper = styled.div`
   background-size: contain;
   font-size: 4rem;
   color: white;
-  
 `;
 const FormWrapper = styled.div`
-width: 80%;
-margin: 0 auto;
-background-color: rgba(0,0,0,.6);
-margin-top:20px;
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin-top: 20px;
 `;
 const Form = styled.form`
   display: flex;
@@ -50,17 +49,17 @@ const Header = styled.h1`
 `;
 
 const Input = styled.input`
-border: none;
-border-bottom: 1px solid white;
-font-size: 1.6rem;
-padding-left: 10px;
-margin-bottom: 30px;
-height: 30px;
-  ::placeholder{
-      padding-left: 10px;
-      font-family: 'Oswald', sans-serif;
-      letter-spacing: 1px
-    }
+  border: none;
+  border-bottom: 1px solid white;
+  font-size: 1.6rem;
+  padding-left: 10px;
+  margin-bottom: 30px;
+  height: 30px;
+  ::placeholder {
+    padding-left: 10px;
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 1px;
+  }
 `;
 class AddStory extends React.Component {
   state = {
@@ -68,6 +67,8 @@ class AddStory extends React.Component {
     name: "",
     storytext: "",
     country: "",
+    photoUrl: null,
+    authorUrl: null,
   };
 
   textChangeHandler = event => {
@@ -81,6 +82,12 @@ class AddStory extends React.Component {
     event.preventDefault();
     this.props.addPost(this.state);
     this.props.history.push("/stories_list");
+  };
+
+  handleSelect = e => {
+    console.log(e.target.files[0]);
+    console.log(e.target.name);
+    this.setState({ [e.target.name]: e.target.files[0] });
   };
 
   render() {
@@ -121,7 +128,14 @@ class AddStory extends React.Component {
                 type="text"
                 value={this.state.storytext}
               />
-              <Button text={"Share"}>Add Post</Button>
+              <input onChange={this.handleSelect} name="photoUrl" type="file" />
+              <br />
+              <input
+                onChange={this.handleSelect}
+                name="authorUrl"
+                type="file"
+              />
+              <Button text={"Share"} />
             </Form>
           </FormWrapper>
         </HeroWrapper>
