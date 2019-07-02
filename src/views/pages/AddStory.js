@@ -82,17 +82,19 @@ class AddStory extends React.Component {
   };
   addPost = e => {
     e.preventDefault();
-
     this.props.addPost(this.state);
-
     this.props.history.push("/stories_list");
   };
 
   handleSelect = event => {
+    // sets photoUrl/authorUrl on state depending on which input was selected
     const file = event.target.files[0];
     const { name, id } = event.target;
     this.setState({ [name]: file });
 
+    // sets photo/author on state depending on which input was selected
+    // this is needed for preview image; see ref below
+    // ref: https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications#Example_Showing_thumbnails_of_user-selected_images
     const reader = new FileReader();
     reader.onload = e => {
       this.setState({ [id]: e.target.result });
@@ -152,9 +154,7 @@ class AddStory extends React.Component {
                   border: "1px solid red",
                 }}
               >
-                {this.state.photo && (
-                  <img src={this.state.photo} alt="story-photo" />
-                )}
+                {this.state.photo && <img src={this.state.photo} alt="story" />}
               </div>
               <br />
               <input
@@ -172,7 +172,7 @@ class AddStory extends React.Component {
                 }}
               >
                 {this.state.author && (
-                  <img src={this.state.author} alt="author-photo" />
+                  <img src={this.state.author} alt="author" />
                 )}
               </div>
               <Button text={"Share"} />

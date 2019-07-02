@@ -36,13 +36,17 @@ export const addPost = newPost => dispatch => {
   dispatch({ type: type.ADD_POST_START });
 
   const fd = new FormData();
-
+  // FormData object (fd) is used to upload image data to server
+  // Text data will be passed as params on req.query
   fd.append("photoUrl", newPost.photoUrl);
   fd.append("authorUrl", newPost.authorUrl);
+
+  // Deletes image data properties so that newPost only has text fields on query string
   delete newPost.photoUrl;
   delete newPost.authorUrl;
   delete newPost.photo;
   delete newPost.author;
+  // Calls server ... upload middleware will prcess fd and return cloudinary urls of images
   axios
     .post(`/admin/stories`, fd, { params: newPost })
     .then(res => {
