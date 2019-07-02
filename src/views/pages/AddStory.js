@@ -68,6 +68,7 @@ class AddStory extends React.Component {
     storytext: "",
     country: "",
     photoUrl: null,
+    authorUrl: null,
   };
 
   textChangeHandler = event => {
@@ -85,6 +86,7 @@ class AddStory extends React.Component {
 
   handleSelect = e => {
     console.log(e.target.files[0]);
+    console.log(e.target.name);
     this.setState({ photoUrl: e.target.files[0] });
   };
 
@@ -126,7 +128,13 @@ class AddStory extends React.Component {
                 type="text"
                 value={this.state.storytext}
               />
-              <input onChange={this.handleSelect} type="file" />
+              <input onChange={this.handleSelect} name="photoUrl" type="file" />
+              <br />
+              <input
+                onChange={this.handleSelect}
+                name="authorUrl"
+                type="file"
+              />
               <Button text={"Share"} />
             </Form>
           </FormWrapper>
