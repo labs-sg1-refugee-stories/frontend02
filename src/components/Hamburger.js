@@ -20,7 +20,7 @@ class Hamburger extends React.Component {
     render() { 
         return ( 
             <HamburgerMenu>
-                <i class="fas fa-bars"></i>
+                <i className="fas fa-bars"></i>
             </HamburgerMenu>
          );
     }
