@@ -87,7 +87,7 @@ class AddStory extends React.Component {
   handleSelect = e => {
     console.log(e.target.files[0]);
     console.log(e.target.name);
-    this.setState({ photoUrl: e.target.files[0] });
+    this.setState({ [e.target.name]: e.target.files[0] });
   };
 
   render() {

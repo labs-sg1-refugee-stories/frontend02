@@ -38,6 +38,7 @@ export const addPost = newPost => dispatch => {
   const fd = new FormData();
 
   fd.append("photoUrl", newPost.photoUrl);
+  fd.append("authorUrl", newPost.authorUrl);
   delete newPost.photoUrl;
   axios
     .post(`/admin/stories`, fd, { params: newPost })
