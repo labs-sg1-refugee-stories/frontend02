@@ -69,6 +69,8 @@ class AddStory extends React.Component {
     country: "",
     photoUrl: null,
     authorUrl: null,
+    photo: null,
+    author: null,
   };
 
   textChangeHandler = event => {
@@ -78,16 +80,24 @@ class AddStory extends React.Component {
       [event.target.name]: newText,
     });
   };
-  addPost = event => {
-    event.preventDefault();
+  addPost = e => {
+    e.preventDefault();
+
     this.props.addPost(this.state);
+
     // this.props.history.push("/stories_list");
   };
 
-  handleSelect = e => {
-    console.log(e.target.files[0]);
-    console.log(e.target.name);
-    this.setState({ [e.target.name]: e.target.files[0] });
+  handleSelect = event => {
+    const file = event.target.files[0];
+    const { name, id } = event.target;
+    this.setState({ [name]: file });
+
+    const reader = new FileReader();
+    reader.onload = e => {
+      this.setState({ [id]: e.target.result });
+    };
+    reader.readAsDataURL(file);
   };
 
   render() {
@@ -128,13 +138,43 @@ class AddStory extends React.Component {
                 type="text"
                 value={this.state.storytext}
               />
-              <input onChange={this.handleSelect} name="photoUrl" type="file" />
+              <input
+                onChange={this.handleSelect}
+                name="photoUrl"
+                id="photo"
+                type="file"
+                accept="image/*"
+              />
+              <div
+                style={{
+                  height: "200px",
+                  width: "200px",
+                  border: "1px solid red",
+                }}
+              >
+                {this.state.photo && (
+                  <img src={this.state.photo} alt="story-photo" />
+                )}
+              </div>
               <br />
               <input
                 onChange={this.handleSelect}
                 name="authorUrl"
+                id="author"
                 type="file"
+                accept="image/*"
               />
+              <div
+                style={{
+                  height: "200px",
+                  width: "200px",
+                  border: "1px solid red",
+                }}
+              >
+                {this.state.author && (
+                  <img src={this.state.author} alt="author-photo" />
+                )}
+              </div>
               <Button text={"Share"} />
             </Form>
           </FormWrapper>
