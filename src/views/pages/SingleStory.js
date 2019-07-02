@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { getStory, getComments, addComment } from "actions";
 import hero from "assets/hero.jpg";
@@ -154,6 +155,10 @@ class SingleStory extends React.Component {
 
   onSubmitComment = event => {
     event.preventDefault();
+    // hack to add storyId to comment payload
+    const comment = this.state;
+    comment.storyId = this.props.match.params.id;
+    console.log("comment:\n", comment);
     this.props.addComment(this.state);
   };
 
@@ -237,4 +242,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { getStory, getComments, addComment }
-)(SingleStory);
+)(withRouter(SingleStory));

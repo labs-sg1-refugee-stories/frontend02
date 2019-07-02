@@ -29,7 +29,7 @@ export const storiesReducer = (state = initialState, action) => {
     case type.GET_COMMENTS_START:
       return { ...state };
     case type.GET_COMMENTS_SUCCESS:
-      return { ...state, comments: action.payload.data };
+      return { ...state, comments: action.payload };
     case type.GET_COMMENTS_FAILURE:
       return { ...state };
 
@@ -99,9 +99,8 @@ export const storiesReducer = (state = initialState, action) => {
     case type.DELETE_STORY_SUCCESS:
       return {
         ...state,
-        stories: state.stories.filter(
-          story => story.id != action.payload
-        )}
+        stories: state.stories.filter(story => story.id != action.payload),
+      };
     case type.DELETE_STORY_FAILURE:
       return { ...state };
 

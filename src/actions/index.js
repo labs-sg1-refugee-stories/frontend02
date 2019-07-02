@@ -27,7 +27,11 @@ export const getComments = id => dispatch => {
   return axios
     .get(`/comments`)
     .then(res => {
-      dispatch({ type: type.GET_COMMENTS_SUCCESS, payload: res });
+      // Only show comments with storyID matching id
+      const filteredComments = res.data.filter(
+        comment => comment.storyId === Number(id)
+      );
+      dispatch({ type: type.GET_COMMENTS_SUCCESS, payload: filteredComments });
     })
     .catch(err => console.log(err));
 };
