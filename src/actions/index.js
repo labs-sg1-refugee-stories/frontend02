@@ -40,7 +40,9 @@ export const addPost = newPost => dispatch => {
   fd.append("photoUrl", newPost.photoUrl);
   fd.append("authorUrl", newPost.authorUrl);
   delete newPost.photoUrl;
-  delete newPost.authorUrl
+  delete newPost.authorUrl;
+  delete newPost.photo;
+  delete newPost.author;
   axios
     .post(`/admin/stories`, fd, { params: newPost })
     .then(res => {
