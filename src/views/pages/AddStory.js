@@ -79,7 +79,7 @@ class AddStory extends React.Component {
   };
   addPost = event => {
     event.preventDefault();
-    this.props.addPost(this.state.photoUrl);
+    this.props.addPost(this.state);
     this.props.history.push("/stories_list");
   };
 
@@ -127,7 +127,7 @@ class AddStory extends React.Component {
                 value={this.state.storytext}
               />
               <input onChange={this.handleSelect} type="file" />
-              <Button text={"Share"}>Add Post</Button>
+              <Button text={"Share"} />
             </Form>
           </FormWrapper>
         </HeroWrapper>

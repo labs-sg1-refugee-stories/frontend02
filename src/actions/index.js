@@ -35,14 +35,12 @@ export const getComments = id => dispatch => {
 export const addPost = newPost => dispatch => {
   dispatch({ type: type.ADD_POST_START });
 
-  console.log("THIS IS NEW POST =>>>", newPost);
-
   const fd = new FormData();
 
-  fd.append("photoUrl", newPost, newPost.name);
-
+  fd.append("photoUrl", newPost.photoUrl);
+  delete newPost.photoUrl;
   axios
-    .post("/admin/stories", fd)
+    .post(`/admin/stories`, fd, { params: newPost })
     .then(res => {
       dispatch({ type: type.ADD_POST_SUCCESS, payload: res });
     })
