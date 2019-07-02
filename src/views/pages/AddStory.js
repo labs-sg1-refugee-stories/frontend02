@@ -85,7 +85,7 @@ class AddStory extends React.Component {
 
     this.props.addPost(this.state);
 
-    // this.props.history.push("/stories_list");
+    this.props.history.push("/stories_list");
   };
 
   handleSelect = event => {
