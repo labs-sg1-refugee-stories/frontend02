@@ -9,7 +9,7 @@ import SimpleMenu from '../components/SimpleMenu'
 const LinkElem = styled(NavLink)`
 
   &.active {
-    color: #0180c7;
+    color: lightgray;
   }
 `
 
@@ -35,14 +35,18 @@ background-color: #fff;
         a{
        
         text-decoration: none;
-      
+        font-family: 'Karla', sans-serif;
         color: #33313b;
         font-size: 2rem;
-        font-size: 2.5rem;
+        font-size: 1.3rem;
         font-weight: 700;
         margin-right: 50px;
         
-  
+        &:last-child{
+          margin-right:0;
+        }
+        
+        
         :hover{
           transition: all .8s;
           color:#0180C7;
@@ -51,14 +55,16 @@ background-color: #fff;
     }`
 
 const Logo = styled.div`
-    background-color: #0180C7;
-    color: white;
+    margin-top: 40px;
+    font-family: 'Libre Baskerville', serif;
+    background-color: white;
+    color: black;
     order:-1;
-    font-size:5rem;
+    font-size:3rem;
     padding-bottom:15px;
     padding-right:5px;
-    padding-left:5px;
-    margin-left:100px;
+    padding-left:5px
+    
       span{
         display: block;
       }
@@ -76,12 +82,7 @@ class Navbar extends React.Component {
     }
   }
 
-  findTab = tabNumber => {
-    this.setState({
-      ...this.state,
-      activeTab: tabNumber,
-    })
-  }
+
 
   render() {
     return (
@@ -91,18 +92,16 @@ class Navbar extends React.Component {
         <nav>
  
           <SimpleMenu/>  
-          <Logo>RS</Logo>
+          <Logo>MACRAMÉ<br></br> مقرمة</Logo>
           <Mobile>
             <LinkElem exact to={'/'}>
               Home
             </LinkElem>
             <LinkElem to={'/about_us'}>About</LinkElem>
             <LinkElem exact to='/stories_list/add_story'>
-              Share
+              support
             </LinkElem>
-            <LinkElem exact to={'/stories_list'}>
-              Read
-            </LinkElem>
+         
       
           </Mobile>
         </nav>
