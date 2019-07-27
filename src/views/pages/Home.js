@@ -1,32 +1,19 @@
 import React from "react";
 import Navbar from "components/Navbar";
 import styled from "styled-components";
-import { NavLink } from 'react-router-dom'
+
 
 import colorPainting from "../../assets/BASEL.HOPE-1.jpg";
 import books from "../../assets/Capture.jpg";
 import shoes from "../../assets/andrew-itaga-QNyWeFHjZJY-unsplash.jpg";
 import hope from "../../assets/kristopher-roller-PC_lbSSxCZE-unsplash.jpg";
 import desert from "../../assets/ivars-krutainis-jTJ9-4ESzU4-unsplash.jpg";
+import Supporters from "components/Supporters";
 
 const Heading = styled.a`
   background-color: white;
   font-weight: 400;
 `;
-const HeadingWrapper = styled.div`
-  display: flex;
-  justify-content: space-around;
-  border-bottom: 1px solid lightgray;
-`;
-
-const StyledLink = styled(NavLink)`
-  text-decoration: none;
-  color: black;
-  font-weight:400;
-  font-size: 2.6rem;
-`
-  
-
 
 const TopContent = styled.div`
   display: flex;
@@ -74,16 +61,6 @@ const ColumnStory = styled.div`
   width: 50%;
 `;
 
-const Contributers = styled.div`
-  border-top: 1px solid lightgray;
-  width: 30%;
-  margin-bottom:20px;
-`;
-
-const ContributerList = styled.ul`
-margin-bottom: 40px;
-`
-
 const StoriesImage = styled.img`
   width: 100%;
   height: 250px;
@@ -103,23 +80,8 @@ const Title = styled.h3`
   font-weight: 400;
 `;
 
-const Border =styled.div`
-border-bottom: 1px solid lightgray;
-`
-const SocialMedia = styled.div`
-display:flex;
 
-  i {
-    margin-right:40px;
-    font-size:40px;
-    
-    
-  }
-  i:first-child{
-    margin-left:50px;
-  }
 
-`
 
 
 class Home extends React.Component {
@@ -129,10 +91,6 @@ class Home extends React.Component {
       <div class="container">
         <div>
           <Navbar />
-          <HeadingWrapper>
-            <StyledLink to={"/stories_list/add_story"}>write</StyledLink>
-            <StyledLink to={"/stories_list"}>read</StyledLink>
-          </HeadingWrapper>
           <SubMenu>spotlight</SubMenu>
           <TopContent>
             <HeroContent>
@@ -222,25 +180,7 @@ class Home extends React.Component {
                 </ColumnStory>
               </StoryList>
             </TopStories>
-            <Contributers>
-              <SubMenu>partners</SubMenu>
-              <ContributerList>
-                <li>Echo 100 Plus</li>
-                <Author>An Austrian charity helping refugees</Author>
-                <li>Zine</li>
-                <Author>A publication by and for refugees</Author>
-                <li>Comic</li>
-                <p />
-                <li>etc.</li>
-              </ContributerList>
-              <Border></Border>
-              <SubMenu>Contact Us</SubMenu>
-              <SocialMedia>
-                <i className="fab fa-github-square" />
-                <i className="fab fa-facebook-square" />
-                <i className="fab fa-twitter-square" />
-              </SocialMedia>
-            </Contributers>
+            <Supporters></Supporters>
             <div />
           </MiddleContent>
         </div>

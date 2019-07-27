@@ -73,6 +73,18 @@ const Logo = styled.div`
     }
     
 `
+const StyledLink = styled(NavLink)`
+  text-decoration: none;
+  color: black;
+  font-weight:400;
+  font-size: 2.6rem;
+`
+
+const HeadingWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid lightgray;
+`;
 
 class Navbar extends React.Component {
   constructor() {
@@ -99,12 +111,17 @@ class Navbar extends React.Component {
             </LinkElem>
             <LinkElem to={'/about_us'}>About</LinkElem>
             <LinkElem exact to='/'>
-              support
+              safety
             </LinkElem>
          
       
           </Mobile>
         </nav>
+        <HeadingWrapper>
+          <StyledLink to={"/stories_list/add_story"}>write</StyledLink>
+          <StyledLink to={"/stories_list"}>read</StyledLink>
+        </HeadingWrapper>
+
       </NavBar>
     
     )

@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "components/Navbar";
 import styled from "styled-components";
-import hero from "assets/hero.jpg";
 import LoginCard from "components/LoginCard";
 
 const HeroWrapper = styled.div`
