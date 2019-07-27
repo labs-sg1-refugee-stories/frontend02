@@ -4,7 +4,6 @@ import { getApprovedStories } from "actions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Navbar from "components/Navbar";
-import hero from "assets/hero.jpg";
 import ReactPaginate from "react-paginate";
 
 const HeroWrapper = styled.div`
@@ -12,14 +11,10 @@ const HeroWrapper = styled.div`
   margin: 0 auto;
   min-height: 900px;
   justify-content: space-around;
-  background-image: linear-gradient(
-      rgba(000, 000, 000, 0.9),
-      rgba(111, 111, 111, 0.8)
-    ),
-    url(${hero});
+ 
   background-size: contain;
   font-size: 4rem;
-  color: white;
+  color: black;
   flex-direction: column;
   //* Pagination styles *//
   .pagination {
@@ -28,6 +23,7 @@ const HeroWrapper = styled.div`
     justify-content: center;
     margin: 0 auto 30px;
     font-weight: 600;
+   
     
     .previous,
     .next {
@@ -39,7 +35,7 @@ const HeroWrapper = styled.div`
     .active,
     .focus {
       outline: none;
-      background: #0180c7;
+      color: black;
 
     }
     li {
@@ -59,7 +55,7 @@ const HeroWrapper = styled.div`
         cursor: pointer;
       }
       &:hover {
-        background: #0180c7;
+        color: lightgray;
         outline: none;
       }
     }
@@ -67,6 +63,7 @@ const HeroWrapper = styled.div`
 `;
 const Title = styled.h1`
   margin: 50px auto;
+  font-weight: 400;
 `;
 const ListWrapper = styled.div`
   min-height: 800px;
@@ -122,6 +119,7 @@ class StoriesList extends React.Component {
     return (
       <div>
         {this.props.stories && (
+        <div class="container">
           <div>
             <Navbar />
             <HeroWrapper>
@@ -159,8 +157,10 @@ class StoriesList extends React.Component {
               />
             </HeroWrapper>
           </div>
+          </div>
         )}
       </div>
+     
     );
   };
 }

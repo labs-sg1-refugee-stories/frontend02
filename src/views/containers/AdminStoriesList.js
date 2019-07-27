@@ -72,6 +72,7 @@ class AdminStoriesList extends React.Component {
   render() {
     if (this.props) {
       return (
+        <div class="container">
         <div>
           <Navbar />
           <HeroWrapper>
@@ -93,6 +94,7 @@ class AdminStoriesList extends React.Component {
               ))}
             </ListWrapper>
           </HeroWrapper>
+        </div>
         </div>
       );
     }

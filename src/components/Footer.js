@@ -4,14 +4,13 @@ import { NavLink } from "react-router-dom"
 
 const FooterWrap = styled.div`
   display: flex;
-  justify-content: space-around;
-  color: white;
-  background-color: #33313b;
-  font-size: 2rem;
+  justify-content: space-between;
+  color: black;
+  font-size: 1.1rem;
   align-items: baseline;
   margin-bottom: 0px;
   @media (max-width: 700px) {
-    flex-direction: column;
+   
     align-items: center
   }
 
@@ -19,27 +18,31 @@ const FooterWrap = styled.div`
       padding: 0px 10px;
     }
 `;
-const SocialMedia = styled.div`
-  i {
-    font-size: 3.5rem;
-    :hover{
-        color: #0180C7;
-        transition: all .8s;
-    }
-  }
-`;
+
 
 const Link = styled(NavLink)`
-color: white;
-font-size: 2rem;
+color: black;
+font-size:1.2rem;
   :hover{
         color: #0180C7;
         transition: all .8s;
   }
 `
 
+const Logo = styled.div`
+
+  p{
+    font-weight: 400;
+    font-size: 1.4rem;
+    margin-right:150px;
+    margin-bottom:50px;
+  }
+
+`
+
 const Footer = () => {
   return (
+    <div class="container">
     <FooterWrap>
       <div>
         <p>
@@ -49,17 +52,12 @@ const Footer = () => {
             <Link to={'/Policies'}>Policies</Link>
         </p>
       </div>
-      <div>
-        <p>Refugee Stories 2019 &copy; </p>
-      </div>
-      <SocialMedia>
-        <p>
-          <i className="fab fa-github-square" />
-          <i className="fab fa-facebook-square" />
-          <i className="fab fa-twitter-square" />
-        </p>
-      </SocialMedia>
+      <Logo>
+        <p>MACRAMÉ<br></br> مقرمة 2019  </p>
+      </Logo>
+     
     </FooterWrap>
+    </div>
   );
 };
 

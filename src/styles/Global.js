@@ -11,9 +11,7 @@ export const GlobalStyle = createGlobalStyle`
   
   html, body {
     font-family: 'Fira Sans';
-    background-color:#33313b;
-    
-  }
+ }
   
   h1, h2, h3, h4, h5 {
     font-family: 'Fira Sans';
@@ -36,12 +34,17 @@ export const GlobalStyle = createGlobalStyle`
   p {
     line-height: 1.5;
     font-size: 2.0rem;
-    padding-bottom: 10px;
+   
   }
 
   a {
       font-size: 1.6rem;
       text-decoration: none
+  }
+
+  li {
+      list-style:none;
+      font-size: 1.8rem
   }
   
   img {
@@ -55,6 +58,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 body {
   margin: 0;
+  font-family: 'Karla', sans-serif;
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -63,7 +67,7 @@ body {
 }
   
   .container {
-    max-width: 800px;
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
   }

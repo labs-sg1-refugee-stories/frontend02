@@ -33,8 +33,7 @@ function App() {
       <Route exact path={"/stories_list/add_story"} component={AddStory} />
       <Route exact path={"/not_logged"} component={NotLogged} />
       <Route exact path={"/contact"} component={Contact} />
-      <Route exact path={"/policies"} component={Policies} />
-
+      <Route exact path={"/policies"} component={Policies} />     
       {/* protected admin routes */}
       <PrivateRoute
         exact
