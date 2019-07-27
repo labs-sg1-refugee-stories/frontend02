@@ -9,25 +9,24 @@ const HeroWrapper = styled.div`
   min-height: 900px;
   justify-content: space-around;
   color: white;
-  background-image: linear-gradient(
-      rgba(000, 000, 000, 0.9),
-      rgba(111, 111, 111, 0.8)
-    ),
-    url(${hero});
   background-size: contain;
   font-size: 4rem;
   h1 {
     margin-top: 200px;
+    color: black;
+    font-weight:400;
   }
 `;
 
 const notLogged = () => {
   return (
     <>
+    <div class="container">
       <Navbar />
       <HeroWrapper>
         <h1>Sorry. Wrong Password or Username.</h1>
       </HeroWrapper>
+      </div>
     </>
   );
 };

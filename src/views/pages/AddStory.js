@@ -11,12 +11,6 @@ const HeroWrapper = styled.div`
   min-height: 900px;
   flex-wrap:wrap;
   flex-direction:column;
-  background-image: linear-gradient(
-      rgba(000, 000, 000, 0.9),
-      rgba(111, 111, 111, 0.8)
-    ),
-    url(${hero});
-  background-size: contain;
   font-size: 4rem;
   color: white;
   
@@ -85,7 +79,7 @@ class AddStory extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class ="container">
         <Navbar />
         <HeroWrapper>
           <Header>Share Your Story</Header>

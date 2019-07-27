@@ -1,13 +1,15 @@
 import React from "react";
 import Navbar from "components/Navbar";
 import styled from "styled-components";
+import { NavLink } from 'react-router-dom'
+
 import colorPainting from "../../assets/BASEL.HOPE-1.jpg";
 import books from "../../assets/Capture.jpg";
 import shoes from "../../assets/andrew-itaga-QNyWeFHjZJY-unsplash.jpg";
 import hope from "../../assets/kristopher-roller-PC_lbSSxCZE-unsplash.jpg";
 import desert from "../../assets/ivars-krutainis-jTJ9-4ESzU4-unsplash.jpg";
 
-const Heading = styled.h1`
+const Heading = styled.a`
   background-color: white;
   font-weight: 400;
 `;
@@ -16,6 +18,15 @@ const HeadingWrapper = styled.div`
   justify-content: space-around;
   border-bottom: 1px solid lightgray;
 `;
+
+const StyledLink = styled(NavLink)`
+  text-decoration: none;
+  color: black;
+  font-weight:400;
+  font-size: 2.6rem;
+`
+  
+
 
 const TopContent = styled.div`
   display: flex;
@@ -119,8 +130,8 @@ class Home extends React.Component {
         <div>
           <Navbar />
           <HeadingWrapper>
-            <Heading>write</Heading>
-            <Heading>read</Heading>
+            <StyledLink to={"/stories_list/add_story"}>write</StyledLink>
+            <StyledLink to={"/stories_list"}>read</StyledLink>
           </HeadingWrapper>
           <SubMenu>spotlight</SubMenu>
           <TopContent>
