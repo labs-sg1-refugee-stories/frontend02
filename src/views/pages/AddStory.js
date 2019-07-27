@@ -9,17 +9,18 @@ import Button from "components/Button";
 const HeroWrapper = styled.div`
   display: flex;
   min-height: 900px;
+
   flex-wrap:wrap;
   flex-direction:column;
+
   font-size: 4rem;
   color: white;
-  
 `;
 const FormWrapper = styled.div`
-width: 80%;
-margin: 0 auto;
-background-color: rgba(0,0,0,.6);
-margin-top:20px;
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin-top: 20px;
 `;
 const Form = styled.form`
   display: flex;
@@ -44,17 +45,17 @@ const Header = styled.h1`
 `;
 
 const Input = styled.input`
-border: none;
-border-bottom: 1px solid white;
-font-size: 1.6rem;
-padding-left: 10px;
-margin-bottom: 30px;
-height: 30px;
-  ::placeholder{
-      padding-left: 10px;
-      font-family: 'Oswald', sans-serif;
-      letter-spacing: 1px
-    }
+  border: none;
+  border-bottom: 1px solid white;
+  font-size: 1.6rem;
+  padding-left: 10px;
+  margin-bottom: 30px;
+  height: 30px;
+  ::placeholder {
+    padding-left: 10px;
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 1px;
+  }
 `;
 class AddStory extends React.Component {
   state = {
@@ -62,6 +63,10 @@ class AddStory extends React.Component {
     name: "",
     storytext: "",
     country: "",
+    photoUrl: null,
+    authorUrl: null,
+    photo: null,
+    author: null,
   };
 
   textChangeHandler = event => {
@@ -71,10 +76,26 @@ class AddStory extends React.Component {
       [event.target.name]: newText,
     });
   };
-  addPost = event => {
-    event.preventDefault();
+  addPost = e => {
+    e.preventDefault();
     this.props.addPost(this.state);
     this.props.history.push("/stories_list");
+  };
+
+  handleSelect = event => {
+    // sets photoUrl/authorUrl on state depending on which input was selected
+    const file = event.target.files[0];
+    const { name, id } = event.target;
+    this.setState({ [name]: file });
+
+    // sets photo/author on state depending on which input was selected
+    // this is needed for preview image; see ref below
+    // ref: https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications#Example_Showing_thumbnails_of_user-selected_images
+    const reader = new FileReader();
+    reader.onload = e => {
+      this.setState({ [id]: e.target.result });
+    };
+    reader.readAsDataURL(file);
   };
 
   render() {
@@ -115,7 +136,42 @@ class AddStory extends React.Component {
                 type="text"
                 value={this.state.storytext}
               />
-              <Button text={"Share"}>Add Post</Button>
+              <input
+                onChange={this.handleSelect}
+                name="photoUrl"
+                id="photo"
+                type="file"
+                accept="image/*"
+              />
+              <div
+                style={{
+                  height: "200px",
+                  width: "200px",
+                  border: "1px solid red",
+                }}
+              >
+                {this.state.photo && <img src={this.state.photo} alt="story" />}
+              </div>
+              <br />
+              <input
+                onChange={this.handleSelect}
+                name="authorUrl"
+                id="author"
+                type="file"
+                accept="image/*"
+              />
+              <div
+                style={{
+                  height: "200px",
+                  width: "200px",
+                  border: "1px solid red",
+                }}
+              >
+                {this.state.author && (
+                  <img src={this.state.author} alt="author" />
+                )}
+              </div>
+              <Button text={"Share"} />
             </Form>
           </FormWrapper>
         </HeroWrapper>
