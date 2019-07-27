@@ -32,7 +32,7 @@ const ProfileWrap = styled.div`
     font-size: 5rem;
   }
   i {
-    color: #0180c7;
+    color: white;
     border: 1px solid white;
     padding: 30px;
     width: 100px;

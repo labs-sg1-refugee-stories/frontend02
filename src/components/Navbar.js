@@ -98,7 +98,7 @@ class Navbar extends React.Component {
               Home
             </LinkElem>
             <LinkElem to={'/about_us'}>About</LinkElem>
-            <LinkElem exact to='/stories_list/add_story'>
+            <LinkElem exact to='/'>
               support
             </LinkElem>
          
