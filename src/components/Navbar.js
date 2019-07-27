@@ -74,16 +74,19 @@ const Logo = styled.div`
     
 `
 const StyledLink = styled(NavLink)`
-  text-decoration: none;
   color: black;
   font-weight:400;
-  font-size: 2.6rem;
+  font-size: 3.9rem;
 `
 
 const HeadingWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   border-bottom: 1px solid lightgray;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 400;
 `;
 
 class Navbar extends React.Component {
@@ -118,8 +121,8 @@ class Navbar extends React.Component {
           </Mobile>
         </nav>
         <HeadingWrapper>
-          <StyledLink to={"/stories_list/add_story"}>write</StyledLink>
-          <StyledLink to={"/stories_list"}>read</StyledLink>
+          <StyledLink to={"/stories_list/add_story"}>Write</StyledLink>
+          <StyledLink to={"/stories_list"}>Read</StyledLink>
         </HeadingWrapper>
 
       </NavBar>
