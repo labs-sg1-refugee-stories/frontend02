@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addPost } from "actions";
-import hero from "assets/hero.jpg";
 import Navbar from "components/Navbar";
 import styled from "styled-components";
 import Button from "components/Button";
@@ -9,17 +8,15 @@ import Button from "components/Button";
 const HeroWrapper = styled.div`
   display: flex;
   min-height: 900px;
-
   flex-wrap:wrap;
   flex-direction:column;
-
   font-size: 4rem;
   color: white;
 `;
 const FormWrapper = styled.div`
   width: 80%;
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.6);
+
   margin-top: 20px;
 `;
 const Form = styled.form`
@@ -30,13 +27,19 @@ const Form = styled.form`
 const TextInput = styled.textarea`
   border: none;
   border-bottom: 1px solid white;
+  padding-left: 10px;
   font-size: 1.6rem;
   margin-bottom: 30px;
+  resize: none;
 
   ::placeholder {
     padding-left: 10px;
-    font-family: "Oswald", sans-serif;
     letter-spacing: 1px;
+  }
+
+  &:focus{
+    outline: none;
+    
   }
 `;
 const Header = styled.h1`
@@ -51,10 +54,17 @@ const Input = styled.input`
   padding-left: 10px;
   margin-bottom: 30px;
   height: 30px;
+  border-bottom: 2px solid transparent;
+  transition: all .5s;
   ::placeholder {
     padding-left: 10px;
-    font-family: "Oswald", sans-serif;
     letter-spacing: 1px;
+  }
+  &:focus{
+    outline: none;
+    border-bottom: 1px solid darkgrey;
+
+    
   }
 `;
 class AddStory extends React.Component {
@@ -136,7 +146,7 @@ class AddStory extends React.Component {
                 type="text"
                 value={this.state.storytext}
               />
-              <input
+              {/* <input
                 onChange={this.handleSelect}
                 name="photoUrl"
                 id="photo"
@@ -170,7 +180,7 @@ class AddStory extends React.Component {
                 {this.state.author && (
                   <img src={this.state.author} alt="author" />
                 )}
-              </div>
+              </div> */}
               <Button text={"Share"} />
             </Form>
           </FormWrapper>

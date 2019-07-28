@@ -4,14 +4,15 @@ import styled from 'styled-components'
 const ButtonStyle = styled.button`
 padding: 10px 20px;
 font-size: 2rem;
-border-radius: 5px;
-color: white;
-background-color: #9C000B;
+background-color: transparent;
+color: black;
+border-radius:3px;
+width: 150px;
 height: ${props => props.height ? "none" : "50px"};
-    :hover{
-      transform: translateY(-3px);
-      transition: all .4s;
-    }
+
+&:focus{
+  outline:none;
+}
 `
 const Button = (props) => {
     return  <ButtonStyle>{props.text}</ButtonStyle>
