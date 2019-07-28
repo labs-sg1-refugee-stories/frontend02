@@ -113,7 +113,7 @@ class Navbar extends React.Component {
               Home
             </LinkElem>
             <LinkElem to={'/about_us'}>About</LinkElem>
-            <LinkElem exact to='/'>
+            <LinkElem exact to='/safety'>
               safety
             </LinkElem>
          
