@@ -7,9 +7,6 @@ import Navbar from "components/Navbar";
 import ReactPaginate from "react-paginate";
 
 const HeroWrapper = styled.div`
-  display: flex;
-  margin: 0 auto;
-  flex-direction: column;
   /* Pagination styles */
   .pagination {
     display: flex;
@@ -17,8 +14,7 @@ const HeroWrapper = styled.div`
     justify-content: center;
     margin: 0 auto 30px;
     font-weight: 600;
-   
-    
+
     .previous,
     .next {
       a {
@@ -30,7 +26,6 @@ const HeroWrapper = styled.div`
     .focus {
       outline: none;
       color: black;
-
     }
     li {
       display: flex;
@@ -58,16 +53,24 @@ const HeroWrapper = styled.div`
 const Title = styled.h1`
   margin: 50px auto;
   font-weight: 400;
+  display: inline-block;
 `;
 const Content = styled.div`
-  width: 100%;
-  padding-left: 100px;
-  @media (max-width: 950px) {
-    padding-bottom: 20px;
-    padding-left: 0;
-  }
 `;
 
+const OneStory = styled.div`
+  border: 1px solid red;
+  width: 33.3%;
+  display: flex;
+  text-align:center;
+  justify-content:center;
+`;
+
+const StoryWrap = styled.div`
+border: 1px solid red;
+flex-wrap: wrap;
+display:flex;
+`
 
 class StoriesList extends React.Component {
   componentDidMount() {
@@ -84,27 +87,27 @@ class StoriesList extends React.Component {
     return (
       <div>
         {this.props.stories && (
-        <div class="container">
-          <div>
-            <Navbar />
-            <HeroWrapper>
-              <Title>Select Story </Title>
-             
+          <div class="container">
+            <div>
+              <Navbar />
+              <div>
+                <Title>Select Story </Title>
+              </div>
+
+              <StoryWrap>
                 {this.props.stories.map((story, index) => (
-                  <Link key={index} to={`/stories_list/user/${story.id}`}>
-                  
-                  
-                      <Content>{story.title}</Content>
-               
-               
-                      <Content>Author:{story.name}</Content>
-                    
-            
-                      <Content>Location:{story.country}</Content>
                  
-                  </Link>
+                    <OneStory>
+                      <Link key={index} to={`/stories_list/user/${story.id}`}>
+                        <Content>{story.title}</Content>
+                        <Content>Author:{story.name}</Content>
+                        <Content>Location:{story.country}</Content>
+                      </Link>
+                    </OneStory>
+             
                 ))}
-          
+              </StoryWrap>
+
               <ReactPaginate
                 previousLabel={"<"}
                 nextLabel={">"}
@@ -121,12 +124,10 @@ class StoriesList extends React.Component {
                   Math.floor(this.props.offset / this.props.limit) || 0
                 }
               />
-            </HeroWrapper>
-          </div>
+            </div>
           </div>
         )}
       </div>
-     
     );
   };
 }
