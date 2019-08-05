@@ -20,10 +20,10 @@ const ProfileWrap = styled.div`
   padding: 40px;
   padding-bottom: 40px;
   margin-bottom: 300px;
-  color: white;
+  color: black;
   width: 100%;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  
   @media (max-width: 800px) {
     width: 80%;
     margin-bottom: 50px;
@@ -46,8 +46,7 @@ const SingleProfile = props => {
   return (
     <ProfileWrapper>
       <ProfileWrap>
-        <i className={props.icon} />
-        <h2>{props.title}</h2>
+        <h3>{props.title}</h3>
         <p>{props.content}</p>
       </ProfileWrap>
     </ProfileWrapper>

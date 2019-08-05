@@ -48,7 +48,7 @@ background-color: #fff;
         
         :hover{
           transition: all .8s;
-          color:#0180C7;
+          color:lightgrey;
         }
       }
     }`
@@ -113,7 +113,7 @@ class Navbar extends React.Component {
             </LinkElem>
             <LinkElem to={'/about_us'}>About</LinkElem>
             <LinkElem exact to='/safety'>
-              safety
+              Safety
             </LinkElem>
          
       

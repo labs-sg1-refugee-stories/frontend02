@@ -14,7 +14,7 @@ const HeroWrapper = styled.div`
   color: white;
 `;
 const FormWrapper = styled.div`
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 
   margin-top: 20px;
@@ -22,7 +22,7 @@ const FormWrapper = styled.div`
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  padding: 30px;
+
 `;
 const TextInput = styled.textarea`
   border: none;
@@ -75,13 +75,17 @@ color: black;
 font-size: 1.6rem;
 transition: all .2s;
 border-bottom: 1px solid lightgray;
-width: 9%;
+width: 10%;
+margin-left: 10px;
 
     &:focus{
       outline: none;
     }
     &:hover{
       color: gray;
+    }
+    @media (max-width: 768px) {
+    width:20%;
     }
 `
 class AddStory extends React.Component {
