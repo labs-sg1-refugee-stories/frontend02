@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   background-color: white;
   color: white;
-  background-color: rgba(0, 0, 0, 0.3);
+
 
   p {
     margin: 0;
@@ -34,7 +34,6 @@ height: 30px;
 padding-left: 10px;
   ::placeholder{
       padding-left: 10px;
-      font-family: 'Oswald', sans-serif;
       letter-spacing: 1px
     }
 `;
@@ -46,12 +45,14 @@ const Button = styled.button`
   padding: 10px 20px;
   font-size: 2rem;
   border-radius: 5px;
-  color: white;
-  background-color: #9c000b;
+  color: black;
+  border: none;
+  transition: all 0.8s;
+  border-bottom: 1px solid transparent;
+  
   :hover {
-    transform: translateY(-3px);
-    transition: all 0.8s;
-  }
+   border-bottom: 1px solid lightgray;
+    }
 `;
 
 class LoginCard extends React.Component {
@@ -99,7 +100,7 @@ class LoginCard extends React.Component {
             name="password"
             value={this.state.newCredentials.password}
           />
-          <Button>Review</Button>
+          <Button>Review &rarr;</Button>
         </Form>
       </Wrapper>
     );

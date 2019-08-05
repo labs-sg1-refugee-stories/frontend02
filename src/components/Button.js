@@ -8,6 +8,7 @@ background-color: transparent;
 color: black;
 border-radius:3px;
 width: 150px;
+border: none;
 height: ${props => props.height ? "none" : "50px"};
 
 &:focus{
