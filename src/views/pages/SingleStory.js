@@ -92,21 +92,21 @@ const CommentsWrapper = styled.div`
       border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
 
-  .btn-primary.focus,
-  .btn-primary:focus {
-    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
-  }
 
   .btn.focus,
   .btn:focus {
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   }
 
   .btn-primary {
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
+    color: black;
+    font-size: 1.6rem;
+    transition: all .2s;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom: 1px solid lightgray;
+    }
   }
 
   h6 {
@@ -206,7 +206,7 @@ class SingleStory extends React.Component {
                     />
                   </div>
                   <button type="submit" className="btn btn-block btn-primary">
-                    Add Comment
+                    Add Comment &rarr;
                   </button>
                 </form>
               ) : null}

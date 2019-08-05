@@ -34,7 +34,7 @@ const Logo = styled.div`
   p{
     font-weight: 400;
     font-size: 1.4rem;
-    margin-right:150px;
+
     margin-bottom:50px;
   }
 
