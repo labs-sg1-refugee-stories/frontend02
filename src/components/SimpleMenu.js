@@ -45,11 +45,9 @@ export default function SimpleMenu() {
           open={Boolean(anchorEl)}
           onClose={handleClose}
         >
-          <DropdownItem component={Link} to="/about_us" onClick={handleClose}>About</DropdownItem>
-          <DropdownItem component={Link} to='/stories_list' onClick={handleClose}>Read</DropdownItem>
-          <DropdownItem component={Link} to='/stories_list/add_story' onClick={handleClose}>Share</DropdownItem>
-          <DropdownItem component={Link} to="/login" onClick={handleClose}>Login</DropdownItem>
           <DropdownItem component={Link} to="/" onClick={handleClose}>Home</DropdownItem>
+          <DropdownItem component={Link} to="/about_us" onClick={handleClose}>About</DropdownItem>
+          <DropdownItem component={Link} to="/safety" onClick={handleClose}>Safety</DropdownItem>
         </Menu>
       </div>
     );
