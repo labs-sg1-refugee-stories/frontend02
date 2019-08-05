@@ -38,6 +38,7 @@ const SocialMedia = styled.div`
   i:first-child {
     margin-left: 50px;
   }
+  
 `;
 
 const Supporters = () => {

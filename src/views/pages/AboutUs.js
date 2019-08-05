@@ -12,7 +12,8 @@ const HeroWrapper = styled.div`
   font-weight: 400px;
 
   @media (max-width: 768px) {
-    flex-direction: column
+    flex-direction: column;
+    align-content:space-around;
     }
 `;
 
@@ -22,6 +23,10 @@ const Title = styled.h1`
 
 const Info = styled.div`
   padding-right: 100px;
+  
+  @media (max-width: 768px) {
+    padding-right: 0px;
+    }
 `;
 
 const Cards = styled.div`
