@@ -9,14 +9,8 @@ import ReactPaginate from "react-paginate";
 const HeroWrapper = styled.div`
   display: flex;
   margin: 0 auto;
-  min-height: 900px;
-  justify-content: space-around;
- 
-  background-size: contain;
-  font-size: 4rem;
-  color: black;
   flex-direction: column;
-  //* Pagination styles *//
+  /* Pagination styles */
   .pagination {
     display: flex;
     width: 100%;
@@ -65,30 +59,6 @@ const Title = styled.h1`
   margin: 50px auto;
   font-weight: 400;
 `;
-const ListWrapper = styled.div`
-  min-height: 800px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 10px;
-
-  a {
-    color: white;
-    font-size: 3rem;
-    text-decoration: none;
-    display: flex;
-    width: 80%;
-    border: 1px solid white;
-    padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    background-color: rgba(0, 0, 0, 0.3);
-    @media (max-width: 950px) {
-      flex-direction: column;
-      padding-bottom: 20px;
-    }
-  }
-`;
 const Content = styled.div`
   width: 100%;
   padding-left: 100px;
@@ -98,12 +68,7 @@ const Content = styled.div`
   }
 `;
 
-const ContentWrapper = styled.div`
-  width: 50%;
-  @media (max-width: 950px) {
-    width: 100%;
-  }
-`;
+
 class StoriesList extends React.Component {
   componentDidMount() {
     this.props.getApprovedStories(this.props.offset);
@@ -124,21 +89,22 @@ class StoriesList extends React.Component {
             <Navbar />
             <HeroWrapper>
               <Title>Select Story </Title>
-              <ListWrapper>
+             
                 {this.props.stories.map((story, index) => (
                   <Link key={index} to={`/stories_list/user/${story.id}`}>
-                    <ContentWrapper>
+                  
+                  
                       <Content>{story.title}</Content>
-                    </ContentWrapper>
-                    <ContentWrapper>
-                      <Content>{story.name}</Content>
-                    </ContentWrapper>
-                    <ContentWrapper>
-                      <Content>{story.country}</Content>
-                    </ContentWrapper>
+               
+               
+                      <Content>Author:{story.name}</Content>
+                    
+            
+                      <Content>Location:{story.country}</Content>
+                 
                   </Link>
                 ))}
-              </ListWrapper>
+          
               <ReactPaginate
                 previousLabel={"<"}
                 nextLabel={">"}
