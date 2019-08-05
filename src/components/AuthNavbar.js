@@ -90,6 +90,7 @@ class Navbar extends React.Component {
 
   render() {
     return (
+      <div className="container">
       <NavBar>
         <nav>
         <Logo>MACRAMÉ<br></br> مقرمة</Logo>
@@ -106,6 +107,7 @@ class Navbar extends React.Component {
           </Mobile>
         </nav>
       </NavBar>
+      </div>
     );
   }
 }

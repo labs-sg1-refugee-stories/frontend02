@@ -33,7 +33,7 @@ const HeroWrapper = styled.div`
     .active,
     .focus {
       outline: none;
-      background: #0180c7;
+      color:black;
 
     }
     li {
@@ -51,11 +51,13 @@ const HeroWrapper = styled.div`
         height: 50px;
         font-size: 2rem;
         cursor: pointer;
-      }
-      &:hover {
-        background: #0180c7;
+        color:black;
+        &:hover {
+        color:gray;
         outline: none;
       }
+    }
+      
     }
   }
 `;

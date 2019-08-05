@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { addPost } from "actions";
 import Navbar from "components/Navbar";
 import styled from "styled-components";
-import Button from "components/Button";
+
 
 const HeroWrapper = styled.div`
   display: flex;
@@ -56,6 +56,7 @@ const Input = styled.input`
   height: 30px;
   border-bottom: 2px solid transparent;
   transition: all .5s;
+  border-bottom: 1px solid transparent;
   ::placeholder {
     padding-left: 10px;
     letter-spacing: 1px;
@@ -67,6 +68,12 @@ const Input = styled.input`
     
   }
 `;
+
+const Button = styled.button`
+border: none;
+color: black;
+font-size: 1.6rem;
+`
 class AddStory extends React.Component {
   state = {
     title: "",
@@ -181,7 +188,7 @@ class AddStory extends React.Component {
                   <img src={this.state.author} alt="author" />
                 )}
               </div> */}
-              <Button text={"Share"} />
+              <Button>share &rarr;</Button>
             </Form>
           </FormWrapper>
         </HeroWrapper>
