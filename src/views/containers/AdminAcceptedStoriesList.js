@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Navbar from "components/AuthNavbar";
 import ReactPaginate from "react-paginate";
-import Button from "../../components/Button"
+
 
 const HeroWrapper = styled.div`
   display: flex;

@@ -73,6 +73,16 @@ const Button = styled.button`
 border: none;
 color: black;
 font-size: 1.6rem;
+transition: all .2s;
+border-bottom: 1px solid lightgray;
+width: 9%;
+
+    &:focus{
+      outline: none;
+    }
+    &:hover{
+      color: gray;
+    }
 `
 class AddStory extends React.Component {
   state = {

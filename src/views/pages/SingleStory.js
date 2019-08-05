@@ -9,20 +9,17 @@ import styled from "styled-components";
 const HeroWrapper = styled.div`
   display: flex;
   margin: 0 auto;
-
   justify-content: space-around;
-  
   background-size: contain;
   font-size: 4rem;
-  color: white;
+  color: black;
 `;
 const StoryWrapper = styled.div`
   padding: 20px;
   margin-bottom: 200px;
-  margin-top: 100px;
+  margin-top: 20px;
   width: 400px;
   border: 1px solid white;
-  background-color: rgba(000, 000, 000, 0.4);
   button {
     margin-right: 20px;
   }
@@ -160,7 +157,7 @@ class SingleStory extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <Navbar />
         <HeroWrapper>
           <StoryWrapper>
