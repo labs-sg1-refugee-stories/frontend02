@@ -7,6 +7,8 @@ import Navbar from "components/Navbar";
 import ReactPaginate from "react-paginate";
 
 const HeroWrapper = styled.div`
+  text-align: center;
+
   /* Pagination styles */
   .pagination {
     display: flex;
@@ -56,21 +58,29 @@ const Title = styled.h1`
   display: inline-block;
 `;
 const Content = styled.div`
+  font-size: 2rem;
+  color: black;
 `;
 
 const OneStory = styled.div`
-  border: 1px solid red;
-  width: 33.3%;
+  box-shadow: -6px 4px 6px -7px rgba(0, 0, 0, 0.75);
+  margin-bottom: 20px;
+  width: 32%;
+  padding: 10px;
   display: flex;
-  text-align:center;
-  justify-content:center;
+  justify-content: center;
+  font-size: 2rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const StoryWrap = styled.div`
-border: 1px solid red;
-flex-wrap: wrap;
-display:flex;
-`
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+`;
 
 class StoriesList extends React.Component {
   componentDidMount() {
@@ -90,13 +100,13 @@ class StoriesList extends React.Component {
           <div class="container">
             <div>
               <Navbar />
-              <div>
-                <Title>Select Story </Title>
-              </div>
+              <HeroWrapper>
+                <div>
+                  <Title>Select Story </Title>
+                </div>
 
-              <StoryWrap>
-                {this.props.stories.map((story, index) => (
-                 
+                <StoryWrap>
+                  {this.props.stories.map((story, index) => (
                     <OneStory>
                       <Link key={index} to={`/stories_list/user/${story.id}`}>
                         <Content>{story.title}</Content>
@@ -104,26 +114,28 @@ class StoriesList extends React.Component {
                         <Content>Location:{story.country}</Content>
                       </Link>
                     </OneStory>
-             
-                ))}
-              </StoryWrap>
+                  ))}
+                </StoryWrap>
 
-              <ReactPaginate
-                previousLabel={"<"}
-                nextLabel={">"}
-                breakLabel={"..."}
-                breakClassName={"break-me"}
-                pageCount={Math.ceil(this.props.count / this.props.limit) || 1}
-                marginPagesDisplayed={1}
-                pageRangeDisplayed={2}
-                onPageChange={this.handlePageClick}
-                containerClassName={"pagination"}
-                subContainerClassName={"pages pagination"}
-                activeClassName={"active"}
-                initialPage={
-                  Math.floor(this.props.offset / this.props.limit) || 0
-                }
-              />
+                <ReactPaginate
+                  previousLabel={"<"}
+                  nextLabel={">"}
+                  breakLabel={"..."}
+                  breakClassName={"break-me"}
+                  pageCount={
+                    Math.ceil(this.props.count / this.props.limit) || 1
+                  }
+                  marginPagesDisplayed={1}
+                  pageRangeDisplayed={2}
+                  onPageChange={this.handlePageClick}
+                  containerClassName={"pagination"}
+                  subContainerClassName={"pages pagination"}
+                  activeClassName={"active"}
+                  initialPage={
+                    Math.floor(this.props.offset / this.props.limit) || 0
+                  }
+                />
+              </HeroWrapper>
             </div>
           </div>
         )}
