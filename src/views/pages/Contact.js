@@ -1,15 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "components/Navbar";
-import SingleProfile from "components/SingleProfile";
+
 
 const HeroWrapper = styled.div`
   display: flex;
-  margin: 0 auto;
   min-height: 900px;
-  justify-content: space-around;
-  background-size: contain;
+  flex-direction: column;
   font-size: 4rem;
+  text-align:center;
 `;
 
 const Policies = () => {
@@ -18,7 +17,8 @@ const Policies = () => {
       <div class="container">
       <Navbar />
       <HeroWrapper>
-      <SingleProfile title={"Contact"} content={"brandonpampuch@gmail.com"} icon={"far fa-envelope"} />
+      <h1>Contact</h1>
+      <p>brandonpampuch@gmail.com</p>
       </HeroWrapper>
       </div>
     </>
