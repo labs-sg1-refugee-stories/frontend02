@@ -10,6 +10,9 @@ const HeroWrapper = styled.div`
   justify-content: space-between;
   font-size: 4rem;
   font-weight: 400px;
+  li {
+    list-style: none;
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -56,10 +59,10 @@ const AboutUs = () => {
               displaced people's. However, for the time being it is being
               operated by the following.
             </p>
-            <ul>
+          
               <li>Brandon Pampuch - Front End Dev</li>
               <li>César Napoleon Mejia Leiva - Full Stack Dev</li>
-            </ul>
+          
             <Question>How did MACRAMÉ begin ? </Question>
             <p>
               As a student project at Lambda School. Students found a common
