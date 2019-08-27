@@ -1,8 +1,6 @@
 import React from "react";
 import Navbar from "components/Navbar";
 import styled from "styled-components";
-
-
 import colorPainting from "../../assets/BASEL.HOPE-1.jpg";
 import books from "../../assets/Capture.jpg";
 import shoes from "../../assets/andrew-itaga-QNyWeFHjZJY-unsplash.jpg";
@@ -80,10 +78,6 @@ const Title = styled.h3`
   font-weight: 400;
 `;
 
-
-
-
-
 class Home extends React.Component {
   state = {};
   render() {
@@ -91,6 +85,7 @@ class Home extends React.Component {
       <div class="container">
         <div>
           <Navbar />
+          <Supporters/>
           <SubMenu>spotlight</SubMenu>
           <TopContent>
             <HeroContent>

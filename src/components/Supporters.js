@@ -55,7 +55,7 @@ const Supporters = () => {
         <li>etc.</li>
       </ContributerList>
       <Border />
-      <SubMenu>Contact Us</SubMenu>
+      <SubMenu>Follow</SubMenu>
       <SocialMedia>
         <i className="fab fa-github-square" />
         <i className="fab fa-facebook-square" />
